@@ -1,0 +1,192 @@
+{
+  "dilations": [
+    {
+      "K": 75,
+      "SC": 380,
+      "T": 232,
+      "ell": 4,
+      "n": 20,
+      "quad": 344
+    },
+    {
+      "K": 100,
+      "SC": 606,
+      "T": 352,
+      "ell": 5,
+      "n": 25,
+      "quad": 499
+    },
+    {
+      "K": 125,
+      "SC": 882,
+      "T": 497,
+      "ell": 6,
+      "n": 30,
+      "quad": 679
+    },
+    {
+      "K": 150,
+      "SC": 1208,
+      "T": 667,
+      "ell": 7,
+      "n": 35,
+      "quad": 884
+    },
+    {
+      "K": 175,
+      "SC": 1584,
+      "T": 862,
+      "ell": 8,
+      "n": 40,
+      "quad": 1114
+    },
+    {
+      "K": 200,
+      "SC": 2010,
+      "T": 1082,
+      "ell": 9,
+      "n": 45,
+      "quad": 1369
+    },
+    {
+      "K": 225,
+      "SC": 2486,
+      "T": 1327,
+      "ell": 10,
+      "n": 50,
+      "quad": 1649
+    },
+    {
+      "K": 250,
+      "SC": 3012,
+      "T": 1597,
+      "ell": 11,
+      "n": 55,
+      "quad": 1954
+    },
+    {
+      "K": 275,
+      "SC": 3588,
+      "T": 1892,
+      "ell": 12,
+      "n": 60,
+      "quad": 2284
+    },
+    {
+      "K": 300,
+      "SC": 4214,
+      "T": 2212,
+      "ell": 13,
+      "n": 65,
+      "quad": 2639
+    },
+    {
+      "K": 325,
+      "SC": 4890,
+      "T": 2557,
+      "ell": 14,
+      "n": 70,
+      "quad": 3019
+    },
+    {
+      "K": 350,
+      "SC": 5616,
+      "T": 2927,
+      "ell": 15,
+      "n": 75,
+      "quad": 3424
+    },
+    {
+      "K": 375,
+      "SC": 6392,
+      "T": 3322,
+      "ell": 16,
+      "n": 80,
+      "quad": 3854
+    },
+    {
+      "K": 400,
+      "SC": 7218,
+      "T": 3742,
+      "ell": 17,
+      "n": 85,
+      "quad": 4309
+    },
+    {
+      "K": 425,
+      "SC": 8094,
+      "T": 4187,
+      "ell": 18,
+      "n": 90,
+      "quad": 4789
+    },
+    {
+      "K": 450,
+      "SC": 9020,
+      "T": 4657,
+      "ell": 19,
+      "n": 95,
+      "quad": 5294
+    },
+    {
+      "K": 475,
+      "SC": 9996,
+      "T": 5152,
+      "ell": 20,
+      "n": 100,
+      "quad": 5824
+    }
+  ],
+  "obstacles": [
+    {
+      "N": 7,
+      "configuration_fixed_when_N_varies": true,
+      "formula": "k*N+1",
+      "k": 2,
+      "kind": "fixed-k narrow rectangles",
+      "patterns": 15
+    },
+    {
+      "N": 6,
+      "configuration_fixed_when_N_varies": true,
+      "formula": "k*N+1",
+      "k": 3,
+      "kind": "fixed-k narrow rectangles",
+      "patterns": 19
+    },
+    {
+      "N": 12,
+      "configuration_fixed_when_N_varies": true,
+      "formula": "k*N+1",
+      "k": 5,
+      "kind": "fixed-k narrow rectangles",
+      "patterns": 61
+    },
+    {
+      "M": 5,
+      "N": 5,
+      "configuration_fixed": true,
+      "formula": "M*N+2*M+2*N+1",
+      "kind": "fixed sparse orthogonal lines",
+      "patterns": 46
+    },
+    {
+      "M": 6,
+      "N": 9,
+      "configuration_fixed": true,
+      "formula": "M*N+2*M+2*N+1",
+      "kind": "fixed sparse orthogonal lines",
+      "patterns": 85
+    },
+    {
+      "M": 30,
+      "N": 30,
+      "configuration_fixed": true,
+      "formula": "M*N+2*M+2*N+1",
+      "kind": "fixed sparse orthogonal lines",
+      "patterns": 1021
+    }
+  ],
+  "passed": true,
+  "scope": "finite exact global checks and integer geometry; infinite claims have manuscript proofs"
+}

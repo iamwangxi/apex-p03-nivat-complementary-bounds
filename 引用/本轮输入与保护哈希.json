@@ -1,0 +1,1262 @@
+{
+  "git_status": "Not executed: task prohibits Git except local init; filesystem hashes used instead.",
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 6501,
+      "sha256": "84815a8b3efeb1e06c175945a71304830cd27a0109e1bacc350964ff5ef8b4d5"
+    },
+    {
+      "path": "SOURCE_OF_TRUTH.md",
+      "bytes": 4116,
+      "sha256": "a461f56aa8940c9441a61e4a3a42dbb3883ce5a0570f5092f84da9099b3a60f4"
+    },
+    {
+      "path": "WORKSPACE_FACTS.md",
+      "bytes": 10700,
+      "sha256": "2f06c2541bc31a7d9d66e610876e8d31d985084f303613863556a88d99765e57"
+    },
+    {
+      "path": "collab/20260930-Apex数学悬赏Nivat优化稿.md",
+      "bytes": 13682,
+      "sha256": "436ec24caba379b43da98106d4d0b55df44b7ec09f97862f64b4450bbeea569a"
+    },
+    {
+      "path": "input/docs/Apex数学悬赏/官网快照/20260929-130301-公告正文.md",
+      "bytes": 12668,
+      "sha256": "213598cc2cab267ea1b33bf9481c41b4a9169a0d1b78166fcb304c6db90ad0b6"
+    },
+    {
+      "path": "input/docs/Apex数学悬赏/候选论文/convex-nivat.txt",
+      "bytes": 156070,
+      "sha256": "93df7568df396f03b90a9406305224d568ca34cc76dbd81ea91888cc9dba7a27"
+    },
+    {
+      "path": "input/docs/Apex数学悬赏/候选论文/convex-nivat.pdf",
+      "bytes": 891962,
+      "sha256": "7fd67831155f4226c010fd6af32de558b76643771e6be12dea4eebafa21745a8"
+    },
+    {
+      "path": "input/docs/Apex数学悬赏/引用原文/N11-Kari-Szabados-代数几何方法.txt",
+      "bytes": 105546,
+      "sha256": "8ea08afbeefab486b3f936036308b50d6ffbee2bb45ee1cd5eecebd84098ee2e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/KS引理分析/KS引理分析-v1.0.md",
+      "bytes": 41780,
+      "sha256": "a40a27b8c63b9b514b4246350541126f997a2c004e68d71536f10ef494f23263"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/KS引理分析/截面计数界复核-v1.0.md",
+      "bytes": 36690,
+      "sha256": "d220ac6b9c96ced912b199573448469d7a67c2d0c59767327412e365ea9d21fc"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/第二阶段全新上下文对抗审阅-v1.0.md",
+      "bytes": 13889,
+      "sha256": "53d0452665cb66bb4e52baf46b20b3034b2dba06b1aec5dd5840836c190bafbb"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书独立复核-v1.0.md",
+      "bytes": 12966,
+      "sha256": "02aa557138b9e55b0f01d3b43f224ac74b7eb68f2823a13e00fadc861b2f4a09"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/新颖性检索记录-v1.0.md",
+      "bytes": 8775,
+      "sha256": "6a0698dad464a2873418757e69fcd381804b5c19c639f0853250a73db8258272"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/一般证明-v1.0.md",
+      "bytes": 9194,
+      "sha256": "05b4c97bd9cdadc962dc5afb10af04f473de3ae8dadb96f267a281b67e4d00af"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/加强下界稿-中文-v1.0.md",
+      "bytes": 13217,
+      "sha256": "1bbe3b148af2c50ae89eff853ae43a9f2f956e68c24a291fae0f4b4f626fa8a9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/独立证书检查器.py",
+      "bytes": 29174,
+      "sha256": "ad0256d2f848b7e4910a067669d5b4ac896975fc40e4ac14a189536e27342833"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/C路第二阶段判定-v1.0.md",
+      "bytes": 7978,
+      "sha256": "4bd4174aff3c122cbfa2f1bf8ac44ceef7c25f8b8460e3a017b17db7015d5be5"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/执行与复核边界-v1.0.md",
+      "bytes": 4224,
+      "sha256": "28ae88a89cf9c7645c8a5609aa7844f05b493fe97c607510cf906232daf49cbf"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书生成器.py",
+      "bytes": 17122,
+      "sha256": "46ff263901ae4189287723ddfd3c1ed9d3884309694d7fedeb20be59ee507479"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/编制与核验-v1.0.py",
+      "bytes": 11243,
+      "sha256": "b573d99898e938f1702f23753cfc5cf786d42cf5ceac3d868a18a986902a924d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/一般证明独立复核-v1.0.md",
+      "bytes": 21553,
+      "sha256": "d1d0dac3bfdd6439b00d9b9a1789ab027664c52091fb8b35177845c3cee087b8"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/窗口族与价值评估-v1.0.md",
+      "bytes": 10672,
+      "sha256": "eaa10356f518e8dea948f330b19107be776639c5424f80b80a8e3fbac045e337"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/C路判定-v1.0.md",
+      "bytes": 8083,
+      "sha256": "0a8c29a02fe51d69d60e52638d8e355ef1d76bdf447f79809384b6d2eabc8d42"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/加强下界稿-English-v1.0.md",
+      "bytes": 15346,
+      "sha256": "f78287b51d38e8f6b7bb847d44d4ebc7cc54469d8bb086762e0fec5dda3d7098"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/第二阶段执行记录-v1.0.md",
+      "bytes": 7343,
+      "sha256": "8edf05f93973797ff9db580cadd9cbc075db8860c25b7a6dcc9683a3fce36719"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书格式说明-v1.0.md",
+      "bytes": 12502,
+      "sha256": "bbc54b16a76d82cb60a019e84a67790f5c4f3931a84c90d98efe6d18c92116f6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书/删点2-4-精确秩证书-v1.0.json",
+      "bytes": 1354409,
+      "sha256": "2e158a8d04069badfed4f6e5b4941fd47540fd0c6e7630c91e9d6a317f64d942"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书/矩形6乘9-精确秩证书-v1.0.json",
+      "bytes": 1380790,
+      "sha256": "258b88aea81a57f2587b2325534f8be9fe02c24e9a9b75de9ed857b9689cbd47"
+    }
+  ],
+  "protected": [
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/第二阶段全新上下文对抗审阅-v1.0.md",
+      "bytes": 13889,
+      "sha256": "53d0452665cb66bb4e52baf46b20b3034b2dba06b1aec5dd5840836c190bafbb"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书独立复核-v1.0.md",
+      "bytes": 12966,
+      "sha256": "02aa557138b9e55b0f01d3b43f224ac74b7eb68f2823a13e00fadc861b2f4a09"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/新颖性检索记录-v1.0.md",
+      "bytes": 8775,
+      "sha256": "6a0698dad464a2873418757e69fcd381804b5c19c639f0853250a73db8258272"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/一般证明-v1.0.md",
+      "bytes": 9194,
+      "sha256": "05b4c97bd9cdadc962dc5afb10af04f473de3ae8dadb96f267a281b67e4d00af"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/加强下界稿-中文-v1.0.md",
+      "bytes": 13217,
+      "sha256": "1bbe3b148af2c50ae89eff853ae43a9f2f956e68c24a291fae0f4b4f626fa8a9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/第二阶段输入快照-v1.0.json",
+      "bytes": 2309,
+      "sha256": "cf1f5500782f293410f4a86563e7c224991f5ad215b1a378853a6c3b646a7d2d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/独立证书检查器.py",
+      "bytes": 29174,
+      "sha256": "ad0256d2f848b7e4910a067669d5b4ac896975fc40e4ac14a189536e27342833"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/第二阶段证据清单-v1.0.json",
+      "bytes": 8512,
+      "sha256": "ce5bdabd0709ba0a106e76924a591b52e266b94c3013c5bb41854e8d6568d5ce"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/C路第二阶段判定-v1.0.md",
+      "bytes": 7978,
+      "sha256": "4bd4174aff3c122cbfa2f1bf8ac44ceef7c25f8b8460e3a017b17db7015d5be5"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/执行与复核边界-v1.0.md",
+      "bytes": 4224,
+      "sha256": "28ae88a89cf9c7645c8a5609aa7844f05b493fe97c607510cf906232daf49cbf"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/发布脚本-v1.0.sh",
+      "bytes": 10971,
+      "sha256": "0ee1915dc28c4224acef242398f758d55259cedd29fb9f474cac85c6489899b1"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书生成器.py",
+      "bytes": 17122,
+      "sha256": "46ff263901ae4189287723ddfd3c1ed9d3884309694d7fedeb20be59ee507479"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/编制与核验-v1.0.py",
+      "bytes": 11243,
+      "sha256": "b573d99898e938f1702f23753cfc5cf786d42cf5ceac3d868a18a986902a924d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/一般证明独立复核-v1.0.md",
+      "bytes": 21553,
+      "sha256": "d1d0dac3bfdd6439b00d9b9a1789ab027664c52091fb8b35177845c3cee087b8"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/窗口族与价值评估-v1.0.md",
+      "bytes": 10672,
+      "sha256": "eaa10356f518e8dea948f330b19107be776639c5424f80b80a8e3fbac045e337"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/第二阶段验收结果-v1.0.json",
+      "bytes": 933,
+      "sha256": "04d09ed1ac55172575d7841b722185abc5a7972194bf283fbef3ac87bd35406d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/C路判定-v1.0.md",
+      "bytes": 8083,
+      "sha256": "0a8c29a02fe51d69d60e52638d8e355ef1d76bdf447f79809384b6d2eabc8d42"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证据清单-v1.0.json",
+      "bytes": 5309,
+      "sha256": "abd73110e99106637ec42d2e4a63632f767d2c78f95aa243f82f4c3071a84209"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/加强下界稿-English-v1.0.md",
+      "bytes": 15346,
+      "sha256": "f78287b51d38e8f6b7bb847d44d4ebc7cc54469d8bb086762e0fec5dda3d7098"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公开前远端核验片段-v1.0.txt",
+      "bytes": 4709,
+      "sha256": "3d67338ec797fe3c22f7fd17a676805b3365c991fb00e1a73542d0e6f08f91a6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/检查器移植核对-v1.0.json",
+      "bytes": 802,
+      "sha256": "8f08056d45f2315da8e1718367caa7b4125f3b93ddf3c45236c78f8c1452a705"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/第二阶段执行记录-v1.0.md",
+      "bytes": 7343,
+      "sha256": "8edf05f93973797ff9db580cadd9cbc075db8860c25b7a6dcc9683a3fce36719"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库复跑-v1.0.json",
+      "bytes": 10464,
+      "sha256": "d86c3f2da437bf3670112d5f8eb1a64c766ed44e57a86fc18119548be411697f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公开与核验-v1.0.sh",
+      "bytes": 15346,
+      "sha256": "7b2f370e67cda1ecc9b04eb4ee6645b862febe3d3a03612c559a0aeb7b4ed86b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书独立检查结果-v1.0.json",
+      "bytes": 10093,
+      "sha256": "c7ee530f69d0e3fe614b0eb2b5e62f3bd4facd6934aeb5e81438b408cb0fd343"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书格式说明-v1.0.md",
+      "bytes": 12502,
+      "sha256": "bbc54b16a76d82cb60a019e84a67790f5c4f3931a84c90d98efe6d18c92116f6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/提交包/标题-v1.0.txt",
+      "bytes": 92,
+      "sha256": "789f6b1aed49ff88c31fe4eb5ae4fc24120cc5ce1c64f9d4b8b4021b14ec659c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/提交包/提交清单-v1.0.md",
+      "bytes": 2493,
+      "sha256": "60a6fb068fb0aad954f6b6833d5f76903b2752134aa7d67b453ec123a6c787ea"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/提交包/正文-v1.0.txt",
+      "bytes": 15249,
+      "sha256": "e145615aec71f0d30206228ab9cbe9db296716d6df293724f5fc0ac2376b9abc"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/提交包/提交包核验-v1.0.json",
+      "bytes": 5162,
+      "sha256": "968175ea0919c5c86b12f77b9c603814d508613988d4ff1d3fefdb1b04d15901"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/MANIFEST.sha256",
+      "bytes": 1199,
+      "sha256": "bf168f6f5320dd43f79df662794edc4147b6ede7a7ea790d1d9bb891ce911b30"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/PACKAGING.zh-CN.md",
+      "bytes": 3898,
+      "sha256": "769297c332b7338886752a9b034d9ee707610c03834f601ae2e017d90e599a4e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/LICENSE",
+      "bytes": 2051,
+      "sha256": "03953db3dcacce59af297efc6a2586f3ce5ba2be6131bef4a107988a4d65559d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/PACKAGING.md",
+      "bytes": 4988,
+      "sha256": "791676565cc1336876d84780722c96b090d7aac83c53f93bb6a653a00e0ed706"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/REPRODUCE.zh-CN.md",
+      "bytes": 4527,
+      "sha256": "3216af75e1a2824aa5b1a53bb9640b3b598abcab15697ca7c613d55e7f9e94f9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/README.md",
+      "bytes": 4921,
+      "sha256": "aaace8cff9a316714266e4cae3fd7c7b7445acdd13cbd2a2ef14e1fb064d410c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/REPRODUCE.md",
+      "bytes": 5392,
+      "sha256": "c0a0b231296a5bf8d7449c038ae6c8cdefd0dfddc95bb6cbefe78cb31628a01b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/.gitignore",
+      "bytes": 103,
+      "sha256": "4eaa98b4ab0157bebf113b8cc7b00623cf090d3ef897d4c79f648d9dc1da6cb4"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/README.zh-CN.md",
+      "bytes": 4149,
+      "sha256": "b9728c8e0689b4ee11eda15bd6c9ed36578204528fe121e7706ea8a1e544ca8f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/proof/submission.zh-CN.md",
+      "bytes": 13217,
+      "sha256": "1bbe3b148af2c50ae89eff853ae43a9f2f956e68c24a291fae0f4b4f626fa8a9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/proof/submission.md",
+      "bytes": 15346,
+      "sha256": "f78287b51d38e8f6b7bb847d44d4ebc7cc54469d8bb086762e0fec5dda3d7098"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/code/verify_all.py",
+      "bytes": 4714,
+      "sha256": "459611a641ae9c7d5d973d07fe65007e60487fb252e9c977cb7a70a6a6950605"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/code/check_certificates.py",
+      "bytes": 28167,
+      "sha256": "ef22b0d49f80856fa9bc1d3df72004686dacfba70574cacb8f8323f9de135222"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/certificates/rectangle-6x9-minus-2-4.json",
+      "bytes": 1354409,
+      "sha256": "2e158a8d04069badfed4f6e5b4941fd47540fd0c6e7630c91e9d6a317f64d942"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/仓库/apex-p03-nivat-quadratic-positions/certificates/rectangle-6x9.json",
+      "bytes": 1380790,
+      "sha256": "258b88aea81a57f2587b2325534f8be9fe02c24e9a9b75de9ed857b9689cbd47"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__REPRODUCE.zh-CN.html",
+      "bytes": 22904,
+      "sha256": "6cf93674a168f420f4200be16bd25de50b35f54c8de9d9e5281c74079409364b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__README.zh-CN.html",
+      "bytes": 26676,
+      "sha256": "a1df0144e857e8e29ff1e1eca2cd020453f02d7e92c9b36a3f7cabb4cd554596"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__proof__submission.zh-CN.html",
+      "bytes": 313231,
+      "sha256": "6460a2ba3318f0c3bc4ea788875473116ed637fce9c09b2d3624f22c3bd49c45"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__REPRODUCE.html",
+      "bytes": 23775,
+      "sha256": "298d9b48e7c93cd43f5a21d45f4a3a83389a8b555dc74490dff5fc519039d1ad"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/加强下界稿-English-v1.0.html",
+      "bytes": 315380,
+      "sha256": "4d752ba1858d485ec6aba9b5a86199e1b9ae54599770f05e7f7530eb20903a5b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__proof__submission.html",
+      "bytes": 315380,
+      "sha256": "4d752ba1858d485ec6aba9b5a86199e1b9ae54599770f05e7f7530eb20903a5b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/公式核验-v1.0.json",
+      "bytes": 6680,
+      "sha256": "9875c15c395016385d2a76a6931c87245f0f5fb3c6f0fa866dfa569ca00a323f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/核验-v1.0.mjs",
+      "bytes": 5527,
+      "sha256": "c4a9f35857721dcb33961aadde715bc9387232ad8c01a6cb907440dc4802b6f6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/加强下界稿-中文-v1.0.html",
+      "bytes": 313231,
+      "sha256": "6460a2ba3318f0c3bc4ea788875473116ed637fce9c09b2d3624f22c3bd49c45"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__PACKAGING.zh-CN.html",
+      "bytes": 6319,
+      "sha256": "c78c3c8bc528fd042a1e289743958dd0e6d0d92747af4c2c8b7005ea32878e44"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__PACKAGING.html",
+      "bytes": 7415,
+      "sha256": "bc8b5afeb8db3ed716ed3d09f9341ae98f259adf1f25513f82445ed40b5eb6f3"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/公式核验/仓库__apex-p03-nivat-quadratic-positions__README.html",
+      "bytes": 27454,
+      "sha256": "8dcce3669b52da65612a450ca34ad47de8ae2b790d2937225e13f3ae7902c857"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书/生成结果-v1.0.json",
+      "bytes": 1195,
+      "sha256": "e6a6c93f4a067d2fe6dd7ee3b6a077054a978e4a96e3bc7abd50d554c00c1b2d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书/删点2-4-精确秩证书-v1.0.json",
+      "bytes": 1354409,
+      "sha256": "2e158a8d04069badfed4f6e5b4941fd47540fd0c6e7630c91e9d6a317f64d942"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/二次位置加强/证书/矩形6乘9-精确秩证书-v1.0.json",
+      "bytes": 1380790,
+      "sha256": "258b88aea81a57f2587b2325534f8be9fe02c24e9a9b75de9ed857b9689cbd47"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/KS引理分析/KS引理分析-v1.0.md",
+      "bytes": 41780,
+      "sha256": "a40a27b8c63b9b514b4246350541126f997a2c004e68d71536f10ef494f23263"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/KS引理分析/截面计数界复核-v1.0.md",
+      "bytes": 36690,
+      "sha256": "d220ac6b9c96ced912b199573448469d7a67c2d0c59767327412e365ea9d21fc"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/定理A验证稿-English-v1.2.md",
+      "bytes": 19927,
+      "sha256": "db4e37fdbbc860572b077720f88fc0b7fda2e303216fbd920d3dd6565fd19abf"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/上游全链证明-v1.0.md",
+      "bytes": 19742,
+      "sha256": "fb6c854c79d9a2ba68ec7d63546277ab953ae4a9ae2603992376cf563c5483cd"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/复用证据核对-v1.0.json",
+      "bytes": 142450,
+      "sha256": "19254ba722f4a89ede6ffc09e50606e72e34d9723f0d63e485a30ebaf495508a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/A路第二阶段判定-v1.0.md",
+      "bytes": 7188,
+      "sha256": "e66fd789179c9f61374143d2c60d419f9185f5f647b7ecbbdf6e1b83e221243a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段最终清单-v1.0.json",
+      "bytes": 10431,
+      "sha256": "c78ff8f463199df2b23e8cd6efc6ecc76d9f8fd3e427885d4cf32256bcef96e2"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/.DS_Store",
+      "bytes": 6148,
+      "sha256": "94c59bc19ceb0438805dba9e0f9083e0aba626830299394e8b9daf9362c2a14e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/定理A验证稿-English-v1.3.md",
+      "bytes": 19927,
+      "sha256": "fbd1d2acad269e9a4ab8b1859027af9a7e66bb3d07c4efd23f1ba3eef754a08f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段输入快照-v1.0.json",
+      "bytes": 10640,
+      "sha256": "acfb0bcd302f2f89752cdddd74d673562fb48c1df51896a1dd9d5a46f3328f2c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段核验-v1.0.py",
+      "bytes": 12470,
+      "sha256": "65f8db2f16f7770fb114ce8f5f3ce085bfad1e35758aa46a18d4e78428065306"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段交付核验-v1.0.json",
+      "bytes": 16386,
+      "sha256": "270cb1b917d58f80b431d21efe2747284495c840e394232749999b2cc1fcb55a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/双语机械核验-v1.3.json",
+      "bytes": 3533,
+      "sha256": "42988720fe7736cc097e8676c6553878f6b8cb9fe4adc60adfc100f36e2d667f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/发布脚本-v1.0.sh",
+      "bytes": 11717,
+      "sha256": "fae0c42304a7c0909cdddd9aee06c58391deec1ee8680a0711637b0fb3405752"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/双语机械核验-v1.2.json",
+      "bytes": 3533,
+      "sha256": "ca9596d73b145c2ca188efdc6aae651030425f390be76c009af627b28089a993"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/GPT-6.1复核-v1.0.md",
+      "bytes": 8089,
+      "sha256": "35c1e8a4b91fc69479149b351496f9f76c0bdc7629b0e1042731cc2eada60dcd"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/复用证据核对-v1.0.py",
+      "bytes": 6436,
+      "sha256": "a7b5e25b990a3f6e9c853de492824ed977c83e1acecbdc1b18fb391f99545e4a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/收尾记录-v1.0.md",
+      "bytes": 4027,
+      "sha256": "e5a206b5c5992718817f38d9f66ed2afeb4884a128f4d25bad98bdfd1524fbf8"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/全新上下文复核记录-v1.0.md",
+      "bytes": 5146,
+      "sha256": "37cd0504e7c9695cba52d8ae2ecf6b46a5e1fec254b38470b2f53e72c9f110e5"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/双语机械核验-v1.1.json",
+      "bytes": 2619,
+      "sha256": "4e91b6b5f845570833a32c833b9119d7ed8cbcb6ae2c38dff548da424d17237f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段全新上下文审阅-v1.0.md",
+      "bytes": 6468,
+      "sha256": "ddac1a4c81eeac453f7ea3f5e70c4776e295fa6a9a2a5c90224869b7551b7060"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/Claude跨模型核对-A路-v1.0.md",
+      "bytes": 4157,
+      "sha256": "fcce1b8775d223bc99e62382b8222be84994b262fa640b12105d2959a70d748d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/发布记录-v1.0.md",
+      "bytes": 2362,
+      "sha256": "0c317de8cd19fe133dc77b4dc247e1f5abc8aa26ed78faa602ceef3b8d4c860d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段编制-v1.0.py",
+      "bytes": 11403,
+      "sha256": "83537ceb678b827de62f7559d372b296f644a26da62e1d05ce9e74211f9df089"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段执行记录-v1.0.md",
+      "bytes": 5268,
+      "sha256": "30fae086456d2666a51c406619dbdb776b9f85bd97249818e5dce10752e2c394"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/发布记录-v1.1.md",
+      "bytes": 4725,
+      "sha256": "fc73f5e989bff3c98942ffeaf1c1af0ba3ea98e7dd9d38c00f80f9fdab9b9731"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/交付核对-v1.0.json",
+      "bytes": 1705,
+      "sha256": "6af7f1203fce8a67107b15e7fef42b5e22fd88b3ea79f7cfa93623082ec8c100"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/定理A验证稿-English-v1.0.md",
+      "bytes": 19886,
+      "sha256": "f0c5a3942df50b268efb6c19e10e423e2bf2a0740ab5e175b0eaeeee288edac2"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段证书验收-v1.0.json",
+      "bytes": 8868,
+      "sha256": "aebdae77f6d3dae7223130aa0e19233734c4a131a7905f5c33f850e2d9a4e6ec"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/附录C声明审计-v1.0.md",
+      "bytes": 4707,
+      "sha256": "a9b83faaa908f1cb855777cf251aad8c49c651e1d6d992f22d77a7638bde158a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/收尾任务书-v1.1.md",
+      "bytes": 1512,
+      "sha256": "a344e152304bc44efd33722c0b1e0aef1150f21de1eabb2e375cdb18ca5ec26d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/A路判定-v1.0.md",
+      "bytes": 9055,
+      "sha256": "ec055ae5d9797e7239f0809882bd45b3fa57f8d81a21f3f030684604d87882f1"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/定理A验证稿-English-v1.1.md",
+      "bytes": 19971,
+      "sha256": "bdaf15abdac6c1bbcbc8cf0c31c681337043124a6b8a4288b603ba654a070b11"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/收尾任务书-v1.0.md",
+      "bytes": 1380,
+      "sha256": "7991730018d19e76ce5058376bb5cc549f4041d8ec1cfd9c9778f2ecfb0e5fe0"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公开与核验-v1.0.sh",
+      "bytes": 13959,
+      "sha256": "fd315090df8cbfbebb6d95ccea51ccdb19158df7bfa431d41a02a1c0db199efa"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/发布与匿名核验-v1.1.py",
+      "bytes": 7439,
+      "sha256": "efe219e7939f94789a0023575a0cc491e4dcaeadbd650a64f07cb1096251c025"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/建仓发布任务书-v1.0.md",
+      "bytes": 2418,
+      "sha256": "985299a5f0f84fdc3569753b7a8509f25abb8ae3d5c90ee5b707cd26dc42b4ad"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/第二阶段证书绑定验收-v1.0.json",
+      "bytes": 16247,
+      "sha256": "95e89dcc89071421746c8a30e6100a4edd1e4a24bc1bbb8de979da7e470576d1"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/定理A验证稿-标题-v1.1.txt",
+      "bytes": 75,
+      "sha256": "1b5b8c25a2fd3adcafbca679ed3ca2d0c385d9f48fbc9bcab0c882a7eb4e589a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/定理A验证稿-标题-v1.0.txt",
+      "bytes": 75,
+      "sha256": "1b5b8c25a2fd3adcafbca679ed3ca2d0c385d9f48fbc9bcab0c882a7eb4e589a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交清单-v1.1.md",
+      "bytes": 2320,
+      "sha256": "063fbbd63acea37595360b10f298df5df9cd8093131bb0a77d0624cb03c694ff"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/定理A验证稿-标题-v1.3.txt",
+      "bytes": 75,
+      "sha256": "1b5b8c25a2fd3adcafbca679ed3ca2d0c385d9f48fbc9bcab0c882a7eb4e589a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交清单-v1.0.md",
+      "bytes": 3541,
+      "sha256": "9ffad3b0fe2d85e7b828354f04615052f67ce277f6c361a2645ca17d1570713c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交包核验-v1.2.json",
+      "bytes": 1778,
+      "sha256": "6770a81bc7dff933ae7882a597fc14dcb31d9c08fd600e831329b051efed2903"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/定理A验证稿-正文-v1.3.md",
+      "bytes": 19847,
+      "sha256": "147c7643473d615585920a7076ee5d34965eaf7e5f8b0665ad545b883d552f78"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/定理A验证稿-正文-v1.2.md",
+      "bytes": 19847,
+      "sha256": "5ca3d8b9f9b4c19a1e8ad12b602fd533e7fc990bb1228751641e78558e19b069"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交包核验-v1.3.json",
+      "bytes": 2854,
+      "sha256": "9b7d3b6d35f48b4af85bced013405659fc949e861950823205f47a5ba0d48295"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交包核验-v1.0.json",
+      "bytes": 1258,
+      "sha256": "5711943504c2b6b18735472e7a0ecfabf58efcb09989631515ad1ae3daeda64c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/定理A验证稿-正文-v1.1.md",
+      "bytes": 19891,
+      "sha256": "968a7d68604d06718a9d37610d45e6240b9b7b243bcdb7fa8645b8f50619530c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/定理A验证稿-正文-v1.0.md",
+      "bytes": 19806,
+      "sha256": "9352cbb8dd1c57ee5b631b7a5b0acc9aade7e393c897788abfbf84f4cf66ea6c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交包核验-v1.1.json",
+      "bytes": 1070,
+      "sha256": "7ef452f7b2b2146247ee6a842d9112a91a012ef5f70e658be957a5b8920976e7"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交清单-v1.3.md",
+      "bytes": 2349,
+      "sha256": "f003d4384eb65914d744e804b1299961ba8b24818634b701eadcfd984c701d4b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/提交包/提交清单-v1.2.md",
+      "bytes": 2194,
+      "sha256": "5b7094e617fce6d1ab4cc8f0e6a5742e191d1704c666106d70b24db7ed8cb7c7"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/MANIFEST.sha256",
+      "bytes": 4757,
+      "sha256": "3995e1f3e166d9cc21c609511f234cbd5800a489fceb435622c2238ed9d4cfc9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/PACKAGING.zh-CN.md",
+      "bytes": 3450,
+      "sha256": "f27c6ef0722c6e217ca6ba4d276b84916095b110434acb818547e25c15b533b5"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/LICENSE",
+      "bytes": 2099,
+      "sha256": "bd276bb1a962938b3af8b55d470729538aadb2e959526b7f31290f3132553eb4"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/PACKAGING.md",
+      "bytes": 4259,
+      "sha256": "1ae42543fc3dc54cffc31ba2f9b35f7733fc5accd5929c55713e5f4697543529"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/REPRODUCE.zh-CN.md",
+      "bytes": 2485,
+      "sha256": "a212ec2a52753a90c838146804fba246e92a370f438808689b007b20b80c9064"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/README.md",
+      "bytes": 4588,
+      "sha256": "d313323d8804a14caf325cce721be8b60eb22c9c742154ef185318e37fca233b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/REPRODUCE.md",
+      "bytes": 2935,
+      "sha256": "059efe9f44c4f2182267d544c8854845f02515759d8c5cd8cfc5c9985bedf5a5"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/.gitignore",
+      "bytes": 67,
+      "sha256": "52c7961d979fd1ba6336ba249940fe72da83f3ac61a3b3b95172b232434c1080"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/README.zh-CN.md",
+      "bytes": 3822,
+      "sha256": "fb01c9cc85c58610749d028a365f4942152060ccdf0aa742c3e1f64473b26cb1"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/appendix-c-audit.zh-CN.md",
+      "bytes": 4870,
+      "sha256": "5f3173ce053a05b9e9a994d7528f822f137730ccc7fe701a6ef3a2e04d6beffb"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/upstream-proof.md",
+      "bytes": 22533,
+      "sha256": "0ed521c2c6ce056403c59fa89fd9165c3ceaade2373c63bc99000dc018c9183e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/expanded-proof.md",
+      "bytes": 26696,
+      "sha256": "4020f5ed92a895bb87597caec54ed913e2948c3135e6ed8923ceb804f2ed4498"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/submission.zh-CN.md",
+      "bytes": 17842,
+      "sha256": "adf5310f0ef0af4d76df24dfb1b4dfe84a80dca305d2224f9cc3c4d8242f2b79"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/expanded-proof.zh-CN.md",
+      "bytes": 22963,
+      "sha256": "7729533bd4219e77aebe957d38cec4cf424c9f55ec56a7f7f112b0f89eaa59be"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/appendix-c-audit.md",
+      "bytes": 5589,
+      "sha256": "33683129791ba78c50c246e4eade45230de69d4fd4fce483a601f62ff9488369"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/upstream-proof.zh-CN.md",
+      "bytes": 19549,
+      "sha256": "1f14b0ab931d6b7ef4c13de76f4ea59a5b6c5bc5a8876d390ba650008bd79230"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/proof/submission.md",
+      "bytes": 19927,
+      "sha256": "fbd1d2acad269e9a4ab8b1859027af9a7e66bb3d07c4efd23f1ba3eef754a08f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/requirements.txt",
+      "bytes": 28,
+      "sha256": "96464f405b58137236b9c10c698be08a780ff7d062dd918ac40c0460f1b0831f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/generate_boundary.py",
+      "bytes": 11719,
+      "sha256": "851532b295a99f218c64c84f236229dfd4ec66ecc5197fd51135aaa3084df2ca"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/generate_baseline.py",
+      "bytes": 10027,
+      "sha256": "3d1dbcaf56d717ea0c382b9e8c56f669e247b5251fa8f8a8a85db4dbc1aff473"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/check_periodic_background.py",
+      "bytes": 11330,
+      "sha256": "be8e0fab414e62882324a16c4fd525f4a3d419a2a5b9fac109fb395bc4597f77"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/regenerate_all.py",
+      "bytes": 3088,
+      "sha256": "9b58ff756c57b90ade5b023abe1ba24fe8ccc686f0775b36f105a39e6a2fdaa7"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/check_baseline.py",
+      "bytes": 13283,
+      "sha256": "ab4c49c0db454bba70d0dc94697b77d6ffcc70f971c90ef351a3e30a05ec696d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/generate_periodic_background.py",
+      "bytes": 6775,
+      "sha256": "651ec71024177b256445785ebcbbdfb3c03d344683174d925c996ed48d18a067"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/check_symbolic_gate.py",
+      "bytes": 16098,
+      "sha256": "6c396a90883f7a36b67e1de7039345b6859f64e08fd74dbd4b04ff50677dddbb"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/check_boundary.py",
+      "bytes": 26635,
+      "sha256": "35a742f9be3d2f89a6c0396e2c941b1206234a27a4e432f61d7ea4fdabed2134"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/code/verify_all.py",
+      "bytes": 8776,
+      "sha256": "6bbe064d70354c8466985853357c88cf19171aa64f866e7645d200f1e9f080f9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/global-configurations.md",
+      "bytes": 10332,
+      "sha256": "7d30f0a06d4eee696fcb56014d036990de6039b77f4517cb88a22b858bcc0779"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/global-configurations.zh-CN.md",
+      "bytes": 8864,
+      "sha256": "f9f5a8c1faaef7b5c2c9b3f1b25f5ded68b9c2f3a3343e53c83113ac7364546f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/symbolic-gate.json",
+      "bytes": 394586,
+      "sha256": "003a58b799c14fb056f95d517368a2e25a5d41fb952792891ba72b12ac68ef25"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/periodic-background/rank-certificates.json",
+      "bytes": 17805,
+      "sha256": "7c0ff262f8418a67136e937c9203fa67d2c4c4785e6e019f038c0b185ca9be64"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/periodic-background/witness.json",
+      "bytes": 6228,
+      "sha256": "dcff0b61aa146528f75de09b4b14595b0f673bc8394b036693dd91341036ec3e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/periodic-background/patterns.json",
+      "bytes": 386248,
+      "sha256": "9bfcc8626be966b107118af8dcdc3eb17e29438fc084605e5a03edb94feb427e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/periodic-background/matrices.json",
+      "bytes": 439136,
+      "sha256": "795a836f5b95b798a31776c5083cf2f3775720c21518d1a63a039bfb3f32f3ae"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B07.json",
+      "bytes": 9792,
+      "sha256": "7d8ab661de7eae9dd4c1be58bcba5448b9b66eb9c235ac6205cf1c29513044a8"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B11.json",
+      "bytes": 114213,
+      "sha256": "e9353a58cada413a9413710932641e9d0ea1f5db4a2d3e4c39f3666025064a45"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B10.json",
+      "bytes": 139069,
+      "sha256": "86e01a330e7d129e00c28633e0e3d10e02d85d35a6d40039184342fa39806051"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B06.json",
+      "bytes": 61316,
+      "sha256": "7f069a33e588a333f723d68d72efa30c8d79250967f6ee445baf60b515d6c6e8"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/frozen-inputs.json",
+      "bytes": 5955,
+      "sha256": "f988d2c2f79c155535cebe9afafb0bd513cea0d8d69f4456ddcfbc89e01dc2f6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B01.json",
+      "bytes": 7052,
+      "sha256": "c0949e29991f8be23834c4264468b1be4c0a3ec7fe95f140afa3c9018b92b5a6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B03.json",
+      "bytes": 9512,
+      "sha256": "476f604380c81aae1064cb24ba8e4b3883ae0286e26f19c7028241a785fb739a"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B02.json",
+      "bytes": 9494,
+      "sha256": "14951c93fbb57340ede9aa71e4bb58b443a7ea59702ad1a461e6b0c24e390625"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B09.json",
+      "bytes": 394586,
+      "sha256": "003a58b799c14fb056f95d517368a2e25a5d41fb952792891ba72b12ac68ef25"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B05.json",
+      "bytes": 163694,
+      "sha256": "9b72e44057490c8b0bff96d37ff1d19e8ff27ebd28583a331b659985a14eefec"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B04.json",
+      "bytes": 29968,
+      "sha256": "1169bea836c0209ffa9d03f4c90380b71dd1d61bd01c3877952376fbd587a232"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B12.json",
+      "bytes": 629199,
+      "sha256": "03b12aa5a037b64e63ba1a6a2fb997a4f51bebd1e2c5e0d070ee87a0c7f5907b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/boundary/B08.json",
+      "bytes": 15275,
+      "sha256": "019f1705c924927eaf51819fd7a84151d88d59cd7740d928c7ca7296ec6d9176"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/baseline/rank-certificates.json",
+      "bytes": 17853,
+      "sha256": "99c3adeff6f42902c9662474e64b9f6680e10df4a64a063f65caa7f4a1d02ae0"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/baseline/witness.json",
+      "bytes": 3954,
+      "sha256": "755787d34cb6eb01a3ed06829bf9a6d5c87d1f085f8c3a7d9e3b15a3969ed47c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/baseline/patterns.json",
+      "bytes": 324968,
+      "sha256": "3fe584a8869628e90fc2945a1871d08159d2e066ca6da81eee821310b3ddb1da"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/仓库/apex-p03-nivat-theorem-a-validation/certificates/baseline/matrices.json",
+      "bytes": 380006,
+      "sha256": "dfc96654512fa7d15dbd4d31ec198ea6112cc0400f2f0a05584feeb00a7db01c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.3.mjs",
+      "bytes": 2790,
+      "sha256": "3ad8903a28a756f48b184369ba0d8ee71b699e3f958879c1cd7c17f8c9a70058"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.2.mjs",
+      "bytes": 2790,
+      "sha256": "8709f560afb16724490a8df398bed1e22b9faec1db8da8796a7b7b2bb195ff4f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.0.mjs",
+      "bytes": 2790,
+      "sha256": "b2c397c0fd7898c45c38789fa0b3c660110353176bf7c6d58062c91e564d531d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.1.mjs",
+      "bytes": 2790,
+      "sha256": "c88caf7e64a8d5d46cea047eb4f7fad0b1f4f52e1d91256686f1e917c77616cc"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/定理A验证稿-preview-v1.0.html",
+      "bytes": 482164,
+      "sha256": "8b4f94f152713e15294e096526ac07cef4b0b599f3a0665c2e06e992be99ac6e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.3.json",
+      "bytes": 4357,
+      "sha256": "7a86a931a36e45ac6167a794247ef2defc1360c857bf0d54291c17ef0f7cc312"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/定理A验证稿-preview-v1.1.html",
+      "bytes": 482236,
+      "sha256": "b245b7eb6c19f097788138ca00b6e82b793cc011276cc5fcef0316ce9fc64ac5"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.2.json",
+      "bytes": 4357,
+      "sha256": "0d63c043085877e1e434a88df61b9e4c3b3d39aa39246138e70c5f55495d2299"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.1.log",
+      "bytes": 4357,
+      "sha256": "b0402c9ab95a40c911e736745e38604a030804ca2195dce4c815ac7eed618886"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/公式核验-v1.2.json",
+      "bytes": 978,
+      "sha256": "52eb782f201e39bec848fa280a91b17ea014a8c0efaa5b049322adf9c3588372"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/公式核验-v1.3.json",
+      "bytes": 978,
+      "sha256": "8a180450d2aed6dfc294e133df9ebca2ab7ba6fa9992dbbdb372615564940b13"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验日志-v1.0.txt",
+      "bytes": 4357,
+      "sha256": "b8c155482df0e301c81831197d714d610aa35712cbd0b3c1f79f6e9e73704565"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/公式核验-v1.0.json",
+      "bytes": 978,
+      "sha256": "e8d88fa2c8917c0b59b9bef66334eb3296c847e1d59cfce8f505c61e769aa1d6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/核验-v1.1.mjs",
+      "bytes": 4717,
+      "sha256": "0b11078299539110325d5d8e7d1f86413e4d94bee5399d7b33c4dfba8022d6a0"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/核验-v1.0.mjs",
+      "bytes": 4717,
+      "sha256": "f13655405545f544dcfe968a970cb04ad2faf4aff7cad479eeea6c1c2f25a7d6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/公式核验-v1.1.log",
+      "bytes": 978,
+      "sha256": "53638def5ce5d4922aa5ed6d47652b353e729c18914c19f77a23760518860eb4"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/核验-v1.2.mjs",
+      "bytes": 4717,
+      "sha256": "4d0c7c05072881ca7c89de0883a7bddd38200f99f793cb1de3a7fcee9a512611"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/核验-v1.3.mjs",
+      "bytes": 4717,
+      "sha256": "171fa7cc7f5e00d612d810f4c9d878fca37b132f0ec1e3aa9c42d3fec2cda0a9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/公式核验-v1.1.json",
+      "bytes": 978,
+      "sha256": "53638def5ce5d4922aa5ed6d47652b353e729c18914c19f77a23760518860eb4"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.1.json",
+      "bytes": 4357,
+      "sha256": "b0402c9ab95a40c911e736745e38604a030804ca2195dce4c815ac7eed618886"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/定理A验证稿-preview-v1.2.html",
+      "bytes": 482179,
+      "sha256": "572d6b972a6d8aec05e0e9989ab101e29edb09c349e6bccc096f1e29fdbe162d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/仓库公式核验-v1.0.json",
+      "bytes": 4357,
+      "sha256": "b8c155482df0e301c81831197d714d610aa35712cbd0b3c1f79f6e9e73704565"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/定理A上游验证/公式核验/定理A验证稿-preview-v1.3.html",
+      "bytes": 482179,
+      "sha256": "397249037395c9288d9a672d4d84574639534e1673e3934963f5f609771ecce0"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段全新上下文对抗审阅-v1.0.md",
+      "bytes": 4453,
+      "sha256": "7cf93cd17f1f48d0feb71ba751d63e883a2540e7102ed3d228d5a13f71340ab7"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/归约验证稿-English-v1.0.md",
+      "bytes": 19820,
+      "sha256": "43ab6eec5eccdad661518c01c26b84f2935ce2c982c4d4beb01eee2afd8e7fb7"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/B路第一阶段判定-v1.0.md",
+      "bytes": 8237,
+      "sha256": "58be431eecc37189be5f7f441b18812756e8d424df729e3f8b2222abe877dce7"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段开始快照-v1.0.json",
+      "bytes": 4010,
+      "sha256": "53a28acdafe918efa743b2fdf44311d2e58131fd75c3c55a1bb5e407fa85ad4d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/归约验证稿-English-v1.1.md",
+      "bytes": 19919,
+      "sha256": "2ff942b7b544234829a0ed250f8246f4e290761e35732a9ba4ca79cfb4ef6ea5"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/.DS_Store",
+      "bytes": 6148,
+      "sha256": "94c59bc19ceb0438805dba9e0f9083e0aba626830299394e8b9daf9362c2a14e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段交付文件清单-v1.0.json",
+      "bytes": 3200,
+      "sha256": "529b5132af311184d4da1b2bcc574ea2f7536de1ea9b864b6cc607cf93052acf"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第8节归约证明审计-v1.0.md",
+      "bytes": 15173,
+      "sha256": "d46fa8801cfdfef8b3effb53121ff7f487f6f24cafb542fbc55f49fb284dd0b9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段交付核验-v1.0.json",
+      "bytes": 7711,
+      "sha256": "a841ffc0214167430f4e483eaec38f68b687fa4ffc98998a6e6f073b2ef9479c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段并行变更核对-v1.0.json",
+      "bytes": 520,
+      "sha256": "99ba84c2f49b97cc946121333557c0bb7083e199a613597dd2eeb9c13f55fad9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/附录D证明审计-v1.0.md",
+      "bytes": 10605,
+      "sha256": "4ae903393b4a2be6e118f99e61aec3bf9da65c4d6ae510f4908884654535c8d8"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/B路第二阶段判定-v1.0.md",
+      "bytes": 6272,
+      "sha256": "e2e8d02767865298f8c278ecc38d3aa29d6866fad3867b94598f23582547aa5e"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/GPT-6.1复核-v1.0.md",
+      "bytes": 11886,
+      "sha256": "711a24dc92e23bd9ed8f0af6949a55ac684b75185a60d1466a23ba193275ff7b"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/收尾记录-v1.0.md",
+      "bytes": 2104,
+      "sha256": "f16ebb6dd347059c5ddd068789aee0a01e3cb41323930b798781edbb4ba31f98"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段交付核验-v1.0.py",
+      "bytes": 5921,
+      "sha256": "84de17af96c8387ad3b771ec0e7fc9e522c019bc0d610a9b8e9d158d7a319109"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段交付核验-v1.1.json",
+      "bytes": 1940,
+      "sha256": "32d443082e1279b6f1b5bc4c961a45e3a4c9f6901f7a9fe6f630191fbebed257"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/全新上下文独立复核-v1.0.md",
+      "bytes": 6757,
+      "sha256": "9de01ae827b456a37d01e0d84a5ed4687e7c6d1f0412916e43d9b95c987b5356"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段第9轮依据-v1.0.json",
+      "bytes": 1975,
+      "sha256": "048dd8e1a691d45e682845612dca3952f984b810c667e53bd4b83b5ca07db604"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/输入来源指纹-v1.0.json",
+      "bytes": 2143,
+      "sha256": "149464aab8d5a965bd19afb5de6d78f49edcd4f4d55b1328054d6169d9fd2c09"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段原件核验-v1.0.json",
+      "bytes": 1616,
+      "sha256": "daae450377289d2791167aec67cbd73c61e8417b983381475844cc119532a6b2"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/交付核验-v1.0.json",
+      "bytes": 3180,
+      "sha256": "c6cc171b8d73955d13ec3643419e9070046881ff1c2a99c7176562bb18f7ef8f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/第二阶段执行记录-v1.0.md",
+      "bytes": 8339,
+      "sha256": "819790b7e893003de9ad0c1a710377afd024e1f3f8e67e5d6d0028aa48366035"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/依赖接口对照-v1.0.md",
+      "bytes": 11532,
+      "sha256": "acdaa904c3e55d2562e5c54e843f8e9fa47a85362bca4493cc3fd1c596070aed"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/收尾任务书-v1.0.md",
+      "bytes": 1191,
+      "sha256": "e5896a273cc18d2bc7026e3ed68cf01a07100ece5f6de61bf03c985b68a9f1d2"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/提交包/提交清单-v1.1.md",
+      "bytes": 3592,
+      "sha256": "79b1274e5bcc617cf724fd3e4290009ba4cb3f28223e3ea7e92e56e7032b76a9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/提交包/提交清单-v1.0.md",
+      "bytes": 3383,
+      "sha256": "15c38d07f6f5c55ecc9f25be9d96bcedaf71489a8d0cab578e412f5647a6ffb8"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/提交包/归约验证稿-正文-v1.1.md",
+      "bytes": 19838,
+      "sha256": "9a5273ff7290d935e153b8b3589262399e5e7874bb8f3f33428943d9354e7f21"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/提交包/归约验证稿-标题-v1.0.txt",
+      "bytes": 76,
+      "sha256": "3ab3ec3998b1a1f00bff7c8741b5285c9fa276b0034c183e2e6939a388a5024f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/提交包/归约验证稿-标题-v1.1.txt",
+      "bytes": 76,
+      "sha256": "3ab3ec3998b1a1f00bff7c8741b5285c9fa276b0034c183e2e6939a388a5024f"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/提交包/归约验证稿-正文-v1.0.md",
+      "bytes": 19739,
+      "sha256": "94cf5848501dc6440972812b7055c636f6a7c2225cbecda83fd4ad11713bef67"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/公式核验/公式核验-v1.0.json",
+      "bytes": 976,
+      "sha256": "d49fd1805d983cd2c5eada10e96723ea545a092573659419fbd2e5e03bdbb29d"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/公式核验/归约验证稿-preview-v1.1.html",
+      "bytes": 333069,
+      "sha256": "fc3cf2b9af0d7f1a0ab04bf33cc3f93767eaa813a4641c24499afb8d47c0d0d9"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/公式核验/核验-v1.1.mjs",
+      "bytes": 4715,
+      "sha256": "54f44ff6f91271bcaece24fe4d8ffd91f705814aa2ff1cefa6858ea89cd200cb"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/公式核验/归约验证稿-preview-v1.0.html",
+      "bytes": 332983,
+      "sha256": "6ff523b024eb58f3bc212f989c3cbdae5490c92303a48e9456de26147dc00ad6"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/公式核验/核验-v1.0.mjs",
+      "bytes": 4715,
+      "sha256": "1442b27ac1340644f2458b8c96a9071ec8b0116be91fc2556420493e56e1588c"
+    },
+    {
+      "path": "drafts/Apex数学悬赏/03验证/第8节归约审计/公式核验/公式核验-v1.1.json",
+      "bytes": 976,
+      "sha256": "400eaa0ebf8c332f7a6597281be5ce46018ef78f342076474abb9945d68f717e"
+    }
+  ]
+}

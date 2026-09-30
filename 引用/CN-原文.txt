@@ -1,0 +1,2030 @@
+                THE CONVEX NIVAT CONJECTURE:
+     A COMPLEXITY LOWER BOUND FOR STAR CONFIGURATIONS,
+        AND A REDUCTION FROM LOW CONVEX COMPLEXITY
+                   TO STAR CONFIGURATIONS
+                                              Apex Intelligence
+
+        Abstract. Nivat’s conjecture asserts that a configuration ξ : Z2 → A over a finite alphabet
+        with Pξ (m, n) ≤ mn for some m, n ≥ 1 is periodic. Its convex form replaces the rectangle by an
+        arbitrary non-empty finite lattice-convex window S, that is, one with S = Conv(S) ∩ Z2 . This
+        paper contains two results.                 Pm
+            The first occupies §§0–7: we call θ = i=1 Fi : Z2 → Fp a star configuration when m ≥ 2,
+        each Fi has a non-zero period ki vi , is not doubly periodic, and agrees with doubly periodic
+        fields on the two half-planes {πi < ℓi } and {πi > ri }, the primitive directions vi being pairwise
+        non-parallel; and we prove that Pθ (S) ≥ |S| + 1 for every non-empty finite lattice-convex S. The
+        proof attaches toQ   θ an exceptional spectrum Λi of roots of unity in
+                                                                             P each direction, a Laurent
+        polynomial A = i Ai (T vi ), and the zonotope Z = Newt(A) =             i
+                                                                                  [0, di vi ]. For a spectrum-
+        preserving scalar encoding η = w(θ), every Laurent polynomial f with f (T )η constant is divisible
+        by A. This bounds the affine deficit by |RZ (S)|: dim US ≥ |S| + 1 − |RZ (S)|. In the remaining
+        case of a finite-difference dichotomy, the same zonotope supplies |RZ (S)| quadratic observables
+        independent modulo US , giving the required complexity bound.
+            The second result is a reduction (§8): the convex conjecture reduces to the first result, and
+        therefore holds. Apart from the annihilator and periodic decomposition theorem of Kari and
+        Szabados [11] and Colle’s results [2] on one-sided nonexpansive directions and on full periodicity
+        over a region, every step of the chain is proved here in full. Appendix D proves in full the Fp
+        and convex form of Szabados’ theorem. A further appendix reports computational checks of the
+        main theorem and of the intermediate assertions of §§2–5, including a counterexample to the
+        natural over-generalisation of Lemma 3.1.
+
+
+
+  2020 Mathematics Subject Classification. Primary 37B51; Secondary 37B10, 68R15, 52C05, 13F20.
+    Key words and phrases. Nivat’s conjecture; low pattern complexity; convex window; periodic
+            decomposition; star configuration; annihilator; Newton polygon; zonotope.
+
+                                                Introduction
+The problem. Let A be a finite alphabet and ξ : Z2 → A a configuration. For a finite Q ⊂ Z2
+write Pξ (Q) for the number of distinct patterns ξ|u+Q , u ∈ Z2 , and Pξ (m, n) = Pξ ([[m]] × [[n]]) for
+the rectangular complexity, [[m]] = {0, . . . , m − 1}. The Morse–Hedlund theorem [13] says that a
+bi-infinite word is periodic as soon as its complexity function satisfies P (n) ≤ n for a single n.
+Nivat asked, in his 1997 ICALP address [14], whether the two-dimensional analogue holds:
+        if Pξ (m, n) ≤ mn for some m, n ≥ 1, is ξ periodic?
+  The question is open. Partial results fall into two families. On the combinatorial and
+dynamical side, Sander–Tijdeman [16], Epifanio–Koskas–Mignosi [8] and Quas–Zamboni [15]
+proved periodicity under complexity bounds of the form Pξ (m, n) ≤ mn/C; Cyr and Kra [6]
+brought the constant down to 2 by way of nonexpansive subdynamics and settled in [7] the
+short-rectangle case Pξ (k, n) ≤ kn for k ≤ 3; Colle and Garibaldi [4] gave a version corrected
+by the size of the alphabet. On the algebraic side, Kari and Szabados [11] observed that low
+  Date: 12 September 2026.
+                                                          1
+2                                       APEX INTELLIGENCE
+
+complexity forces the existence of a non-trivial annihilating Laurent polynomial and deduced
+that the configuration decomposes as a sum of periodic configurations over Z; Szabados [17]
+settled the case of two components; Colle [2, 3] developed the interaction between minimal
+periodic decompositions and one-sided nonexpansive directions; and Colle and Garibaldi [5]
+recently proved, in the framework of Zp -minimal periodic decompositions, a structure theorem —
+the orbit closure of an aperiodic configuration of low convex complexity contains an aperiodic
+configuration each of whose periodic components is fully periodic on two disjoint half-planes
+— and deduced from it the case k ≤ 4. Kari and Moutot [9, 10] proved that the orbit closure
+of a configuration of low convex complexity contains a periodic configuration, and the related
+decidability statement for low-complexity tilings.
+   The convex form of the conjecture replaces the rectangle by an arbitrary window that is convex
+in the only sense available on a lattice: a finite S ⊂ Z2 is lattice-convex if S = Conv(S) ∩ Z2 .
+A configuration has low convex pattern complexity if Pξ (S) ≤ |S| for some non-empty finite
+lattice-convex S. The convexity hypothesis is not decoration. Khetan [12] has constructed an
+exact cluster F ⊂ Z2 of cardinality 8 with full affine span and an F -tiling whose orbit closure
+contains no 1-periodic F -tiling; since every F -tiling has low complexity with respect to the
+window −F , this is a counterexample to the statement for non-convex windows of full affine
+span.
+Results. Our results are two. The first is a complexity lower bound for star configurations,
+proved from scratch; the second reduces the convex Nivat conjecture to the first, quoting only
+results of [11] and [2].
+    Call θ : Z2 → Fp a star configuration if θ = m     i=1 Fi with m ≥ 2, where each Fi is periodic
+                                                     P
+
+in a direction vi , is not doubly periodic, and coincides with doubly periodic fields on two
+disjoint half-planes bounded by lines of the form πi = det(vi , ·) = const, the primitive directions
+v1 , . . . , vm being pairwise non-parallel. The precise axioms (S1)–(S3) are in §0.1. Informally: m
+one-dimensionally periodic fields, each of which is doubly periodic outside a strip, superimposed
+in m pairwise distinct directions.
+Theorem A (Theorem 7.3). Let θ be a star configuration and let S ⊂ Z2 be non-empty, finite
+and lattice-convex. Then Pθ (S) ≥ |S| + 1.
+   Theorem A is proved in §§0–7 using no input from the literature beyond the facts that C[T1± , T2± ]
+is a unique factorisation domain, that Newton polygons are additive under multiplication
+(Ostrowski), the Chinese remainder theorem, Hilbert’s Nullstellensatz, and the existence of
+unimodular triangulations of lattice polygons.
+Theorem B (Theorem 8.18). Let A be finite and ξ : Z2 → A. If Pξ (S) ≤ |S| for some non-empty
+finite lattice-convex S, then ξ is periodic. Consequently, if Pξ (m, n) ≤ mn for some m, n ≥ 1,
+then ξ is periodic.
+   Theorem B is a reduction of the convex conjecture to Theorem A (§8). The chain runs as
+follows: the annihilator and the periodic decomposition of Kari and Szabados [11]; the two
+results of Colle [2] — a line that is one-sidedly nonexpansive in both directions, and an aperiodic
+configuration ϑ in the orbit closure which is fully periodic on a region; and then the two steps
+of this paper. The first is that each periodic component is fully periodic on one half-plane Ui
+(Proposition 8.9: extend the full periodicity over the region to a doubly periodic field, isolate the
+component with a difference operator Qi , and run a finite-state argument). The second is that
+each component is fully periodic on a half-plane Vi on the far side (Theorem 8.12: push to the
+limit along the direction of some component; the limit is a sum of two periodic configurations in
+distinct directions, hence periodic by Theorem D.1 of Appendix D, and therefore every limit on
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                            3
+
+the far side of the component under examination is doubly periodic; that there are only finitely
+many such limits then forces the far side itself to agree with a doubly periodic field). Finally
+Lemma 8.17 normalises such a ϑ into a star configuration, contradicting Theorem A. Theorem 8.1
+— each component is fully periodic on two disjoint half-planes — coincides formally with the
+structure theorem of [5]; the proof given here is different from the one there. After the region has
+been extracted, the half-plane arguments do not require the Fp -decomposition to be minimal;
+the region extraction uses a counterexample of minimal Z-order, as specified in Remark 8.3.
+The shape of the proof ofQTheorem A. Let Hi be a period of Fi along vi that also preserves
+every tail field, and let D = m   i=1 (T
+                                         Hi − 1).
+
+   A dichotomy (§1). Applying D to a function that depends on θ through a finite window kills
+everything except a bounded region, because outside the union of the pairwise intersections of m
+strips in pairwise distinct directions at most one component is still varying. If D⊮[θ = a] ̸= 0
+for some colour a, the theorem follows for arbitrary finite S, convex or not, by a one-line
+integral-domain argument. The remaining case is D⊮[θ = a] ≡ 0 for every colour a.
+   The exceptional spectrum and its zonotope (§2). Pushing θ to infinity along ±Hi isolates the
+i-th component against a doubly periodic background, producing configurations Ξ±                ±
+                                                                                    i = Fi + Bi in
+the orbit closure together with their own pure tails Gσ,L     σ,R
+                                                         i , Gi . Their colour-indicator differences
+are invariant under Hi , hence decompose under the κi -th roots of unity; the set of roots that
+actually occur is theQexceptional spectrum ΛQ     i , non-empty exactly because Fi is not    doubly
+periodic. Set A = i Ai (T vi ) with Ai (t) = λ∈Λi (t − λ), and Z = Newt(A) = i [0, di vi ],
+                                                                                         P
+
+di = |Λi |. The key divisibility is Lemma 2.4: if f (T )η is constant for a spectrum-preserving
+scalar encoding η = w(θ) as in Lemma 2.2, then A | f . Counting, this says that a window S
+carries at most |RZ (S)| independent affine relations, where RZ (S) = {r : r + Z ⊆ Conv(S)}: the
+cost of the zonotope.
+   The quadratic witness (§§3–6). The affine bound may fall short by |RZ (S)|. We supply that
+many additional quadratic observables. This requires a single vector d with Dz [η(z)η(z + d)] ̸= 0
+and d ∈ (Z − Z) ∩ Z2 . Existence of some such d is §4; confinement to Z − Z comes from a
+pair of recursions in the two variables (d, z) (§5) which say that the Laurent transform of the
+witness kills the ideal (A(Y ), A(X/Y )) in K[Y ± ], K = C(X1 , X2 ), whose quotient is spanned by
+monomials with exponents in Z − Z; and the passage from d ∈ Z − Z to a pair of lattice points
+of Z differing by d is a unimodular triangulation argument (§6).
+   The cancellation (§7). Each r ∈ RZ (S) now yields a quadratic observable Φr on the pattern
+set, and these are independent modulo the linear ones. Their number compensates for the full
+possible affine deficit; that is Remark 7.4.
+Organisation. §0 fixes notation, the axioms of a star configuration, and the main theorem.
+§1 proves the dichotomy. §2 constructs Λi , A, Z and the dimension budget. §3 shows that A
+applied to the colour field of θ is a doubly periodic background. §4 produces a non-vanishing
+two-point difference, §5 confines it to Z − Z, and §6 converts that into a pair of lattice points
+of Z. §7 assembles Theorem A, and §8 deduces Theorem B: §8.1 sets up half-planes, regions
+and full periodicity; §8.2 collects the results that are quoted; §8.3 proves the first half-plane
+(Proposition 8.9); §8.4 proves the second (Theorem 8.12); §8.5 normalises; §8.6 proves Theorem B.
+Appendix A is a one-page skeleton of the argument. Appendix B briefly describes, without proof
+and for the record only, a different route that was explored and is not used here. Appendix C
+reports the numerical verification. Appendix D proves the Fp and convex form of Szabados’
+theorem.
+4                                         APEX INTELLIGENCE
+
+Dependencies. §§0–7 are self-contained. §8 quotes [11] (annihilators and periodic decomposi-
+tions), [2, Theorem 1.9], and the proof of [2, Lemma 4.6]. Appendix D uses nothing beyond the
+one-dimensional Morse–Hedlund theorem [13].
+
+                      0. Notation, hypotheses and the main theorem
+0.1. Star configurations. Let p be a prime and m ≥ 2. Let v1 , . . . , vm ∈ Z2 be primitive
+(coprime coordinates) and pairwise non-parallel. Write
+                                    πi (z) = det(vi , z)      (z ∈ Z2 ),
+a surjective linear form Z2 → Z, surjective because vi is primitive.
+   Call G : Z2 → Fp doubly periodic if its period group Per(G) = {u ∈ Z2 : T u G = G} contains
+two linearly independent vectors; equivalently, Per(G) is a finite-index sublattice of Z2 .
+   Let Fi : Z2 → Fp satisfy
+    (S1) Fi has period ki vi for some integer ki ≥ 1;
+    (S2) Fi is not doubly periodic;
+    (S3) there are doubly periodic fields Li , Ri and integers ℓi ≤ ri + 1 with
+                         Fi = Li on {πi < ℓi },            Fi = Ri on {πi > ri }.
+(If one starts with ℓi > ri + 1, shrinking ℓi to ri + 1 keeps (S3).) We call {πi < ℓi } and
+{πi > ri } the left and right tail regions of component i, call Li , Ri its left and right tails, and call
+{ℓi ≤ πi ≤ ri } the transition strip (possibly empty). We do not require Li = Ri , do not require
+either to be constant, and do not require ki = 1. Put
+                                              m
+                                              X
+                                         θ=         Fi : Z2 → Fp ,
+                                              i=1
+and call θ a star configuration.
+0.2. Complexity and the main theorem. For finite Q ⊂ Z2 let θ|u+Q denote the function
+q 7→ θ(u + q) and
+                                   Pθ (Q) = #{θ|u+Q : u ∈ Z2 }.
+Call a finite S ⊂ Z2 lattice-convex if S = Conv(S) ∩ Z2 .
+Theorem T. Let θ be a star configuration and let S ⊂ Z2 be non-empty, finite and lattice-convex.
+Then
+                                     Pθ (S) ≥ |S| + 1.
+Remark 0.1 (Periodic backgrounds). If a doubly periodic field B is added to θ, absorb B into
+F1 and replace the tangential period of F1 by a multiple that also preserves B; such a multiple
+exists because Per(B) has finite index, so Per(B) ∩ Zk1 v1 ̸= 0. Then F1 + B is still not doubly
+periodic (otherwise F1 = (F1 + B) − B would be), and L1 + B, R1 + B are still doubly periodic.
+Hence Theorem T covers an arbitrary doubly periodic background.
+0.3. Translations, differencesPand basic conventions. Write T u f (z) = f (z + u). A Laurent
+polynomial is a finite sum f = u cu T u with complex coefficients unless stated otherwise, with
+support supp(f ) = {u : cu ̸= 0} and Newton polygon Newt(f ) = Conv(supp(f )). The ring
+C[T1± , T2± ] is an integral domain and a unique factorisation domain, and its units are exactly the
+monomials cT u with c ∈ C× .
+   Colour indicators, the encoding, the differences and all linear algebra take place in characteristic
+zero; only the summation of the original components happens in Fp . In particular ⊮[θ = a] takes
+values in {0, 1} ⊂ Z.
+                  STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                     5
+
+The common period lattice and the vectors Hi . Put
+                                                 m
+                                                 \                           
+                                      Γ :=             Per(Lj ) ∩ Per(Rj ) ,
+                                                 j=1
+a finite intersection of finite-index sublattices, hence of finite index; choose N ∈ Z>0 with
+N Z2 ⊆ Γ. For each i we have N ki vi ∈ Γ, so we may put
+                         Hi := κi vi ,           κi := min{κ ∈ ki Z>0 : κvi ∈ Γ}.
+Thus Hi preserves Fi (by (S1)) and preserves every Lj , Rj , j = 1, . . . , m.
+The difference operator and its formal exponents. Put
+                          m
+                          Y
+                                T Hi − 1 ,
+                                             
+                    D=                                 Ia = ⊮[θ = a],            eθ = (Ia )a∈Fp .
+                          i=1
+Then D ̸= 0:Peach factor is non-zero and C[T ± ] is an integral domain. For C ⊆ [m] := {1, . . . , m}
+write HC = i∈C Hi , and call
+                       E = {HC : C ⊆ [m]},                   Ei = {HC : C ⊆ [m] \ {i}}
+the formal exponent sets. For an arbitrary function g one has the formal expansion
+                                                   X
+                                                           (−1)m−|C| g z + HC ,
+                                                                                    
+                                (Dg)(z) =                                                              (0.1)
+                                                  C⊆[m]
+
+valid as an operator identity irrespective of whether the vectors HC for different C coincide.
+Thus supp(D) ⊆ E, and for m ≥ 3 the inclusion may be strict, since distinct subsets may have
+equal sums (for instance if H3 = H1 + H2 ). Every pairing argument made on Q
+                                                                           a formal expansion
+below is indexed by subsets C, never by the points HC . Likewise, for Qi := j̸=i (T Hj − 1) one
+has D = (T Hi − 1)Qi and
+                                                  X
+                                                           (−1)m−1−|C| g z + HC .
+                                                                                        
+                           (Qi g)(z) =                                                                 (0.2)
+                                             C⊆[m]\{i}
+
+                         1. Finite differences and the first case
+1.1. Differencing turns a local function into one of finite support.
+Lemma 1.1. Let h(z) = φ θ|z+W with W ⊂ Z2 finite. Then Dh has finite support.
+                                         
+
+Proof. If W = ∅, then h is constant and Dh = 0. Assume henceforth that W ̸= ∅. Put
+M = E + W , a finite set, and diami = maxs∈M |πi (s)|. Define the widened strips
+                                  
+                           Σi = z : ℓi − diami ≤ πi (z) ≤ ri + diami ,
+and call direction i active at the anchor z if z ∈ Σi . If i is not active at z, then for every s ∈ M
+the values πi (z + s) and πi (z) lie both in {πi < ℓi } or both in {πi > ri }, so on z + M the field
+Fi is identically one pure tail εi ∈ {Li , Ri }.
+Claim: if at most one direction is active at z, then Dh(z) = 0. Let J be the set of active
+directions, |J| ≤ 1. Take j0 ∈ J if J ̸= ∅, and j0 = 1 otherwise. On z + M ,
+                                                     (
+                                                         Fj0 , J = {j0 }                    X
+                     θ = G + B,              G=                          ,         B=           εj ,
+                                                         0,    J =∅                       ∈J
+                                                                                         j/
+6                                              APEX INTELLIGENCE
+
+where B is doubly periodic and preserved by every Hl , and G is preserved by Hj0 by (S1). Hence
+G + B is preserved by Hj0 . Expand D = (T Hj0 − 1)Qj0 using (0.2):
+                                  X                    h                                           i
+                                            (−1)m−1−|C| h z + HC + Hj0 − h z + HC .
+                                                                                
+                  Dh(z) =
+                             C⊆[m]\{j0 }
+
+Fix C. Since HC and HC + Hj0 both lie in E, the two windows z + HC + W and z + HC + Hj0 + W
+are contained in z + M , where θ = G + B. So for y ∈ W ,
+                                                                                                                    
+θ z + HC + Hj0 + y = (G + B) z + HC + y + Hj0 = (G + B) z + HC + y = θ z + HC + y ,
+so the two W -patterns agree and the bracket vanishes. This proves the claim.
+Conclusion. Therefore supp(Dh) ⊆ i̸=j (Σi ∩ Σj ). As vi ̸∥ vj , the intersection of two strips of
+                                              S
+
+bounded width in non-parallel directions is bounded, so Dh has finite support.                 □
+1.2. The integral-domain argument.
+Lemma 1.2. Let J : Z2 → C be non-zero with finite support and let f be a non-zero Laurent
+polynomial. Then f (T )J ̸= 0.
+
+Proof. Write J(X)
+                         P              −z ∈ C[X ± , X ± ], which is non-zero. For f = P c T u ,
+                  =      z J(z)X                                                        u u
+             b
+                                                1     2
+                                                                                      ′
+                                                                                               X            
+        f (T )J (z)X −z =                   J(z + u)X −z =                  J(z ′ )X −z +u =
+    X                        X         X                      X        X
+                                                                                                        cu X u b
+              
+                                  cu                              cu                                           J(X).
+    z                         u         z                     u        z′                          u
+Both factors are non-zero Laurent polynomials and the ring is an integral domain, so the product
+is non-zero.                                                                                  □
+1.3. The first case.
+Proposition 1.3. If DIa ̸= 0 for some a ∈ Fp , then Pθ (S) ≥ |S| + 1 for every non-empty finite
+S ⊂ Z2 ; no convexity is needed.
+Proof. Suppose Pθ (S) ≤ |S|. Write L = {θ|u+S : u ∈ Z2 }, so |L| ≤ |S|. On L consider the |S| + 1
+functions
+                                   1; γ 7→ ⊮[γ(s) = a] (s ∈ S).
+They lie in a space of dimension ≤ |L| ≤ |S|, hence are linearly dependent: there are rationals
+c0 , (cs )s∈S , not all zero, with
+                                  X
+                                        cs ⊮[γ(s) = a] = c0       for all γ ∈ L.
+                                  s∈S
+Substituting γ = θ|u+S gives q(T )Ia = c0 with q = s cs T s . If q = 0 then all cs = 0 and hence
+                                                              P
+
+c0 = 0, a contradiction; so q ̸= 0.
+   Apply D to both sides. The right-hand side gives Dc0 = 0, since a constant is killed by
+T H1 − 1; the left-hand side gives q(T ) DIa . By Lemma 1.1 and the hypothesis, DIa is non-zero
+with finite support, so q(T )DIa ̸= 0 by Lemma 1.2. Contradiction.                            □
+From now on we assume
+                                        DIa = 0 for every a ∈ Fp .                                                (1.1)
+                                 a w(a)DIa = 0 for every function w : Fp → Z.
+                             P
+Consequently D w(θ) =
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                  7
+
+Remark 1.4 (The dichotomy does not          depend on the choice of the Hi ). Replacing Hi by a
+positive multiple ni Hi produces D′ = i (T ni Hi − 1), which is a multiple of D because T nH − 1 =
+                                         Q
+
+(T H − 1)(1 + T H + · · · + T (n−1)H ). Hence DIa = 0 implies D′ Ia = 0; conversely, if DIa ̸= 0 then
+it is non-zero of finite support by Lemma 1.1, and Lemma 1.2 gives D′ Ia = (D′ /D)(T ) DIa ̸= 0.
+Any two choices satisfying the conventions of §0.3, namely κi ∈ ki Z>0 and Hi = κi vi ∈ Γ, can be
+compared through a common positive multiple in each direction. Thus (1.1) is independent of
+these choices. Each Hi must preserve its component Fi as well as every tail field; preservation of
+the tails alone is insufficient.
+
+   2. Exceptional spectra, the encoding, and the dimension budget for affine
+                                    relations
+2.1. Isolating configurations. Fix i. For j ̸= i we have πj (Hi ) = det(vj , Hi ) = κi det(vj , vi ) ̸=
+0, so πj (nHi ) → ±∞; hence on any fixed finite set Fj is eventually identically equal, as n → +∞,
+to                                       (
+                                    +      Rj , πj (Hi ) > 0,
+                                   εj =
+                                           Lj , πj (Hi ) < 0,
+while Fi is preserved by Hi . So T nHi θ stabilises on every finite set, with limit
+                                                                       X
+                                    Ξ+         +
+                                     i = Fi + Bi ,            Bi+ =           ε+
+                                                                               j .
+                                                                       j̸=i
+
+Letting n → −∞ gives Ξ−            −                                     −
+                        i = Fi + Bi , with the opposite tail choices: εj is Lj when πj (Hi ) > 0
+and Rj otherwise. Both belong to the orbit closure Xθ = {T u θ : u ∈ Z2 } in the product topology.
+Since κi > 0 we have sign πj (Hi ) = sign πj (vi ), so that
+                                                (
+                                                    Rj ,   σπj (vi ) > 0,
+                                       εσj =                                                         (2.0)
+                                                    Lj ,   σπj (vi ) < 0.
+  By (S3),
+        Ξσi = Gσ,L
+               i   := Li + Biσ on {πi < ℓi },                Ξσi = Gσ,R
+                                                                    i   := Ri + Biσ on {πi > ri },
+and Gσ,L
+       i , Gi
+              σ,R
+                  are doubly periodic and preserved by Γ. They too belong to Xθ : take (vi , ui ) a
+basis of Z2 with det(vi , ui ) = 1 and put u = N ui ∈ Γ, so that πi (u) = N > 0. For fixed z and n
+large, πi (z + nu) > ri , whence
+                T nu Ξσi (z) = Ri (z + nu) + Biσ (z + nu) = Ri (z) + Biσ (z) = Gσ,R
+                       
+                                                                                i (z),
+
+that is, T nu Ξσi → Gσ,R                         σ,L
+                     i ; using −u instead gives Gi .
+  We record that Hi preserves Ξσi , and every Hj preserves each of Gσ,L  σ,R
+                                                                    i , Gi , the latter being
+sums of tails.
+2.2. Spectral projections, exceptional difference fields, and Λi . Take an integral basis
+(vi , ui ) with det(vi , ui ) = 1 and write z = svi + tui ; then πi (z) = t and s = det(z, ui ). Call
+{t = const} a transverse row. Recall Hi = κi vi .
+Lemma 2.0 (Spectral projection). Let d : Z2 → C satisfy T Hi d = d. For λκi = 1 put
+                             κ −1
+                               i                                      κ −1
+                                                                        i
+                           1 X                                      1 X
+                   Pλ :=          λ−k T kvi ,          dbt (λ) :=          λ−k d(kvi + tui ).
+                           κi k=0                                   κi k=0
+
+    (1) (Pλ d)(svi + tui ) = λs dbt (λ), and
+                                                P
+                                                    λ Pλ d = d;
+    (2) T vi Pλ d = λ Pλ d;
+8                                              APEX INTELLIGENCE
+
+     (3) Pλ is a Laurent polynomial in T , hence commutes with every T u and with every Laurent
+         polynomial f (T );
+     (4) for f (T ) = α,β fαβ T αvi +βui ,
+                     P
+                                                    X
+                 f (T )Pλ d (svi + tui ) = λs                  fαβ λα dbt+β (λ) = λs f (λ, Y ) db• (λ) (t),
+                                                                                                    
+
+                                                    α,β
+
+                                        λα Y β acts, as a Laurent polynomial in the single variable Y ,
+                               P
+          where f (λ, Y ) := α,β fαβ
+          on functions of t, with Y the shift t 7→ t + 1.
+Proof. Parts 1 and 2 are the discrete Fourier decomposition on Z/κi , carried out row by row:
+                                                                    ′
+(Pλ d)(svi + tui ) = κ1i k λ−k d((s + k)vi + tui ) = λs · κ1i k′ λ−k d(k ′ vi + tui ), re-indexing by
+                        P                                    P
+
+κi -periodicity, while λ λs−k = κi ⊮[k ≡ s] gives completeness. Part 3 is clear, and part 4 is a
+                       P
+
+direct computation from part 1 and the definition of T αvi +βui .                                  □
+    Say that λ occurs in d if Pλ d ̸= 0, that is, if dbt (λ) ̸= 0 for some row t.
+    Define the exceptional difference fields
+ di,σ,ϵ,a (z) = ⊮ Ξσi (z) = a − ⊮ Gσ,ϵ
+                                                    
+                                   i (z) = a ∈ {−1, 0, 1}                            (σ ∈ {+, −}, ϵ ∈ {L, R}, a ∈ Fp ).
+    (P1) di,σ,R,a ≡ 0 on {πi > ri }, and di,σ,L,a ≡ 0 on {πi < ℓi }.
+    (P2) Both Ξσi and Gσ,ϵi are preserved by Hi , so T
+                                                         Hi d
+                                                             i,σ,ϵ,a = di,σ,ϵ,a and Lemma 2.0 applies.
+    Put
+                      Λi = λ : λκi = 1, ∃ σ, ϵ, a such that λ occurs in di,σ,ϵ,a .
+                           
+
+Lemma 2.1. Λi ̸= ∅.
+Proof. Otherwise every di,σ,ϵ,a vanishes identically, by part 1 of Lemma 2.0. Taking σ = + and
+                   +,R
+ϵ = R gives Ξ+
+             i = Gi    ; subtracting Bi+ gives Fi = Ri , so Fi is doubly periodic, contradicting
+(S2).                                                                                          □
+    Put
+                                       Y
+                           Ai (t) =           (t − λ),              di = deg Ai = |Λi | ≥ 1,                        (2.1)
+                                       λ∈Λi
+                                       Ym                                 m
+                                                                          X
+                                                    vi 
+                           A(T ) =           Ai T          ,        Z=          [0, di vi ] ⊂ R2 .                  (2.2)
+                                       i=1                                i=1
+    (P3) For all σ, ϵ, a one has Ai (T vi ) di,σ,ϵ,a = 0. Indeed, by Lemma 2.0 only the terms with
+         λ ∈ Λi in d = λ Pλ d are non-zero, and Ai (T vi )Pλ d = Ai (λ)Pλ d = 0.
+                         P
+
+                                                                                                              λ (−λ) ̸= 0.
+                                                                                                              Q
+  The elements of Λi are distinct κi -th roots of unity, so Ai is monic with Ai (0) =
+Hence                                                           X
+                  Newt Ai (T vi ) = [0, di vi ],
+                                 
+                                                   Newt(A) =       [0, di vi ] = Z,                                 (2.3)
+                                                                                       i
+the second equality by Minkowski additivity of Newton polygons (Ostrowski: over an integral
+domain, Newt(f g) = Newt(f ) + Newt(g)).
+Remark 2.1′ (Galois stability of Λi ). Each di,σ,ϵ,a is integer-valued, so for every τ ∈ Gal(Q(ζκi )/Q)
+                 
+one has τ dbt (λ) = dbt (τ λ). Hence λ occurs if and only if τ λ occurs, Λi is a union of Galois
+orbits, Ai is a product of distinct cyclotomic polynomials, Ai ∈ Z[t] and A ∈ Z[T ± ]. Nothing
+below depends on this (Lemma 2.5 handles the coefficient field by invariance of rank under field
+extension), but it does mean that every object of §2 can be discussed over Q.
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                              9
+
+2.3. A spectrum-preserving encoding.
+Lemma 2.2. There is an injection w : Fp → Z such that for every i and every λ ∈ Λi , the scalar
+difference field
+                       δi,σ,ϵ := w(Ξσi ) − w Gσ,ϵ
+                                                   X
+                                              i    =   w(a) di,σ,ϵ,a
+                                                               a
+still has λ occurring in it, for some pair σ, ϵ.
+Proof. Regard (w(a))a∈Fp as a vector in Qp . For each λ ∈ Λi there are, by definition, σ, ϵ, t
+                                           p
+                             
+                      i,σ,ϵ,a t (λ) ∈ C , indexed by a, is non-zero. By linearity of the Fourier
+for which the vector d\
+transform,                                       X
+                                                               
+                                  δd
+                                   i,σ,ϵ t (λ) =   w(a) d\
+                                                         i,σ,ϵ,a t (λ)
+                                                   a
+is a non-zero complex linear form in w; its zero set inside Qp is a proper Q-subspace of QpP
+                                                                                           , since
+otherwise the form would vanish on a Q-basis of Qp and hence identically. There are i |Λi |
+such conditions. Injectivity excludes a further p2 proper hyperplanes {w(a) = w(a′ )}. Finitely
+many proper subspaces cannot cover Qp , so a rational w satisfying all the conditions exists;
+multiplying by a common denominator makes it integer-valued without affecting non-vanishing
+or injectivity.                                                                                 □
+  Fix such a w and put η = w(θ) : Z2 → Z. By (1.1), Dη = 0.
+2.4. One-sided vanishing.
+Lemma 2.3. Let d : Z2 → C satisfy T Hi d = d, vanish identically on a half-plane {πi > c} or on
+          {πi < c}, and let λ occur in d. If a Laurent polynomial f satisfies f (T )d = 0, then
+a half-plane
+ T vi − λ | f .
+
+Proof. By part 3 of Lemma 2.0, f (T )Pλ d = Pλ f (T )d = 0. Write cλ (t) = dbt (λ), so cλ (t) = 0
+whenever d vanishes on row t, and g(Y ) := f (λ, Y ) = β gβ Y β . By part 4 of Lemma 2.0,
+                                                      P
+                                                       X
+                  0 = f (T )Pλ d (svi + tui ) = λs
+                                 
+                                                           gβ cλ (t + β)   for all s, t,
+                                                       β
+
+that is, g(Y )cλ = 0; and cλ ̸≡ 0 because λ occurs.
+   Case: d vanishes on {πi > c}. Then cλ (t) = 0 for t > c, so t0 := max{t : cλ (t) ̸= 0} exists. If
+g ̸= 0, let β− = min{β : gβ ̸= 0} and evaluate at t = t0 − β− : for β > β− one has t0 − β− + β > t0
+and cλ vanishes there, so only the term β = β− survives, giving gβ− cλ (t0 ) = 0, a contradiction.
+   Case: d vanishes on {πi < c}. Symmetrically, take t0 = min{t : cλ (t) ̸= 0} and β+ = max{β :
+gβ ̸= 0} and evaluate at t = t0 − β+ ; only the term β = β+ survives.
+   So g ≡ 0. Write f as an element of C[X ± , Y ± ] with X = T vi and Y = T ui ; since (vi , ui ) is a
+basis of Z2 this is an automorphism of the Laurent ring. With f = β Y β fβ (X), the identity
+                                                                         P
+
+g ≡ 0 says fβ (λ) = 0 for every β, whence (X − λ) | fβ (X) — a one-variable Laurent polynomial
+vanishing at a non-zero point is divisible by X − λ — and therefore (X − λ) | f .                   □
+2.5. Divisibility.
+Lemma 2.4. Let f be a non-zero Laurent polynomial with complex coefficients such that
+f (T )η = c is constant. Then A | f .
+10                                      APEX INTELLIGENCE
+                                                                                  
+Proof. (a) The relation passes to the orbit closure. The map z 7→ f (T )η (z) − c depends on
+θ only through its values on z + supp(f ), so it is a local function of θ. It vanishes on every
+translate of θ; local functions are continuous for the product topology, so it vanishes on every
+member χ of Xθ : f (T )w(χ) = c.
+   (b) Subtraction. Take χ = Ξσi and χ = Gσ,ϵ i , both in Xθ by §2.1, and subtract the two identities:
+f (T )δi,σ,ϵ = 0.
+   (c) One prime factor at a time. Fix λ ∈ Λi . By Lemma 2.2 there are σ, ϵ with λ occurring
+in δi,σ,ϵ ; by (P1) this difference field vanishes on a half-plane; by (P2) it is preserved by Hi .
+Lemma 2.3 gives T vi − λ | f .
+   (d) Assembling. Under the automorphism X = T vi , Y = T ui the element T vi − λ becomes
+X − λ, and C[X ± , Y ± ]/(X − λ) ∼   = C[Y ± ] is an integral domain, so T vi − λ is prime. Primes
+coming from different directions i ̸= k are non-associate: being associate would force T vi −
+λ = cT u (T vk − µ), and comparing supports gives {0, vi } = {u, u + vk }, hence vi = ±vk ,
+contradicting non-parallelism. Primes from the same direction with λ ̸= λ′ are also non-associate:
+comparing supports forces u = 0 and then comparing coefficients forces λ = λ′ . In a unique
+factorisation   domain, pairwise non-associate primes each dividing f have their product dividing
+f : A = i λ∈Λi (T vi − λ) | f .
+           Q Q
+                                                                                                   □
+2.6. The dimension budget for affine relations. For a lattice-convex S put
+                              RZ (S) = r ∈ Z2 : r + Z ⊆ Conv(S) ,
+                                        
+                                  n                             o
+                      US = spanQ 1, γ 7→ w γ(s) (s ∈ S)              ⊆ {L → Q}.
+
+Lemma 2.5. dimQ US ≥ |S| − |RZ (S)| + 1.
+Proof. US is generated by |S| + 1 elements, so dimQ US = (|S| + 1) − dimQ R, where
+                    n                            X                                    o
+               R = (c0 , (cs )s∈S ) ∈ Q1+|S| :         cs η(u + s) = c0 for all u ∈ Z2 .
+                                                 s∈S
+R is the Q-solution space of a (possibly infinite) homogeneous linear system with integer
+coefficients; writing RC for its C-solution space, RC = R ⊗Q C and dimC RC = dimQ R, the
+dimension of the solution space of a rational linear system being unchanged by extension of the
+base field.
+   Let (c0 , (cs )) ∈ RC be non-zero and put f = s cs T s . If f = 0 then c0 = 0 and the element is
+                                                 P
+
+zero; so f ̸= 0, and f (T )η = c0 with supp(f ) ⊆ S. By Lemma 2.4, valid for complex f , we may
+write f = Ag with g ̸= 0. By (2.3) and Newton-polygon additivity,
+                         Newt(f ) = Newt(A) + Newt(g) = Z + Newt(g).
+From supp(f ) ⊆ S we get Newt(f ) ⊆ Conv(S), so for every r ∈ supp(g),
+                          r + Z ⊆ Newt(g) + Z = Newt(f ) ⊆ Conv(S),
+that is, r ∈ RZ (S). Hence supp(g) ⊆ RZ (S).
+  The map RC → {g : supp(g) ⊆ RZ (S)}, (c0 , f ) 7→ g = f /A, is C-linear and injective (c0 is
+determined by f , A ̸= 0, and division in an integral domain is unique), so
+                                  dimQ R = dimC RC ≤ |RZ (S)|.                                     □
+Remark 2.6. By lattice-convexity, r ∈ RZ (S) implies (r + Z) ∩ Z2 ⊆ Conv(S) ∩ Z2 = S. If
+RZ (S) = ∅, then Lemma 2.5 gives dim US ≥ |S| + 1; but US is a space of functions on the finite
+set L, so Pθ (S) = |L| ≥ dim US ≥ |S| + 1 and the main theorem holds. This case covers point
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                              11
+
+and segment windows, since Z has non-empty interior (m ≥ 2 and v1 ̸∥ v2 ). From now on we
+assume RZ (S) ̸= ∅.
+
+      3. A applied to the colour field yields a doubly periodic background
+3.1. Realised sectors and adjacent sectors. The complement R2 \ i Rvi has exactly 2m
+                                                                                     S
+
+connected components, open cones: order the 2m rays {σvi : σ = ±, i ∈ [m]} by angle; the
+components are the sectors between consecutive rays. On each sector every πi has constant sign;
+write ϵ(K) ∈ {+, −}m for the sign vector of the sector K, and call these 2m sign vectors realised.
+(For m ≥ 3 the remaining 2m − 2m sign vectors are not realised.) For a realised ϵ put
+                                                                         ε−
+                                       X ϵ
+                               Θϵ :=        εi i ,       ε+
+                                                          i = Ri ,        i = Li ,
+                                        i
+which is doubly periodic and preserved by every Hj , as is its colour field eΘϵ = (⊮[Θϵ = a])a .
+Lemma 3.0 (Sectors adjacent along a ray). Let the ray σvi be the common boundary ray of
+two sectors K, K ′ . Then ϵ(K) and ϵ(K ′ ) differ exactly in the coordinate i, and for j ̸= i one has
+ϵ(K)j = ϵ(K ′ )j = sign σπj (vi ) . Consequently
+                                  {Θϵ(K) , Θϵ(K ′ ) } = {Gσ,L  σ,R
+                                                          i , Gi }.
+In the angular order, the 2m sectors form a 2m-cycle under the relation of sharing a boundary
+ray.
+Proof. The ray σvi lies on Rvi and on no Rvj with j ̸= i, the directions being pairwise non-parallel.
+A small circular arc centred at σvi crosses only Rvi , so the sign vectors of the two sectors on
+either side differ only in coordinate i; for j ̸= i, the sign of πj is constant on the arc and equals
+                                             ϵ(K)
+sign πj (σvi ) = sign(σπj (vi )). By (2.0), εj j = εσj is precisely the tail choice made in Biσ , so
+                                σ            σ
+Θϵ(K) and Θϵ(K ′ ) are Ri + Bi and Li + Bi in the order dictated by ϵi . The cycle structure comes
+from the angular ordering.                                                                         □
+Lemma 3.1. For every ray σvi ,
+                                       A(T ) eGσ,R = A(T ) eGσ,L .
+                                                     i               i
+
+Consequently A(T )eΘϵ takes one and the same value for all realised ϵ; write
+                                       b = (ba )a∈Fp := A(T )eΘϵ .
+This b is doubly periodic and preserved by every Hj .
+Proof. Colour by colour,
+                           ⊮[Gσ,R
+                              i   = a] − ⊮[Gσ,L
+                                            i   = a] = di,σ,L,a − di,σ,R,a ,
+which is killed by Ai (T vi ) by (P3), hence by A. By Lemma 3.0 the backgrounds of two sectors
+adjacent along a ray are exactly Gσ,Ri   and Gσ,L
+                                               i , so their values of Ae agree; and the 2m sectors
+form a cycle under this adjacency, hence a connected graph, so AeΘϵ is the same for all realised
+sectors. Double periodicity and Hj -invariance follow from the corresponding properties of Θϵ
+together with the fact that A commutes with translations.                                       □
+Remark 3.1′ (The lemma does not extend to unrealised tail choices). The generalisation “AeΘε =
+AeΘε′ for all ε, ε′ ∈ {L, R}m , realised or not” is false. The reason is that Λi is defined using
+only the backgrounds Bi± , whereas a mixed tail choice B may have periods along vi that Bi±
+do not have, so the spectrum of ⊮[Ri + B = a] − ⊮[Li + B = a] can fall outside Λi . An explicit
+counterexample is in Appendix C.3. Lemma 3.2 uses only realised sectors, so the main line is
+unaffected.
+12                                                 APEX INTELLIGENCE
+
+3.2. Aeθ − b has finite support.
+Lemma 3.2. Aeθ − b has finite support.
+Proof. Write MA = supp(A). Choose ci ≥ max(|ℓi |, |ri |) so that {πi < −ci } ⊆ {πi < ℓi } and
+{πi > ci } ⊆ {πi > ri }, and put
+                            ρi = ci + max |πi (s)|,                   Σi = {z : |πi (z)| ≤ ρi }.
+                                         s∈MA
+Call i active at z if z ∈ Σi ; otherwise all of z + MA lies in one and the same tail region of
+component i, the one on the side sign πi (z).
+   (a) No active direction. Then |πi (z)| > ρi > 0 for every i; put ϵi = sign πi (z). Regarded as
+a point of R2 , z lies on no Rvi and has sign vector ϵ, so ϵ is realised; and θ = Θϵ on z + MA .
+Hence (Aeθ )(z) = (AeΘϵ )(z) = b(z).
+   (b) At least two active directions. Then z ∈ Σi ∩ Σj with i ̸= j, an intersection of two strips of
+bounded width in non-parallel directions, which is bounded and so contains only finitely many
+lattice points.
+   (c) Exactly one active direction i. Write z = tvi + qui in the basis (vi , ui ), so πi (z) = q and
+|q| ≤ ρi . For j ̸= i,
+                         πj (z) = t πj (vi ) + q πj (ui ),                 πj (vi ) = det(vj , vi ) ̸= 0.
+If
+                                    ρi maxj̸=i |πj (ui )| + maxj̸=i ρj
+                                     |t| >                             ,                                               (3.1)
+                                            minj̸=i |πj (vi )|
+then for every j ̸= i and every s ∈ MA ,
+     |πj (z + s)| ≥ |t| |πj (vi )| − |q| |πj (ui )| − |πj (s)| > ρj − |πj (s)| ≥ ρj − max
+                                                                                      ′
+                                                                                          |πj (s′ )| = cj ,
+                                                                                                        s ∈MA
+                                                                                                                   
+and, because |t| |πj (vi )| > |q| |πj (ui )| + |πj (s)|, also sign πj (z + s) = sign t πj (vi ) . So all of
+z + MA lies in the tail region of component j determined by sign(tπj (vi )). By (2.0) these are
+                                       sign(t)
+exactly the tail choices made in Bi            , so on z + MA
+                                                       sign(t)
+                                    θ = F i + Bi                 = Ξσi ,        σ = sign(t),
+                                   (z). By (P3), Ai (T vi ) kills eΞσi − eGσ,R =
+                                                                                                           
+whence (Aeθ )(z) = AeΞσi                                                                         di,σ,R,a a , so
+                                                                                        i
+                                                                           
+                                         Ae   Ξσ
+                                               i
+                                                       (z) = AeGσ,R (z) = b(z),
+                                                                      i
+
+the last step because Gσ,R
+                       i   is the background of one of the realised sectors adjacent along the ray
+σvi (Lemma 3.0).
+  Only finitely many t violate (3.1), and these combine with |q| ≤ ρi to give finitely many lattice
+points. Combining (a), (b), (c), supp(Aeθ − b) is finite.                                        □
+3.3. Conclusion.
+Proposition 3.3. A(T )eθ = b. In particular
+                                                                     X
+                                               Aη = bη :=                  w(a)ba
+                                                                      a
+is a doubly periodic field preserved by every Hi .
+Proof. By (1.1), Deθ = 0; and b is preserved by every Hi , so Db = 0. Hence D(Aeθ − b) =
+A Deθ − Db = 0. By Lemma 3.2 this function has finite support, so Lemma 1.2 (with D ̸= 0)
+forces it to vanish.                                                                   □
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                  13
+
+                    4. At least one two-point difference is non-zero
+   Put Qi = j̸=i T Hj − 1 as in (0.2), and fi = Qi η. From D = (T Hi − 1)Qi and Dη = 0 it
+              Q              
+
+follows that fi has period Hi .
+Lemma 4.1. The support of fi is contained in a strip of bounded width in the direction vi , and
+fi ̸= 0.
+Proof. (a) A global identity. We have fi = T nHi fi for every n. Let n → +∞: on every fixed finite
+set T nHi θ → Ξ+
+               i , the convergence being eventual pointwise stabilisation, so T
+                                                                                nHi η → w(Ξ+ ) and
+                                                                                           i
+therefore
+                                         fi = Qi w Ξ+
+                                                         
+                                                       i .                                    (4.1)
+Each factor T Hj − 1 with j ̸= i annihilates w(G+,R
+                                                i   ), since Hj preserves that pure-tail field, so
+                                                                      +,R
+                                                    δi := w(Ξ+
+                                                                                  
+                                 fi = Qi δi ,                i ) − w Gi   .                           (4.2)
+Using G+,L
+       i   instead gives fi = Qi δi′ with δi′ = w(Ξ+        +,L
+                                                   i ) − w(Gi   ).
+    (b) A strip of bounded width. By (P1), δi ≡ 0 on {πi > ri } and δi′ ≡ 0 on {πi < ℓi }. Put
+c = maxs∈Ei |πi (s)|. By (4.2) and (0.2), fi (z) ̸= 0 forces δi (z + s) ̸= 0 for some s ∈ Ei , whence
+πi (z) ≤ ri + c; the other identity gives πi (z) ≥ ℓi − c. So supp(fi ) ⊆ {ℓi − c ≤ πi ≤ ri + c}.
+                                                                +,R
+  (c) Non-vanishing. First, δi ̸= 0: otherwise w(Ξ+    i ) = w(Gi   ), and injectivity of w gives
+ +     +,R                +
+Ξi = Gi ; subtracting Bi gives Fi = Ri , which is doubly periodic, contradicting (S2).
+  Since δi vanishes on {πi > ri } but is not identically zero,
+                                   π ∗ = max{πi (z) : δi (z) ̸= 0} (≤ ri )
+exists. Choose z ∗ with δi (z ∗ ) ̸= 0 and πi (z ∗ ) = π ∗ .
+   Expand Qi formally as in (0.2). We have πi (HC ) = j∈C πi (Hj ) with every πi (Hj ) ̸= 0 for
+                                                               P
+
+j ̸= i. Put
+                                      Cmin = {j ̸= i : πi (Hj ) < 0}.
+For any C ⊆ [m] \ {i} with C ̸= Cmin ,
+                                                  X                     X
+                  πi HC − πi HCmin =                       πi (Hj ) −                 πi (Hj ) > 0,
+                                                j∈C\Cmin                j∈Cmin \C
+
+because the terms of the first sum are positive, those of the second are negative, and at least one
+of the two sums is non-empty. So πi (HCmin ) is the unique minimum. This is a statement about
+the πi -projections and is unaffected by any coincidences among the points HC themselves.
+   Evaluate at z = z ∗ − HCmin :
+                                                X
+                                                (−1)m−1−|C| δi z + HC .
+                                                                             
+                                   fi (z) =
+                                      C
+                                    ∗
+The term C = Cmin contributes ±δi (z ) ̸= 0; for C ̸= Cmin ,
+                                                                             
+                          πi z + HC = π ∗ + πi (HC ) − πi (HCmin ) > π ∗ ,
+                                        
+
+so δi vanishes there. Hence fi (z) = ±δi (z ∗ ) ̸= 0.                                                   □
+                                                                                 
+Lemma 4.2. For every d the function J(d, ·) := Dz η(z)η(z + d) has finite support; and there
+exists d with J(d, ·) ̸= 0.
+14                                                        APEX INTELLIGENCE
+
+Proof. Finite support: z 7→ η(z)η(z + d) is a local function of θ, with window W = {0, d}; apply
+Lemma 1.1.
+  Non-vanishing: choose i ̸= j, possible since m ≥ 2. By Lemma 4.1 choose xi , xj with fi (xi ) ̸= 0
+and fj (xj ) ̸= 0. Put d0 = xj − xi and
+                                                     C(z) = fi (z) fj (z + d0 ).
+Then C(xi ) = fi (xi )f (x ) ̸= 0. Now supp(fi ) lies in a strip of bounded width in the direction vi
+                     j j
+and supp fj (· + d0 ) in one of direction vj , with vi ̸∥ vj , so supp(C) is bounded. By Lemma 1.2,
+DC ̸= 0.
+  On the other hand, expanding formally by (0.2),
+                 X                            X                                               X
+        C(z) =          ±η z + HC1                        ±η z + d0 + HC2                   =                 ± η(z + u1 )η(z + u2 ),
+                  C1                                 C2                                         C1 ,C2
+with u1 = HC1 and u2 = d0 + HC2 . By translation invariance of D,
+                        X                                                                 X
+                                ± T u1 Dz η(z)η(z + u2 − u1 )                                            ± T u1 J u2 − u1 , · .
+                                                                                                                             
+             DC =                                                                      =
+                       C1 ,C2                                                               C1 ,C2
+
+If every J(d, ·) vanished, then DC = 0, a contradiction.                                                                                  □
+
+                        5. The bi-recursion and the quotient algebra
+                                                                                                                                          
+5.1. The bi-recursion. Regard J as a function of the pair (d, z): J(d, z) = Dz η(z)η(z + d) .
+Write Tds J(d, z) = J(d + s, z) and Tzs J(d, z) = J(d, z + s).
+Lemma 5.1.
+                                                                      A Tz Td−1 J = 0.
+                                                                                        
+                                           A(Td ) J = 0,                                                                                (5.1)
+Proof. First identity. For any Laurent polynomial g =
+                                                                                      P             s,
+                                                                                        s gs T
+                                     X                                                        h                           i
+             g(Td )J(d, z) =                   gs Dz η(z)η(z + d + s) = Dz η(z) g(T )η (z + d) .
+                                       s
+Take g = A; by Proposition 3.3, (Aη)(z + d) = bη (z + d). Expanding Dz by (0.1),
+                                                          X
+                                                              (−1)m−|C| η z + HC bη z + HC + d .
+                                                                                                                      
+                  Dz η(z)bη (z + d) =
+                                                          C
+Each HC is a sum of vectors Hi and so preserves bη ; therefore bη (z + HC + d) = bη (z + d) and
+                                      X
+                                               (−1)m−|C| η z + HC = bη (z + d) Dη (z) = 0.
+                                                                                                                
+                  = bη (z + d)
+                                       C
+                                                              s
+  Second identity. The operator Tz Td−1 sends (d, z) to (d − s, z + s): the first observation
+point moves, z 7→ z + s, while the second, z + d, does not. Hence
+              g Tz Td−1 J(d, z) =                    gs Dz ′ η(z ′ )η(z ′ + d − s)
+                                               X                                            
+                                                 s                                                  z ′ =z+s
+                                                X                     X
+                                                     (−1)m−|C|
+                                                                                                                            
+                                           =                              gs η z + s + HC η z + HC + d
+                                                 C                    s
+                                                X
+                                                              m−|C|                                                    
+                                           =         (−1)             g(T )η z + HC η z + HC + d .
+                                                 C
+Take g = A: then (Aη)(z + HC ) = bη (z + HC ) = bη (z), so the sum equals
+                            X
+                                    (−1)m−|C| η z + HC + d = bη (z) · Dη (z + d) = 0.
+                                                                                                         
+                  bη (z)                                                                                                                  □
+                                C
+                     STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                                 15
+
+5.2. The quotient algebra. Let X = (X1 , X2 ) be independent indeterminates, K = C(X1 , X2 ),
+and R = K[Y1±1 , Y2±1 ]. For u ∈ Z2 write Y u = Y1u1 Y2u2 and X u = X1u1 X2u2 ; the monomials
+{Y u }u∈Z2 are a K-basis of R. Put
+                               ci = Ai X vi Y −vi ,
+                                                                  Y                            Y
+         ai = Ai Y vi ,
+                                                     
+                                                            a=            ai = A(Y ),    c=            ci = A(X/Y ).
+                                                                      i                        i
+
+Lemma 5.2. As a K-vector space, R/(a, c) is spanned by the images of {Y d : d ∈ (Z − Z) ∩ Z2 }.
+Proof. Step 1: no common zeros, and the Chinese remainder theorem. Extend to K
+                  ×
+and test in (K )2 . Note that C is algebraically closed, so an element of K that is algebraic over
+C lies in C, whereas X u with u ̸= 0 is transcendental over C.
+   (i) ai and ci have no common zero. From ai = 0 we get Y vi = λ ∈ Λi ; from ci = 0 we get
+X vi Y −vi = µ ∈ Λi . Multiplying, X vi = λµ ∈ C, a contradiction.
+   (ii) If ai = ak = 0 with i ̸= k, then every cj ̸= 0. From Y vi = λ, Y vk = λ′ and ∆ =
+det(vi , vk ) ̸= 0, the elements Y1∆ and Y2∆ are products of integer powers of λ, λ′ , so Y1 , Y2 are
+algebraic over C and hence lie in C× . If some cj = 0 then X vj = µY vj ∈ C, a contradiction.
+   (iii) If cj = cl = 0 with j ̸= l, then every ai ̸= 0. Put W = X/Y , that is W1 = X1 /Y1 and
+W2 = X2 /Y2 . From W vj = µ and W vl = µ′ we get, as in (ii), W1 , W2 ∈ C× , that is Y1 = αX1
+and Y2 = βX2 with α, β ∈ C× . If some ai = 0 then Y vi = λ, that is αvi1 β vi2 X vi = λ and
+X vi ∈ C, a contradiction.
+                                                                ×
+   By (ii), for i ̸= k the ideal (ai , ak , c) has no zero in (K )2 , so it equals (1) in K[Y ± ] by the
+Nullstellensatz, and descends to R by faithful flatness of R → K[Y ± ]: (ai , ak , c) = R. That is,
+the ai are pairwise coprime in R/(c). By the Chinese remainder theorem,
+                                                      Q              
+                                                                          ≃
+                                                                               Q
+                                  R/(a, c) = R             i ai , c            i R/(ai , c).
+In R/(ai ): by (i), (ai , ci ) = R, so ci is a unit; by (iii), for j ̸= l with j, l ̸= i one has (ai , cj , cl ) = R,
+so the cj are pairwise coprime in R/(ai ). A second application of the Chinese remainder theorem
+gives                                                       Q
+                                R/(ai , c) = R ai , j cj ≃ j̸=i R/(ai , cj ),
+                                                      Q
+
+and combining, with the isomorphism given by the natural projections,
+                                                               Y
+                                             R/(a, c) ≃               R/(ai , cj ).                                    (5.2)
+                                                               i̸=j
+
+   Step 2: a monomial spanning set for each factor. Fix i ̸= j. Put u = Y vi and w = Y −vj ,
+let L = Zvi + Z(−vj ) and ν = [Z2 : L] = | det(vi , vj )|. Take the ν lattice points r1 , . . . , rν of the
+half-open fundamental domain
+                                  Π = {αvi − βvj : 0 ≤ α < 1, 0 ≤ β < 1},
+a complete set of representatives for Z2 /L. Then R is free as a K[u± , w± ]-module with basis
+{Y rn }.
+  The ideal (ai , cj ) is generated by the elements ai = Ai (u) and cj = Aj X vj w of the subring
+                                                                                  
+
+K[u± , w± ], so
+                                             ν
+                                                   Y rn · K[u± , w± ] Ai (u), Aj (X vj w) .
+                                             M                                                    
+                            R/(ai , cj ) ≃
+                                             n=1
+Now Ai (u) has degree di in u with both extreme coefficients non-zero (Ai is monic and Ai (0) ̸= 0),
+so any integer power of u reduces into the K-span of {u0 , . . . , udi −1 }; and Aj (X vj w) has degree
+16                                                   APEX INTELLIGENCE
+
+dj in w with leading coefficient X dj vj ̸= 0 and constant term Aj (0) ̸= 0, so any integer power of
+w reduces into the span of {w0 , . . . , wdj −1 }. Hence
+                           n                                                                          o
+                            Y rn +αvi −βvj : 1 ≤ n ≤ ν, 0 ≤ α < di , 0 ≤ β < dj                                  (5.3)
+spans R/(ai , cj ). Since rn ∈ Π — its vi -coefficient and its (−vj )-coefficient both lie in [0, 1) —
+all the exponents in (5.3) lie in
+                                           Pij := [0, di vi ] + [0, −dj vj ].                                    (5.4)
+     Step 3: projection onto a factor. Put
+                                                             Y            Y
+                                                     Eij =          ak           cl .
+                                                             k̸=i         l̸=j
+
+In the decomposition (5.2):
+       • on a factor (i′ , j ′ ) with i′ ̸= i: the factor ai′ occurs in Eij and is ≡ 0 there, so Eij ≡ 0;
+       • on a factor (i, j ′ ) with j ′ ̸= j: the factor cj ′ occurs and is ≡ 0, so Eij ≡ 0;
+       • on the factor (i, j): by (i), (ii), (iii), the ideals (ai , cj , ak ) for k ̸= i and (ai , cj , cl ) for l ̸= j
+                                  ×
+         have no zero in (K )2 , hence equal R by the Nullstellensatz and faithfully flat descent.
+         Now (ai , cj , x) = R means precisely that there is w ∈ R with wx ≡ 1 (mod (ai , cj )), so
+         each ak and each cl is a unit in R/(ai , cj ), and so is their product Eij .
+  Therefore the image of Eij · (5.3) spans the factor (i, j) and vanishes on all the others. Every
+monomial exponent occurring in Eij · Y e lies in Newt(Eij ) + e, and
+                                          X                      X
+                 Newt(Eij ) + Pij ⊆              [0, dk vk ] +          [0, −dl vl ] + Pij
+                                          k̸=i                   l̸=j
+                                          X                      X
+                                      =          [0, dk vk ] +          [0, −dl vl ] = Z + (−Z) = Z − Z,
+                                           k                        l
+using Newt(ak ) = [0, dk vk ], Newt(cl ) = [0, −dl vl ] and the fact that the Newton polygon of a
+product is the Minkowski sum. Taking the union over all i ̸= j gives the spanning statement. □
+5.3. The witness lies in Z − Z.
+Proposition 5.3. There is d ∈ (Z − Z) ∩ Z2 with d ̸= 0 and J(d, ·) ̸= 0.
+Proof. By Lemma 4.2 each J(d, ·) has finite support, so
+                                                     J(d, z)X −z ∈ C[X1± , X2± ] ⊂ K
+                                               X
+                               J(d;
+                               b X) =
+                                                 z
+is well defined, the supports for different d being allowed to differ. Define a K-linear functional
+L : R → K by setting L(Y d ) = J(d;b X) on the K-basis and extending K-linearly. That L is
+K-linear, and not merely C-linear, is what makes the next step work: coefficients X s ∈ K may
+be pulled out of L.
+  kills the ideal (a, c). Write A = s As T s , so that a = A(Y ) = s As Y s and c = A(X/Y ) =
+                                            P                                                  P
+L
+P        s −s .
+  s As X Y
+                                                            P
+  By the first identity of (5.1), for every (d, z) we have s As J(d + s, z) = 0. Taking the
+Laurent transform in z,
+                      X                                                                 X
+                              b + s; X) = 0 =⇒ L Y d · a =                                  As L Y d+s = 0.
+                                                                                                    
+                           As J(d
+                       s                                                                s
+                     STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                    17
+
+
+                                                                          s As J(d − s, z + s) = 0. Taking the
+                                                                    P
+  By the second identity of (5.1), for every (d, z) we have
+Laurent transform in z and noting
+                                                                      ′
+                     J(d − s, z + s)X −z =            J(d − s, z ′ )X −z +s = X s J(d
+                X                              X
+                                                                                  b − s; X),
+                 z                               z′
+
+we get s As X s J(d
+                b − s; X) = 0, that is L Y d · c =          s      d−s ) = 0.
+       P                                                      P
+                                                      s As X L(Y
+  For an arbitrary g = d gd Y d ∈ R with gd ∈ K, K-linearity gives L(ga) = d gd L(Y d a) = 0,
+                        P                                                      P
+
+and likewise L(gc) = 0. So L vanishes on (a, c) and descends to L̄ : R/(a, c) → K.
+Conclusion. If J(d, ·) = 0 for every d ∈ (Z − Z) ∩ Z2 , then L̄ vanishes on a spanning set supplied
+by Lemma 5.2, hence L̄ = 0, hence L = 0, hence J(d;     b X) = 0 for every d, that is J ≡ 0 —
+contradicting Lemma 4.2.
+d ̸= 0. We have J(0, z) = Dz [η(z)2 ], and η 2 = w′ (θ) with w′ (a) = w(a)2 is a single-site colour
+function, so Dη 2 = 0 by (1.1).                                                                  □
+
+                     6. Putting two points into one integral zonotope
+                              Pm                                           2
+Lemma 6.1. Let Z =             i=1 [0, di vi ] with integers di ≥ 1, vi ∈ Z , m ≥ 2 and v1 ̸∥ v2 . Then
+                                                   2            2          2
+                                   (Z − Z) ∩ Z        =   Z ∩Z     − Z ∩Z .                              (6.1)
+Proof. The inclusion “⊇” is clear.
+  “⊆”: put c0 = i di vi ∈ Z2 . For x = i xi ∈ Z with xi ∈ [0, di vi ] we have c0 − x =
+                       P                               P
+
+  i (di vi − xi ) with di vi − xi ∈ [0, di vi ], so c0 − x ∈ Z; that is, c0 − Z ⊆ Z. Applying this once
+P
+
+more, Z = c0 − (c0 − Z) ⊆ c0 − Z, so c0 − Z = Z and −Z = Z − c0 . Hence
+                               Z − Z = Z + (−Z) = Z + Z − c0 = 2Z − c0 .
+   Let d ∈ (Z − Z) ∩ Z2 and put x = d + c0 ∈ 2Z ∩ Z2 .
+   The vertices of Z are subset sums of the vectors di vi and so are lattice points; thus Z is a
+two-dimensional lattice polygon. Take a unimodular triangulation of Z: every two-dimensional
+lattice polygon can be subdivided into lattice triangles of area 12 whose vertices are lattice points
+of Z. Since x/2 ∈ Z, it lies in some unimodular triangle △ABC (boundary included), and
+(B − A, C − A) is a basis of Z2 . Write
+                      1
+                      2 x = A + α(B − A) + β(C − A),               α, β ≥ 0, α + β ≤ 1.
+Then x − 2A = (2α)(B − A) + (2β)(C − A). The left-hand side is a lattice point and (B −
+A, C − A) is a lattice basis, so 2α, 2β ∈ Z≥0 with 2α + 2β ≤ 2. The cases are:
+
+                     (2α, 2β) x                                              decomposition
+                     (0, 0)        2A                                        A+A
+                     (1, 0)        2A + (B − A) = A + B                      A+B
+                     (0, 1)        A+C                                       A+C
+                     (2, 0)        2A + 2(B − A) = 2B                        B+B
+                     (0, 2)        2C                                        C +C
+                     (1, 1)        2A + (B − A) + (C − A) = B + C            B+C
+
+In every case x = p + q with p, q ∈ {A, B, C} ⊆ Z ∩ Z2 .
+   Finally d = x − c0 = p − (c0 − q), and c0 − q ∈ c0 − Z = Z is a lattice point.                           □
+Corollary 6.2. The vector d of Proposition 5.3 can be written d = q1 − q0 with q0 , q1 ∈ Z ∩ Z2 .
+Putting q = q0 , both q and q + d lie in Z ∩ Z2 .
+18                                       APEX INTELLIGENCE
+
+               7. Quadratic observables make up the whole linear deficit
+     Fix d and q as in Proposition 5.3 and Corollary 6.2, and put
+                      h(z) = η(z) η(z + d),      J := Dh ̸= 0 of finite support.
+Lemma 7.1. For every r ∈ RZ (S) one has r + q ∈ S and r + q + d ∈ S.
+Proof. We have r + Z ⊆ Conv(S) and q, q + d ∈ Z ∩ Z2 , so
+                      r + q, r + q + d ∈ (r + Z) ∩ Z2 ⊆ Conv(S) ∩ Z2 = S.                             □
+     Consequently, for each r ∈ RZ (S) the quadratic scalar observable
+                                                                                  
+                      Φr : L → Q,       Φr (γ) = w γ(r + q) · w γ(r + q + d)
+                                
+is well defined, and Φr θ|u+S = η(u + r + q) η(u + r + q + d) = h(u + r + q).
+Lemma 7.2. The family {Φr }r∈RZ (S) is linearly independent in {L → Q}/US .
+Proof. Suppose not: there are (cr ), not all zero, and ψ ∈ US with        r cr Φr = ψ on L. Substituting
+                                                                        P
+
+γ = θ|u+S ,         X                                X
+                          cr h(u + r + q) = c0 +        µs η(u + s)         for all u.
+                     r∈RZ (S)                       s∈S
+                                                                  Dc0 + s µs T s (Dη) = 0 by (1.1); the
+                                                                      P
+Apply D in u to both        sides. The  right-hand  side gives
+                                   r+q                   r+q
+                          P                     P            
+left-hand side gives        r cr T      (Dh) =    r cr T       J.
+                 r+q
+                     
+                       J = 0. The exponents r + q for r ∈ RZ (S) are distinct and the (cr ) are not all
+       P
+   So     r cr T
+zero, so that Laurent polynomial is non-zero; and J is non-zero of finite support. This contradicts
+Lemma 1.2.                                                                                           □
+Theorem 7.3 (Theorem T). Pθ (S) ≥ |S| + 1.
+Proof. The case RZ (S) = ∅ is Remark 2.6. Assume RZ (S) ̸= ∅ and put
+                          V = US + spanQ {Φr : r ∈ RZ (S)} ⊆ {L → Q}.
+By Lemma 7.2, dim V = dim US + |RZ (S)|; by Lemma 2.5,
+                                                       
+                        dim V ≥     |S| − |RZ (S)| + 1 + |RZ (S)| = |S| + 1.
+On the other hand V is a space of functions on the finite set L, so dim V ≤ |L| = Pθ (S).             □
+Remark 7.4 (The balance). The zonotope Z enters the proof twice and with opposite signs:
+it is the cost of the affine relations, Lemma 2.5 subtracting |RZ (S)|, and it is the capacity of
+the quadratic witness, Lemma 7.1 supplying exactly |RZ (S)| positions. The two cancel exactly,
+independently of the shape of S and of the size of Z. The sampled modular ranks in Appendix C
+attain the lower bound of Lemma 2.5 on every reported Case-B instance.
+
+                      8. Reduction to the convex Nivat conjecture
+   This section starts from a non-periodic configuration ξ of low convex complexity, extracts a
+star configuration from Xξ , and contradicts Theorem 7.3. The chain is
+            Theorem 8.4 [11] −→ Lemma 8.5 (mod p) −→ Theorems 8.6 and 8.7 [2]
+                         −→ Proposition 8.9 (first half-plane, this paper)
+     −→ Theorem 8.12 (second half-plane, this paper) −→ Lemma 8.17 −→ Theorem 7.3.
+Every link is either a result of [11] or [2], or proved here in full.
+                  STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                              19
+
+Theorem 8.1 (Structure input). Let ξ be a counterexample of minimal order in the sense of
+Remark 8.3. Then there are a prime P
+                                        p with A ⊂ [[p]], a non-periodic ϑ ∈ Xξ , an m ≥ 2 and
+Fp -valued G1 , . . . , Gm with ϑ = i Gi over Fp , each Gi having a non-zero period hi , the hi
+pairwise non-parallel and no component doubly periodic, such that for every i:
+    (i) Gi is fully periodic on a half-plane Ui whose boundary is parallel to hi ;
+   (ii) Gi is fully periodic on a half-plane Vi disjoint from Ui .
+  Part (i) is proved in §§8.2–8.3 (Proposition 8.9 and Corollary 8.10); part (ii) is proved in §8.4
+(Theorem 8.12).
+8.1. Half-planes, regions and full periodicity.
+Definition. A half-plane is a set of the form H = {z ∈ Z2 : ⟨z, n⟩ > c} or H = {z ∈ Z2 : ⟨z, n⟩ ≥
+c} with n ∈ R2 \ {0} and c ∈ R;  we call n its normal. For an integer vector g: if ⟨g, n⟩ ≥ 0 then
+H + g ⊆ H; if ⟨g, n⟩ > 0 then N ≥0 (H − N g) = Z2 .
+                              S
+
+
+  Call R ⊂ Z2 a lattice-convex region if R = C ∩ Z2 for some closed convex C ⊆ R2 . Writing
+CR := Conv(R) for the closed convex hull, one still has R = CR ∩ Z2 , since R ⊆ CR ⊆ C. Let
+                                 KR := {w ∈ R2 : CR + w ⊆ CR }
+be the recession cone of CR , a closed convex cone. If h ∈ Z2 satisfies R + h ⊆ R, then CR + h =
+Conv(R + h) ⊆ CR , that is h ∈ KR . A half-plane with rational boundary direction is a lattice-
+convex region: after rescaling its normal to an integer vector, a strict inequality can be replaced
+by a weak inequality with an integer threshold. For such a half-plane, KR = {w : ⟨w, n⟩ ≥ 0}.
+   For a non-empty U ⊆ Z2 say that G : Z2 → Fp is fully periodic on U ([5, Definition 2.1]) if
+there are R-linearly independent h, h′ ∈ Z2 with U + h ⊆ U, U + h′ ⊆ U, G(z + h) = G(z) and
+G(z + h′ ) = G(z) for all z ∈ U. The restriction of a doubly periodic field to any half-plane is
+fully periodic: take two independent vectors of its period lattice pointing into the half-plane.
+Conversely:
+Lemma 8.2 (Global extension). Let R be a lattice-convex region or a half-plane, and let G
+be fully periodic on R, with vectors h, h′ . Put g := h + h′ . Then for every z ∈ Z2 one has
+z + N g ∈ R for all large N , and there is a doubly periodic field G           e ⊇ Zh + Zh′
+                                                                   e with Per(G)
+and G e = G on R. If R is a lattice-convex region, then dim KR = 2 and g ∈ int KR ; if R is a
+half-plane with normal n, then ⟨g, n⟩ > 0.
+Proof. First suppose R is a lattice-convex region. From R + h ⊆ R and R + h′ ⊆ R we get
+h, h′ ∈ KR ; they are linearly independent, so the closed sector they span lies in KR , its interior
+is non-empty and contains g, whence g ∈ int KR and dim KR = 2. Pick x0 ∈ CR ; by the
+definition of the recession cone x0 + KR ⊆ CR . For any z we have z + N g − x0 = N g + z−x
+                                                                                                   
+                                                                                               N
+                                                                                                 0
+                                                                                                     ,
+and for N large the vector in brackets lies in a neighbourhood of g contained in KR ; hence
+z + N g ∈ CR ∩ Z2 = R.
+   For a half-plane R with normal n, there is a direct argument, whether its boundary direction
+is rational or irrational and whether its defining inequality is strict or weak. The inclusion
+R + h ⊆ R implies ⟨h, n⟩ ≥ 0: otherwise, starting at any point of R, repeated addition of h would
+eventually leave R. Likewise ⟨h′ , n⟩ ≥ 0. Since h, h′ are independent, these two inner products
+cannot both vanish, so ⟨g, n⟩ > 0. Thus z + N g ∈ R for all sufficiently large N . In either case
+the extension is constructed as follows.
+   Step 1. For z ∈ R and k ≥ 0: z + kh ∈ R and G(z + kh) = G(z), by induction on k; likewise
+for h′ and for g.
+20                                        APEX INTELLIGENCE
+
+
+  Definition. For z ∈ Z2 pick N ≥ 0 with z + N g ∈ R and set G(z)
+                                                             e    = G(z +N g). This is well
+defined: if N ≤ N both work, then G(z + N g) = G (z + N g) + (N ′ − N )g = G(z + N g) by
+                  ′                         ′
+
+Step 1. Taking N = 0 shows G e = G on R.
+  Periodicity. Given z, pick N with z + N g ∈ R; then also z + h + N g ∈ R, so G(z
+                                                                                e + h) =
+                                                               ′
+               
+G (z + N g) + h = G(z + N g) = eG(z) by Step 1. The same for h .                          □
+  An open half-plane with irrational boundary direction need not be a lattice-convex region
+under the closed-convex-set definition above. The direct half-plane argument in Lemma 8.2
+covers this case as well.
+8.2. The results quoted, and counterexamples of minimal order.
+Remark 8.3 (Counterexamples of minimal order). For a non-periodic configuration ξ of low convex
+complexity with A ⊂ Z+ , write ord(ξ) for the length of a Z-minimal periodic decomposition of ξ;
+by [11] a configuration of low complexity has a non-trivial annihilator and hence a finite periodic
+decomposition, so ord is finite. If the convex Nivat conjecture has a counterexample, then one
+may take a counterexample ξ with ord(ξ) minimal, and for such a ξ every non-periodic ξ ′ ∈ Xξ
+is again a counterexample, with ord(ξ ′ ) = ord(ξ).
+    Proof. Every finite-window pattern of ξ ′ is a pattern of ξ, so ξ ′ has low convex complexity; being
+non-periodic  P
+                it is a counterexample, and minimality gives ord(ξ ′ ) ≥ ord(ξ) =: m. Conversely
+write ξ = i≤m ξi minimal, with ξi of period hi ; the directions are pairwise distinct, since
+two   components with parallel periods could be merged, contradicting minimality. Then φ =
+Q
+     (X hi − 1) annihilates ξ; an annihilation relation is a linear identity on a finite window and
+   i
+therefore passes to the orbit closure, so φ annihilates ξ ′ , and by [11] the configuration ξ ′ has a
+periodic decomposition with at most m terms, that is ord(ξ ′ ) ≤ m.                                   □
+   Consequently every result of [2] proved under the standing assumption that the non-periodic
+configurations of the orbit closure all have the same order ([2, §4.1]) — including [2, Theorem 1.10]
+and the Claims of its §4 — is available for a counterexample ξ of minimal order; it is under that
+assumption that Theorem 8.7 below quotes [2, Lemma 4.6].
+Theorem 8.4 (Kari–Szabados [11]). Let ξ : Z2 → A with A ⊂ Z finite.
+      (a) If Pξ (S) ≤ |S| for some non-empty finite S ⊂ Z2 , then AnnZ (ξ) ̸= 0.
+      (b) If AnnZ (ξ) ̸= 0, then there are pairwise non-parallel h1 , . . . , hm ∈ Z2 \ {0} such that
+          φ= m
+                Q        hi − 1) annihilates ξ; and every η ∈ ZZ2 annihilated by such a φ can be
+                  i=1 (X
+                                          2
+          written η = i ηi with ηi ∈ ZZ of period hi (the values possibly unbounded).
+                        P
+
+     Both (a) and (b) are in [11]; the argument for (a) is the same as in the proof of Proposition 1.3.
+Lemma 8.5 (Passing to the orbit closure and reducing mod p). Let ξ be as in Theorem 8.4 with
+A ⊂ Z+ , and let φ = m      hi
+                      i=1 (X − 1) annihilate ξ, with the hi non-zero and pairwise non-parallel
+                     Q
+
+as in Theorem 8.4(b). Then for every ϑ ∈ Xξ and every prime p > max A:
+                                                       2
+      (a) φ annihilates ϑ, so ϑ = i ϑi with ϑi ∈ ZZ of period hi ;
+                                   P
+
+      (b) putting ϑ̄i := ϑi mod p : Z2 → Fp one has i ϑ̄i = ϑ, the values of ϑ being read in Fp (no
+                                                      P
+
+          colours are merged, since A ⊂ [[p]]), and each ϑ̄i has period hi ;
+      (c) after merging the components whose periods are parallel one may assume the hi pairwise
+          non-parallel; and if ϑ is non-periodic, at least two components remain.
+Proof. (a) At each z the identity φϑ = 0 involves only ϑ|z+supp φ , so it is a local function of ϑ; it
+vanishes on every translate of ξ, and local functions are continuous for the product topology,
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                 21
+
+hence it vanishes on Xξ . Now apply Theorem 8.4(b). (b) Reduce pointwise. (c) The sum of two
+components with parallel periods is again periodic (take a common multiple of the two periods);
+if only one term were left, ϑ would be periodic.                                            □
+                                                                                   2
+Theorem 8.6 (Colle [2, Theorem 1.9]). Let A ⊂ Z be finite and let ξ ∈ AZ have a non-trivial
+annihilator. If for every line ℓ either −ℓ ∈ / ONED(ξ) or ℓ ∈ / ONED(ξ), then ξ is fully periodic.
+In particular, if ξ is non-periodic there is a line ℓ with ±ℓ ∈ ONED(ξ).
+  The proof of [2, Theorem 1.9] uses the periodic-limit theorem of Kari and Moutot [9, 10] and
+the Boyle–Lind theorem [1]; it does not depend on the equal-order assumption of [2, §4.1].
+Theorem 8.7 (Colle [2, proof of Lemma 4.6]). Let ξ be a counterexample of minimal order in
+the sense of Remark 8.3, so that the equal-order assumption of §4.1 of [2] is in force, and let
+ℓ be as in Theorem 8.6. Then there are a non-periodic ϑ ∈ Xξ and a lattice-convex region R
+such that ϑ|R is fully periodic. Here R is a (ℓ, ℓ′ )-region: the set of lattice points of a convex
+unbounded polygonal region whose boundary consists of two unbounded edges, along ℓ and along
+ℓ′ , both nonexpansive lines for Xξ , and finitely many bounded edges.
+   Theorem 8.7 is extracted from Cases 1 and 2 in the proof of [2, Lemma 4.6]. There, regional
+periods require equality only where a point and its translate both belong to the region. Both
+cases also provide a period parallel to each of the two non-parallel unbounded edges. Orient these
+periods h, h′ along the corresponding outward rays of CR . Closed convexity puts h, h′ in KR : if
+x0 + R≥0 h ⊆ CR , then for x ∈ CR and t ≥ 0, letting s → ∞ in (1 − t/s)x + (t/s)(x0 + sh) ∈ CR
+gives x + th ∈ CR . Thus R + h, R + h′ ⊆ R, and the overlap identities hold at every point of
+R, giving full periodicity in the sense of §8.1. The source proof uses Lemma 3.5, Lemma 4.2,
+Propositions 2.13–2.14 and Claims 4.7–4.16 of [2], of which Claims 4.11 and 4.16 depend on
+the equal-order assumption. Only three items of it are used below: ϑ is non-periodic, R is a
+lattice-convex region, and ϑ is fully periodic on R. The position of the two asymptotic directions
+of the region is not needed: Proposition 8.9(b) gives the half-plane containments for its recession
+cone that are used in Lemma 8.15.
+8.3. The first half-plane. This subsection proves Theorem 8.1(i). The only tools are Lemma 8.2,
+the difference operators Qi of (0.2), and the finite-state argument of step (6) of Lemma D.7 in
+Appendix D.
+Lemma 8.8 (One-sided finite-state lemma). Let G : Z2 → Fp have period kv with v primitive and
+k ≥ 1, let (v, u) be a basis of Z2 , so det(v, u) = ±1, and define the row coordinate of z = sv + tu
+       t(z) = det(v, u) det(v,Pz). Let H1 , . . . , Hr ∈ Z2 with r ≥ 1 satisfy βj := t(Hj ) ̸= 0, and put
+by t = P
+β− := βj <0 βj and β+ := βj >0 βj . If
+                                                r
+                                                Y
+                                                      T Hj − 1 G
+                                                             
+                                         ∆ :=
+                                                j=1
+
+vanishes on the half-plane {t ≥ c}, then there is q ≥ 1 with G(z + qu) = G(z) for all z with
+t(z) ≥ c + β− ; in particular G is fully periodic on {t ≥ c + β− }, with the periods kv and qu,
+neither of which leaves that half-plane. If ∆ ≡ 0, then G is doubly periodic.
+Proof. Write z = sv + tu. Let W := {f : Z → Fp : f (s + k) = f (s)}, a set of cardinality pk , and
+for each row t let Gt ∈ W be Gt (s) := G(sv + tu). Write Hj = αj v + βj u. Then
+                  (T Hj G)(sv + tu) = G (s + αj )v + (t + βj )u = (ραj Gt+βj )(s),
+                                                                   
+22                                            APEX INTELLIGENCE
+
+where (ρf )(s) := f (s + 1) is an invertible linear map of W. Since ρ commutes with the translations
+in the t direction, for every t
+                          X                                          X                    X
+                  ∆t =        (−1)r−|C| ραC Gt+βC ,       αC :=            αj ,   βC :=         βj .
+                         C⊆[r]                                       j∈C                  j∈C
+
+The maximum β+ = maxC βC is attained only at C+ := {j : βj > 0} and the minimum
+β− = minC βC only at C− := {j : βj < 0}; put L := β+ − β− ≥ 1. From ∆t = 0 for t ≥ c we get:
+(F)    the forward recursion
+                         Gt+β+ = −(−1)r−|C+ | ρ−αC+
+                                                         X
+                                                                (−1)r−|C| ραC Gt+βC ,
+                                                        C̸=C+
+
+whose right-hand side involves only Gt+β− , . . . , Gt+β+ −1 ;
+(B) likewise Gt+β− is determined by Gt+β− +1 , . . . , Gt+β+ .
+   Let the state be xt := (Gt+β− , . . . , Gt+β+ −1 ) ∈ W L and let Σ := {xt : t ≥ c}, a finite set.
+By (F), xt+1 is determined by xt , so Ψ(xt ) := xt+1 is a well-defined map Σ → Σ; by (B) it is
+injective on Σ. An injective self-map of a finite set is a bijection, so (xt )t≥c is purely periodic:
+there is q ≥ 1 with xt+q = xt for all t ≥ c. Reading off the first component, Gt+q = Gt for
+t ≥ c + β− , that is G(z + qu) = G(z) whenever t(z) ≥ c + β− . If ∆ ≡ 0, take instead the finite
+set Σall := {xt : t ∈ Z}. Both recursions hold at every integer t, so the same argument makes the
+forward map a permutation of Σall . A positive power q of this permutation is the identity, giving
+Gt+q = Gt for every t ∈ Z. Thus G has the two independent periods qu and kv.                      □
+Proposition 8.9 (The first half-plane). Let ϑ : Z2 → Fp with ϑ = m        i=1 ϑi , m ≥ 2, where ϑi
+                                                                                    P
+
+has period hi = ki vi with vi primitive and the vi pairwise non-parallel. Let R be a lattice-convex
+region on which ϑ is fully periodic, with vectors a, b, and put K := KR . Then
+      (a) a, b ∈ K and dim K = 2;
+      (b) for each i exactly one of the following holds:
+           (α) the line Rvi meets int K, and then ϑi is doubly periodic;
+           (β) otherwise there are σi ∈ {+, −} and ti ∈ Z such that K ⊆ {σi πi ≥ 0} and ϑi is fully
+                periodic on the half-plane Ui := {σi πi ≥ ti };
+      (c) if ϑ is non-periodic and no component is doubly periodic, then K is a closed sector of
+          opening strictly between 0 and π, and its interior contains no ±vj . In particular K cannot
+          be a half-plane.
+Proof. Step 1 (global extension). By Lemma 8.2, a, b ∈ K, dim K = 2, g := a + b ∈ int K, and
+                                                        ϑ) of finite index. Choose N0 ≥ 1 with
+there is a doubly periodic ϑe with ϑe = ϑ on R and Per( e
+    2
+N0 Z ⊆ Per(ϑ) and put Hj := N0 hj . Pick x0 ∈ CR , so that x0 + K ⊆ CR .
+             e
+  Step 2 (differencing). Fix i and put Qi := j̸=i (T Hj − 1), with formal exponent set Ei =
+                                               Q
+
+{HC : C ⊆ [m] \ {i}} and the expansion (0.2). If z + Ei ⊆ R, then
+                                 X
+                                          (−1)m−1−|C| ϑe z + HC = ϑ(z) · (1 − 1)m−1 = 0,
+                                                                 
+                (Qi ϑ)(z) =                                       e
+                              C⊆[m]\{i}
+                              e On the other hand Hj is a period of ϑj , so Qi ϑj = 0 for j ̸= i,
+because every HC lies in Per(ϑ).
+and therefore
+                    Di := Qi ϑi = Qi ϑ vanishes on Ri′ := {z : z + Ei ⊆ R}.
+Put C ′ := e∈Ei (CR − e). Then Ri′ = C ′ ∩ Z2 , and C ′ ⊇ y0 + K where y0 := x0 + N ′ g with N ′
+            T
+
+large: indeed for x ∈ y0 + K and e ∈ Ei one has x − x0 + e = N ′ g + e + (x − y0 ) ∈ K, because
+N ′ g + e ∈ K.
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                  23
+
+   Step 3 (saturation along vi ). Di has period hi , so Di vanishes on Sati := {z : (z + Zhi ) ∩ Ri′ ̸=
+∅}. There are two cases.
+   (α) Rvi ∩ int K ̸= ∅. Then vi or −vi lies in int K, so for any z the point z + nhi enters y0 + K
+as n → +∞ or as n → −∞; hence Sati = Z2 and Di ≡ 0. Apply Lemma 8.8 in its whole-plane
+case to the basis (vi , ui ), the hypothesis t(Hj ) = N0 det(vi , hj ) ̸= 0 holding because the directions
+are pairwise non-parallel: ϑi is doubly periodic.
+   (β) Rvi ∩ int K = ∅. A convex set and a line missing its interior can be separated, so K lies in
+one of the two closed half-planes bounded by Rvi ; choose σi with K ⊆ {σi πi ≥ 0}. For the vector
+g ∈ int K of Step 1 put ai := σi πi (g) > 0. Choose εi > 0 so small that g ± εi vi ∈ K. For every
+τ > 0, the two points aτi (g ± εi vi ) lie in K ∩ {σi πi = τ }, so this slice contains a segment parallel
+to vi of length 2εi τ |vi |/ai . Choose ci > 0 with 2εi ci |vi |/ai ≥ |hi |. If σi πi (z − y0 ) ≥ ci , then
+                                                                                    
+                     (z + Rvi ) ∩ (y0 + K) = y0 + K ∩ {σi πi = σi πi (z − y0 )}
+contains a segment of length ≥ |hi | and hence a point of z + Zhi , these points being spaced
+|hi | apart along that line; so z ∈ Sati . Therefore Di vanishes on the half-plane {σi πi ≥ t} with
+t := ⌈ci + σi πi (y0 )⌉. Apply Lemma 8.8 to the basis (vi , σi ui ), for which t(z) = σi πi (z) and
+t(Hj ) = σi N0 det(vi , hj ) ̸= 0: the field ϑi is fully periodic on Ui := {σi πi ≥ ti } with the integer
+ti := t + β− . The choice of σi also gives K ⊆ {σi πi ≥ 0}, as required in (b).
+    Step 4 (part (c)). Suppose ϑ is non-periodic and no component is doubly periodic. Then
+case (α) occurs for no i, that is, no line Rvi meets int K. Now K is a closed convex cone with
+dim K = 2. If K were a half-plane, at most one line Rvi could lie on its boundary and all the
+others would fall into case (α), a contradiction; and K = R2 is excluded in the same way. A
+closed convex cone of dimension two in the plane is either the whole plane, a half-plane, or a
+closed sector of opening strictly between 0 and π. Thus K is such a sector, and its interior
+contains no ±vj .                                                                                      □
+Corollary 8.10 (Theorem 8.1(i)). Let ϑ and R be as in Theorem 8.7, let p > max A be a
+                       P
+prime, and let ϑ = i ϑ̄i be the decomposition of Lemma 8.5, with the hi pairwise non-parallel.
+Let I be the indices of the components that are not doubly periodic and let B be the sum of
+all the other components, so B is doubly periodic. Since ϑ is non-periodic, |I| ≥ 2: if I were
+empty then ϑ = B would be doubly periodic, and if I had one element then a common period
+of that component and B along its direction would be a period of ϑ. For each i ∈ I, case (α)
+of Proposition 8.9 is impossible. Part (b) therefore gives a half-plane Ui = {σi πi ≥ ti } of full
+periodicity and KR ⊆ {σi πi ≥ 0}. Choose i0 ∈ I, set Gi0 := ϑ̄i0 + B, and set Gi := ϑ̄i for
+i ∈ I \ {i0 }. The field Gi0 has a non-zero period along hi0 , obtained by taking a suitable multiple
+in Per(B), and is fully periodic on Ui0 : there it agrees with the sum of B and the doubly periodic
+extension of ϑ̄i0 |Ui0 from Lemma 8.2. It is not doubly periodic, since subtracting B would then
+                                      P
+make ϑ̄i0 doubly periodic. Thus ϑ = i∈I Gi , no component is doubly periodic, and their periods
+are pairwise non-parallel. Retaining the primitive directions and renaming the period multiples if
+necessary, every Gi is fully periodic on Ui , with KR ⊆ {σi πi ≥ 0}. The cone KR has dimension
+two and is a closed sector of opening < π whose interior contains no remaining component
+direction, by Proposition 8.9(a),(c) applied to this decomposition.
+Remark 8.11. (1) Proposition 8.9 is the one-sided version of Lemma 4.1 of §4 — the support
+of fi = Qi η lies in a strip — and Lemma 8.8 is the general form of step (6) of Lemma D.7. (2)
+In Proposition 8.9(b) neither the non-periodicity of ϑ nor the minimality of the decomposition
+is required. The corollary absorbs all doubly periodic components, including any that fall into
+case (β).
+24                                        APEX INTELLIGENCE
+
+8.4. The second half-plane. This subsection proves Theorem 8.1(ii), in three steps. Proposi-
+tion 8.14 uses Theorem D.1 to show that, when ϑ is pushed to the limit along a suitable direction,
+every subsequential limit on the far side of one component is doubly periodic. Lemma 8.16 shows
+that this forces the component to agree with a doubly periodic field on a half-plane on that
+side, the point of the argument being that there are only finitely many such limits. Lemma 8.15
+guarantees that the directions required can always be found, in a fixed order, so that an induction
+produces all of the Vi .
+Theorem 8.12 (The second half-plane). In the notation of Corollary 8.10, for every i ∈ I there
+is a half-plane Vi with Vi ∩ Ui = ∅ such that Gi |Vi is fully periodic.
+    The proof is at the end of the subsection. By step (γ) of Lemma 8.17, every half-plane of full
+periodicity of an hi -periodic field that is not doubly periodic is bounded by a line parallel to
+hi ; so such a Vi necessarily lies on the side of Ui opposite to Ui , and shrinking either Ui or Vi
+destroys nothing.
+Lemma 8.13 (Bi-periodicity over Fp ). Let G : Z2 → Fp have a non-zero period h, let d ∈ Z2 be
+non-parallel to h, and suppose g := (T d − 1)G is doubly periodic. Then G is doubly periodic.
+                                                                    M −1 id
+Proof. Choose M ≥ 1 with M d ∈ Per(g). From T M d − 1 =                     (T d − 1) we get
+                                                                               P   
+                                                                    i=0 T
+                        −1 id
+g ′ := (T M d − 1)G = M              M dg′ =     id M d g = g ′ . Hence
+                     P                       P
+                      i=0 T g, and T           iT T
+                                                  p−1         
+                                                         T iM d g ′ = p g ′ = 0,
+                                                   X
+                                 pM d
+                            (T          − 1)G =
+                                                   i=0
+so pM d is a period of G, and it is independent of h.                                            □
+
+Safe directions. In the notation of Corollary 8.10, whenever σj = − replace (vj , uj , hj ) by
+(−vj , −uj , −hj ). This preserves hj = kj vj with kj ≥ 1 and det(vj , uj ) = 1, and gives σj = +
+throughout, that is Uj = {πj ≥ tj }. For j ∈ I let Kj be the set of half-planes on which Gj is
+so far known to be fully periodic: initially Kj = {Uj }, and a half-plane Vj disjoint from Uj is
+added to Kj as soon as it has been produced. For H ∈ Kj write G      e H for the global extension of
+                                                                       j
+Gj |H furnished by Lemma 8.2. Fix N ≥ 1 divisible by all the kj and such that N Z2 is contained
+in the period lattice of every G e H . For a non-zero d ∈ N Z2 say that d fixes j if d ∥ hj — then
+                                    j
+d ∈ Zkj vj and T d Gj = Gj — and that d is safe for j if there is H = {τ πj ≥ t} ∈ Kj , τ ∈ {+, −},
+with τ πj (d) > 0. If d is safe for j then T nd Gj → G  e H pointwise as n → ∞, the convergence
+                                                          j
+being eventual equality at each point: for a fixed z and large n one has z + nd ∈ H, whence
+Gj (z + nd) = G  e H (z + nd) = G
+                                e H (z).
+                   j              j
+
+Proposition 8.14 (Two-component limits). Let b, c ∈ I with b ̸= c, let d ∈ N Z2 fix c, let
+πb (d) < 0, and let d be safe for every j ∈ I \ {b, c}. Let n1 < n2 < · · · be such that T nk d Gb
+                                                                    2
+converges pointwise — such a sequence exists by compactness of FZp — and write G∞      b for the
+limit. Then G∞b  is doubly periodic.
+Proof. By the preceding paragraph T nk d ϑ → Ξ := Gc + B + G∞         b pointwise, where B :=
+P        e Hj is doubly periodic. Since Xξ is closed, Ξ ∈ Xξ , so PΞ (S) ≤ Pϑ (S) ≤ |S|. Choose
+         G
+   j̸=b,c j
+h′c ∈ (Per(B) ∩ Zhc ) \ {0}; then θ1 := Gc + B has period h′c and θ2 := G∞  b has period hb (a
+pointwise limit of translates keeps the period), and h′c ∦ hb . Theorem D.1 supplies a non-zero
+period d0 of Ξ = θ1 + θ2 . There are three cases.
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                               25
+
+   (i) d0 is parallel to neither hb nor hc . Then g := (T d0 − 1)θ1 = −(T d0 − 1)θ2 has both h′c and
+hb as periods, hence is doubly periodic; Lemma 8.13, applied to θ1 with d0 ∦ h′c , makes θ1 doubly
+periodic, so Gc = θ1 − B is doubly periodic, contradicting Corollary 8.10.
+   (ii) d0 ∥ hb . Pick d1 ∈ (Zd0 ∩ Zhb ) \ {0}. From T d1 Ξ = Ξ and T d1 θ2 = θ2 we get T d1 θ1 = θ1 ;
+as d1 ∦ h′c , θ1 is doubly periodic and we conclude as in (i).
+   (iii) d0 ∥ hc . Pick d1 ∈ (Zd0 ∩ Zh′c ) \ {0}. From T d1 θ1 = θ1 and T d1 Ξ = Ξ we get T d1 θ2 = θ2 ;
+as d1 ∦ hb , the field θ2 = G∞b is doubly periodic.                                                  □
+Lemma 8.15 (Available directions). Let O ⊆ I be the set of components for which no Vj has
+yet been produced, O ̸= ∅, and let N be chosen as above. Then there are b ∈ O, c ∈ I \ {b} and
+d ∈ N Z2 satisfying all the hypotheses of Proposition 8.14.
+Proof. If O = {b}, take any c ̸= b and d := τ N hc with τ ∈ {+, −} chosen so that πb (τ hc ) < 0;
+this is possible because hc ∦ hb , so πb (hc ) ̸= 0. For j ̸= b, c we have j ∈/ O, so Kj = {Uj , Vj }
+contains a half-plane on each side of πj , and πj (d) ̸= 0; hence d is safe for j.
+   If |O| ≥ 2, put KO := j∈O {πj ≥ 0}. By Corollary 8.10 we have KR ⊆ {πj ≥ 0} for every
+                            T
+
+j ∈ O, so KO ⊇ KR and dim KO = 2. Being the intersection of |O| ≥ 2 closed half-planes
+through the origin with pairwise distinct boundary lines Rvj , the cone KO is a closed sector of
+opening < π. At each non-zero boundary point at least one defining inequality is an equality;
+otherwise all are strict and the point is interior. Consequently its two boundary rays lie on two
+of the lines Rva , Rvb with a, b ∈ O, a ̸= b. Also int KO ⊆ {πj > 0} for j ∈ O contains no ±vj
+with j ∈ O. Write r ⊂ Rva and r′ ⊂ Rvb for the two boundary rays, oriented so that turning
+anticlockwise from r to r′ sweeps exactly KO . Among the 2m rays {±vj : j ∈ I}, let rc = εc vc
+(c ∈ I, εc ∈ {+, −}) be the first one met when turning anticlockwise from r′ . It exists, and c ̸= b
+with ∠(r′ , rc ) < π: the angle from r′ anticlockwise to −r equals π − ∠(r, r′ ) < π = ∠(r′ , −r′ ), so
+−r occurs before −r′ . (The index c may lie in O, and may equal a.) Put d := εc N hc .
+   We verify the hypotheses. (1) d fixes c. (2) The interior of the sector Q := cone(r′ , rc ) contains
+none of the rays ±vj , since rc is the first after r′ , and its boundary rays are r′ ⊂ Rvb and
+rc ⊂ Rvc . For j ∈ O \ {b, c} the line Rvj misses Q \ {0}, so πj has constant sign on Q \ {0};
+as r′ ⊂ KO ⊆ {πj ≥ 0} and r′ ̸⊂ Rvj , that sign is positive, and in particular πj (d) > 0, so d is
+safe for j (using Uj ∈ Kj ). (3) Q is adjacent to KO along r′ and crosses the line Rvb , because
+∠(r′ , rc ) < π; hence Q ⊆ {πb ≤ 0}, and since rc ̸⊂ Rvb we get πb (d) < 0. (4) For j ∈      / O with
+j ̸= c we have Kj = {Uj , Vj } and πj (d) ̸= 0, so d is safe for j.                                  □
+Lemma 8.16 (Propagation). Let G : Z2 → Fp have period kv with v primitive and k ≥ 1, let
+(v, u) be a basis of Z2 with det(v, u) = 1 and put π := det(v, ·). Let d ∈ Z2 satisfy δ := −π(d) > 0.
+If every subsequential limit of the sequence (T nd G)n≥1 is doubly periodic, then there are β ∈ Z
+and a doubly periodic field θ∗ with G = θ∗ on {π ≤ β}.
+Proof. Let Ω be the set of limit points of the sequence: y ∈ Ω if and only if T nk d G → y pointwise
+                                                   2
+for some n1 < n2 < · · · . By compactness of FZp , Ω ̸= ∅; it is closed; and T d Ω = T −d Ω = Ω,
+since replacing the indices nk by nk ± 1 does not affect the existence of a subsequential limit.
+Every element of Ω has period kv, each T nd G having it and pointwise limits keeping it, and is
+doubly periodic by hypothesis. Call {π = t} the t-th row and put BW := {sv + tu : |s|, |t| ≤ W }.
+Two fields of period kv that agree at k consecutive lattice points of a row agree on the whole
+row; so agreement on BW with W ≥ k implies agreement on the rows −W to W . For a doubly
+periodic y of period kv set
+                            Tr(y) := min{π(λ) : λ ∈ Per(y), π(λ) > 0},
+which is defined because Per(y) has finite index.
+26                                        APEX INTELLIGENCE
+
+    Step 1: Ω is finite. First, {y ∈ Ω : Tr(y) ≤ P } is finite for every P . Indeed take λ ∈ Per(y) with
+π(λ) = Tr(y); subtracting a multiple of kv we may assume λ = s′ v + Tr(y) u with 0 ≤ s′ < k. For
+any z write π(z) = m Tr(y) + r with 0 ≤ r < Tr(y); then y(z) = y(z − mλ) and π(z − mλ) = r.
+So y is determined by λ together with the values of y on {sv + tu : 0 ≤ s < k, 0 ≤ t < Tr(y)},
+and there are only finitely many such data.
+    Suppose Ω were infinite. Then there are yn ∈ Ω with Tr(yn ) → ∞; passing to a subsequence,
+yn → θ ∈ Ω. Now θ is doubly periodic; put P := Tr(θ) and choose ϖ ∈ Per(θ) with π(ϖ) = P .
+From yn → θ we may choose Wn → ∞ with yn = θ on BWn , hence, once Wn ≥ k, on the rows
+−Wn to Wn .
+    Call the t-th row ϖ-good for yn if yn (z + ϖ) = yn (z) for every z with π(z) = t. The rows −Wn
+to Wn − P are ϖ-good: both z and z + ϖ lie in rows where yn and θ agree, and θ(z + ϖ) = θ(z).
+Let Jn be the largest integer interval containing [−Wn , Wn − P ] and consisting of ϖ-good rows.
+If Jn = Z then ϖ ∈ Per(yn ) and Tr(yn ) ≤ P , contradicting Tr(yn ) → ∞ for large n. So
+Jn = [an , bn ] has at least one finite endpoint; passing to a subsequence we may assume an finite
+for every n, the case of finite bn being symmetric (replace T qn d below by T −qn d and {π ≥ δ} by
+{π ≤ −δ}). Then an ≤ −Wn and the row an − 1 is not ϖ-good: there is zn with π(zn ) = an − 1
+and yn (zn + ϖ) ̸= yn (zn ).
+    Put qn := ⌈−an /δ⌉ ≥ 1, so that rn := an + qn δ ∈ [0, δ), and put yn′ := T qn d yn ∈ Ω. Since
+π(z + qn d) = π(z) − qn δ, the t-th row is ϖ-good for yn′ exactly when the row t − qn δ is ϖ-good
+for yn . Hence the rows rn to bn + qn δ are ϖ-good for yn′ , where bn + qn δ ≥ (Wn − P ) + (−an ) ≥
+2Wn − P → ∞, while the row rn − 1 is not: the point zn′ := zn − qn d satisfies π(zn′ ) = rn − 1 and
+yn′ (zn′ + ϖ) ̸= yn′ (zn′ ). Using the kv-periodicity, translate zn′ along v into {sv + tu : 0 ≤ s < k};
+this yields a point zn′′ of the finite set F := {sv + tu : 0 ≤ s < k, −1 ≤ t ≤ δ − 2} with
+yn′ (zn′′ + ϖ) ̸= yn′ (zn′′ ). Passing to a further subsequence we may assume zn′′ = z∗ and rn = r∗
+constant and yn′ → y ∈ Ω, Ω being closed.
+    Then: (i) y(z + ϖ) = y(z) whenever π(z) ≥ δ — for large n one has rn ≤ δ − 1 < π(z) ≤
+bn + qn δ, so the row π(z) is ϖ-good for yn′ , and one lets n → ∞; and (ii) y(z∗ + ϖ) ̸= y(z∗ ), the
+two values lying in the finite set Fp and converging, so that the inequality survives in the limit.
+But y ∈ Ω is doubly periodic: taking λ ∈ Per(y) with π(λ) > 0 and M with π(z∗ + M λ) ≥ δ,
+part (i) gives
+                             y(z∗ + ϖ) = y(z∗ + ϖ + M λ) = y(z∗ + M λ) = y(z∗ ),
+contradicting (ii). So Ω is finite.
+    Step 2: eventual agreement. Put Λ := y∈Ω Per(y), of finite index, and choose N ′ ≥ 1 with
+                                                 T
+
+N ′ Z2 ⊆ Λ; every element of Ω then has period N ′ u. Put W := max(k, N ′ + δ).
+    (a) For all large n the field T nd G agrees on BW with some element of Ω. Otherwise there are
+n1 < n2 < · · · with T nk d G|BW outside the finite set {y|BW : y ∈ Ω}; passing to a convergent
+subsequence with limit y ∈ Ω gives T nk d G|BW = y|BW for large k, a contradiction. For such n
+choose y (n) ∈ Ω with T nd G = y (n) on BW , hence, W ≥ k, on the rows −W to W .
+    (b) Let n ≥ n0 be such n. For π(z) ∈ [−W + δ, W ] one has π(z + d) ∈ [−W, W ], so
+             y (n+1) (z) = (T (n+1)d G)(z) = (T nd G)(z + d) = y (n) (z + d) = (T d y (n) )(z).
+Thus T d y (n) and y (n+1) agree on 2W − δ + 1 ≥ N ′ consecutive entire rows. Both lie in Ω, since
+T d Ω = Ω, and both have period N ′ u; any row can be translated by a multiple of N ′ u into those
+N ′ consecutive rows, so the two fields agree everywhere: T d y (n) = y (n+1) .
+   (c) Hence y (n) = T (n−n0 )d y (n0 ) for n ≥ n0 . For π(w) ∈ [−nδ − W, −nδ + W ] one has
+π(w − nd) ∈ [−W, W ], so
+     G(w) = (T nd G)(w − nd) = y (n) (w − nd) = y (n0 ) w − nd + (n − n0 )d = T −n0 d y (n0 ) (w).
+                                                                                                 
+                  STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                             27
+
+As n runs over the integers ≥ n0 , the row intervals [−nδ − W, −nδ + W ] cover (−∞, −n0 δ + W ],
+consecutive intervals overlapping because 2W ≥ δ. Take θ∗ := T −n0 d y (n0 ) , which is doubly
+periodic, and β := −n0 δ + W .                                                               □
+Proof of Theorem 8.12. Induct, starting from O := I, the set of components for which no Vj
+has yet been produced. While O ̸= ∅, choose N as in the paragraph on safe directions — it
+depends on the current Kj — and take b ∈ O, c and d as in Lemma 8.15. By Proposition 8.14
+every subsequential limit of (T nd Gb )n≥1 is doubly periodic, so Lemma 8.16, applied to G := Gb ,
+v := vb , u := ub and this d (for which πb (d) < 0), yields β and a doubly periodic θ∗ with Gb = θ∗
+on {πb ≤ β}. Put Vb := {πb ≤ min(β, tb − 1)}. Then Vb ∩ Ub = ∅ and Gb |Vb is fully periodic,
+with the periods kb vb and any λ ∈ Per(θ∗ ) with πb (λ) < 0, neither of which leaves Vb . Add Vb to
+Kb and remove b from O. Each step decreases |O| by one, so after |I| steps O = ∅ and every
+component has the required Vi .                                                                  □
+8.5. Normalisation.
+Lemma 8.17 (Normalisation). Let θ : Z2 → Fp be non-periodic and suppose θ = m
+                                                                                    P
+                                                                                     i=1 Gi , where
+each Gi : Z2 → Fp has a non-zero period hi and there are disjoint half-planes Ui , Vi on which Gi
+is fully periodic. Then θ is a star configuration.
+   Call a family (Gi , hi , Ui , Vi )m
+                                     i=1 with these properties an admissible decomposition of θ, of
+length m. Since θ is non-periodic, every admissible decomposition has m ≥ 2: for m = 1 we
+would have θ = G1 periodic.
+Proof. Step (γ): alignment of the components that are not doubly periodic. Let G have a non-zero
+period h, not be doubly periodic, and be fully periodic on disjoint half-planes U with normal n
+and V with normal n′ . Claim: ⟨h, n⟩ = 0. Let G  e be the global extension of G|U from Lemma 8.2
+and put ΓU := Per(G),e of finite index. Suppose ⟨h, n⟩ ̸= 0; replacing h by −h we may assume
+⟨h, n⟩ > 0. For z ∈ U we have z + h ∈ U , so G(z     e + h) = G(z + h) = G(z) = G(z):     e       the
+ΓU -periodic function G(· + h) − G vanishes on U . But a ΓU -periodic function vanishing on a
+                       e           e
+half-plane vanishes everywhere: ΓU contains some N ′ Z2 and hence a vector g with ⟨g, n⟩ > 0,
+and any z is translated into U by z + N g for N large. So G    e has period h. Now for any z pick
+N with z + N h ∈ U : then G(z) = G(z + N h) = G(z + N h) = G(z),
+                                                     e              e       that is G = G
+                                                                                        e is doubly
+periodic, a contradiction.
+   Hence n ⊥ h. Write h = kv with v primitive and k ≥ 1, after changing the sign of h if
+necessary, and put π = det(v, ·). Since v ⊥ = (−v2 , v1 ) satisfies ⟨z, v ⊥ ⟩ = π(z) and n ∥ v ⊥ , we
+have ⟨z, n⟩ = κ π(z) for some κ ∈ R× , so U is either {π < ℓ} or {π > r} with ℓ, r ∈ Z. The
+same applies to V . If U and V were both of the type {π < ·}, or both of the type {π > ·},
+they would intersect; so one is {π < ℓ} and the other is {π > r}, and disjointness says exactly
+ℓ ≤ r + 1. Taking L,
+                   e Re to be the global extensions of G on these two half-planes, G satisfies (S1)
+with period kv, (S2), and (S3).
+   Operation A: absorbing a doubly periodic component. Suppose Gi is doubly periodic and
+m ≥ 2; pick k ̸= i. Since Per(Gi ) has finite index, Per(Gi ) ∩ Zhk contains some h′k ̸= 0, and
+G′k := Gk + Gi has period h′k . On Uk we have G′k = G  e k + Gi by Lemma 8.2, the restriction of a
+doubly periodic field, hence fully periodic; likewise on Vk . Deleting Gi and replacing Gk by G′k
+gives an admissible decomposition of length m − 1.
+   Operation C: merging parallel components. Suppose Gi , Gk with i ̸= k are both not doubly
+periodic and hi ∥ hk . By Step (γ) there is a primitive
+                                                             v with hi = ±ki v, hk = ±kk v, and
+{Ui , Vi } = {π < ℓi }, {π > ri } , {Uk , Vk } = {π < ℓk }, {π > rk } , where π = det(v, ·).
+28                                      APEX INTELLIGENCE
+
+
+Then Gi + Gk has period lcm(ki , kk ) v, equals L         e k on {π < min(ℓi , ℓk )} and R
+                                                     ei + L                               ei + Re k on
+{π > max(ri , rk )}, both restrictions of doubly periodic fields and hence fully periodic; and these
+two half-planes are disjoint, since min(ℓi , ℓk ) ≤ ℓi ≤ ri + 1 ≤ max(ri , rk ) + 1. Merging gives an
+admissible decomposition of length m − 1.
+   Termination and conclusion. Starting from the given admissible decomposition, repeat: if
+some component is doubly periodic, apply Operation A; otherwise, if some pair is parallel, apply
+Operation C. Each step strictly decreases the length, so the process terminates. At termination
+no component is doubly periodic, the periods are pairwise non-parallel, and m ≥ 2. By Step (γ)
+every component satisfies (S1)–(S3) and the primitive directions vi are pairwise non-parallel. So
+θ is a star configuration.                                                                           □
+8.6. The convex Nivat conjecture.
+Theorem 8.18 (Convex Nivat conjecture). Let ξ : Z2 → A with A finite, and suppose there is a
+non-empty finite lattice-convex S with Pξ (S) ≤ |S|. Then ξ is periodic.
+Proof. Suppose the conjecture has a counterexample. Embed the alphabet into Z>0 by an
+injective encoding, which changes neither the number of patterns nor periodicity, and use
+Remark 8.3 to choose a counterexample of minimal ord, still written ξ; it is non-periodic and
+has low convex complexity.
+   (0) The annihilator. Theorem 8.4 supplies pairwise non-parallel h1 , . . . , hm and φ = i (X hi −
+                                                                                          Q
+
+1) annihilating ξ; we may take m = ord(ξ).
+   (1) The region. Theorem 8.6 supplies ℓ, and Theorem 8.7 a non-periodic ϑ ∈ Xξ together with
+a lattice-convex region R on which ϑ is fully periodic.
+   (2) The decomposition. Take any prime p > max A; then Lemma 8.5 gives ϑ = i ϑ̄i over Fp
+                                                                                        P
+
+with each ϑ̄i of period hi , the directions being pairwise distinct.
+   (3) The first half-plane. Corollary 8.10 gives ϑ = i∈I Gi with |I| ≥ 2, no component doubly
+                                                       P
+
+periodic, pairwise non-parallel periods, and each Gi fully periodic on Ui .
+   (4) The second half-plane. Theorem 8.12 gives half-planes Vi disjoint from Ui with Gi |Vi fully
+periodic. At this point the whole of Theorem 8.1 holds.
+   (5) The complexity does not increase. Since A ⊂ [[p]], reading the values of ϑ in Fp merges no
+colours: as an Fp -valued configuration, ϑ has the same pattern set and the same periodicity as it
+has as an A-valued one. Every finite-window pattern of a configuration in Xξ is a pattern of ξ, a
+limit in the product topology agreeing with some translate on any finite window. Hence
+                                     Pϑ (S) ≤ Pξ (S) ≤ |S|.                                     (8.1)
+                                               P
+  (6) Normalisation. ϑ is non-periodic, ϑ = i∈I Gi over Fp with each Gi of period hi and fully
+periodic on the disjoint half-planes Ui , Vi . By Lemma 8.17, ϑ is a star configuration.
+  (7) Contradiction. By Theorem 7.3, Pϑ (S) ≥ |S| + 1, contradicting (8.1).                 □
+                                                              
+Corollary 8.19 (Nivat’s conjecture). If Pξ [1, n] × [1, k] ≤ nk for some n, k ≥ 1, then ξ is
+periodic. (A rectangle is lattice-convex.)
+                     STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                        29
+
+                               Appendix A. Skeleton of the proof
+
+
+   §1 ∃a : DIa ̸= 0 =⇒ Theorem 7.3 at once, no convexity needed;
+      otherwise DIa ≡ 0 and Dη = 0.
+   §2 Λi = exceptional spectrum, A = i Ai (T vi ), Z = Newt(A);
+                                        Q
+
+      f (T )η = const ⇒ A | f =⇒ dim US ≥ |S| − |RZ (S)| + 1.
+   §3 Ae agrees on adjacent realised sectors ⇒ Aeθ = b, doubly periodic, all Hi -invariant.
+   §4 fi = Qi η ̸= 0 and transversally bounded =⇒ ∃d : J(d, ·) = Dz [η(z)η(z + d)] ̸= 0.
+   §5 A(Td )J = A(Tz Td−1 )J = 0; R/(a, c) spanned by Y Z−Z =⇒ d ∈ (Z − Z) ∩ Z2 .
+   §6 (Z − Z) ∩ Z2 = (Z ∩ Z2 ) − (Z ∩ Z2 ) =⇒ d = q1 − q0 , q0 , q1 ∈ Z.
+   §7 |RZ (S)| quadratic observables independent modulo US =⇒ Pθ (S) ≥ |S| + 1.
+                   Prop. 8.9   Thm. 8.12   Lem. 8.17
+   §8 [11],[2] −−−−−→ Ui −−−−−−→ Vi −−−−−−→ star configuration
+        Thm. 7.3
+       −−−−−→ convex Nivat =⇒ Nivat.
+   Dependencies: §§0–7 are self-contained, using only the standard facts that C[T ± ] is a unique
+factorisation domain, Newton-polygon additivity (Ostrowski), the Chinese remainder theorem,
+the Nullstellensatz, and the existence of unimodular triangulations of lattice polygons. The
+external inputs to §8 are Kari and Szabados [11] and Colle [2] only: the first supplies the
+annihilator and the periodic decomposition, the second a line both of whose directions are
+one-sided nonexpansive ([2, Theorem 1.9]) and a non-periodic configuration in the orbit closure
+that is fully periodic on a region (the proof of [2, Lemma 4.6]). The Fp and convex form of
+Szabados’ theorem, used by Proposition 8.14, is proved in Appendix D.
+
+ Appendix B. Independent edge-increment results, not part of the proof chain
+   Before the argument of §§0–8 took its present form, the same question was approached along
+a different route, by comparing Pθ (S) with Pθ (S \ E) for an edge E of the polygon Conv(S) and
+controlling the increment through the combinatorics of the edge directions of Conv(S) against
+the directions vi . That route produced a number of statements of independent interest: an
+exact identity for the lattice width of Conv(S) in a given direction in terms of its edge data, a
+divisibility relation between the determinants of three consecutive edge directions, a propagation
+principle for sums of functions each of which depends on a single one of the projections πi
+and which vanish on enough consecutive layers, a description of the periods surviving after
+repeated differencing, a count of the far-field patterns along an edge, and lower bounds of the
+form Pθ (S) − Pθ (S \ E) ≥ 2 for short edges and of the form Pθ (S) − Pθ (S \ E) ≥ (a row-length
+quantity) in general. None of them is used above, their proofs are not reproduced here, and the
+notation they require is not set up in this paper; they will be treated separately. Nothing in
+§§0–8 depends on any of them.
+
+                               Appendix C. Numerical verification
+   The scripts are star.py (construction, enumeration and all checks), verify.py and
+verify2.py (the two randomised experiments), and lemma31.py (the counterexample of §C.3).
+They depend only on numpy and are supplied as ancillary files together with their output for the
+stated seeds. The reported experimental values are read from that output; the supplementary
+exact checks described below are included with the source material. The latter include
+30                                      APEX INTELLIGENCE
+
+check_case_support.py, check_periods_and_spectra.py, and check_encodings.py; their
+locations and saved results are listed in the accompanying BUILD.md.
+C.1. Method.
+     • Configurations. Each component is specified by a primitive direction vi , a tangential
+       period ki , an arbitrary value table on the transition strip [ℓi , ri ], and left and right tails
+       Li , Ri given, in the basis (vi , ui ) of §0.3, as doubly periodic tables in (t mod a, s mod ki ).
+       Axioms (S1) and (S3) hold by construction. Axiom (S2) is decided exactly: Fi is doubly
+       periodic if and only if it coincides with the global extension of its left tail (a doubly
+       periodic function vanishing on a half-plane vanishes identically), and that coincidence is
+       tested on the strip and on one full period beyond it. With M the least common multiple
+       of all the kj and of all the tail period indices, the lattice Γ of §0.3 contains M Z2 , and the
+       program uses Hi = M ki vi ; by Remark 1.4 this choice, which need not be the minimal
+       one, does not affect the Case A/Case B decision, and it does not affect Λi either, since
+       refining the period only adds zero Fourier coefficients.
+     • Pattern counts. The S-patterns are enumerated at all anchors of the square box of radius
+       R = 90 and again of radius R = 180. The entries labelled Pθ (S) below are these observed
+       counts, hence lower bounds for the global complexity. The two counts agreed on every
+       reported window, but this agreement alone does not certify exhaustiveness: that would
+       require covering the strip crossings and all periodic phase classes outside them, with the
+       window offsets included.
+     • Deciding the case. DIa is computed on the box of radius 40 from the formal expansion
+       (0.1). A non-zero value certifies Case A; an all-zero result only suggests Case B unless
+       the box covers the support. For the reported configurations, the case assignments were
+       additionally confirmed on boxes containing all pairwise intersections of the strips
+                         ℓi − max πi (HC ) ≤ πi (z) ≤ ri − min πi (HC ).
+                              C⊆[m]                           C⊆[m]
+
+       The strip argument of Lemma 1.1, with W = {0}, places the entire support of every DIa
+       inside this union.
+                                                       σ,ϵ
+     • Spectrum and zonotope. The fields Ξ±     i and Gi are built as in §2.1; for each difference
+       field di,σ,ϵ,a a length-κi DFT is taken row by row over all rows within 2M + 2 of the
+       strip (outside the strip the rows repeat with period M ). Frequencies with coefficient of
+       modulus above 10−9 give numerical estimates of Λi , di and Z. For all 570 components in
+       the two experiments, the frequency sets were also checked exactly by reducing the integer
+       row polynomials modulo the appropriate cyclotomic polynomials; every set agreed with
+       the DFT output. The set RZ (S) is decided by testing whether all subset sums of the
+       di vi , translated by r, lie in Conv(S).
+     • Ranks. The encoding w is a random injection into {1, . . . , 100}. Injectivity alone does
+       not imply the spectrum-preservation condition of Lemma 2.2; for the reported encodings
+       that condition was checked separately by exact cyclotomic remainders and held for all
+       570 components. The rank of the |L| × (|S| + 1) matrix 1, w(γ(s))s∈S γ∈L is computed
+       over Fq with q = 231 − 1. The entries labelled dim US below are these modular ranks
+       of the sampled pattern matrices; they are lower bounds for the rational ranks on the
+       full pattern set. Meeting the lower bound in Lemma 2.5 is therefore sufficient to verify
+       that inequality for the sampled configuration. In Case B with RZ (S) ̸= ∅ the matrix
+       is extended by the columns Φr (γ) = w(γ(r + q)) w(γ(r + q + d)), r ∈ RZ (S), of §7, and
+       the rank H2 (S) of the extended matrix is compared with dim US + |RZ (S)| (Lemma 7.2)
+       and with |S| + 1 (Theorem 7.3).
+                       STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                31
+
+      • Witness and background. In Case B, for every non-zero d ∈ (Z − Z) ∩ Z2 the function
+        J(d, ·) is computed on the box of radius 40 and the non-zero instances are collected
+        (Proposition 5.3); the first of them, with a q as in Corollary 6.2, is the pair (d, q) used
+        for the Φr . The polynomial A is built with complex coefficients from the Λi , and Aeθ is
+        checked to be M Z2 -periodic on the box (Proposition 3.3).
+C.2. Results. Experiment 1 (script verify.py, seed 1). We generated 84 random star
+configurations with p ∈ {2, 3, 5}, m ∈ {2, 3}, directions drawn without repetition from the 8
+primitive vectors (1, 0), (0, 1), (1, ±1), (1, ±2), (2, ±1), ki ∈ {1, 2, 3}, tail periods of 1 or 2 rows,
+strip widths 1 to 3 with ℓi ∈ {−1, 0, 1}, all tables uniformly random over Fp subject to (S2);
+component 1 has independently drawn left and right tails, the other components have Li = Ri .
+Windows: the 2 × 3, 3 × 3, 2 × 4 and 4 × 2 rectangles, the 6-point triangle with vertices
+(0, 0), (2, 0), (0, 2), the 8-point hexagon with vertices (1, 0), (2, 0), (3, 1), (2, 2), (1, 2), (0, 1), the
+5-point rhombus with vertices (0, 0), (1, 1), (2, 0), (1, −1), and the 3-point segment {0, 1, 2} × {0}.
+Result: 81 configurations in Case A and 3 in Case B; Pθ (S) ≥ |S| + 1 held on all 8 windows of all
+84 configurations. The three Case-B instances have di ∈ {3, 6}, so Z is larger than every window
+and RZ (S) = ∅ throughout; on them dim US was exactly |S| + 1 on every window, with 192, 310
+and 28 non-zero witnesses d found respectively, and the periodicity residual of Aeθ on the tested
+box was at most 2 · 10−15 . These are instances of Remark 2.6; Experiment 2 targets RZ (S) ̸= ∅.
+Experiment          2 (script verify2.py, seed 7). We generated 157 configurations of the form
+         ◦           i = 1 and constant tails: each wi : Z → Fp takes a constant value ci outside
+P
+   i w i   π i , so k
+a window of length 1 to 4 and arbitrary values inside it, with Li = Ri = ci ; p ∈ {2, 3, 5},
+m = 2 with probability 0.7 and m = 3 with probability 0.3, directions drawn from the 11
+primitive vectors (1, 0), (0, 1), (1, ±1), (1, ±2), (2, ±1), (1, ±3), (3, 1). Windows: the 3 × 4, 4 × 4,
+5 × 3 and 4 × 3 rectangles, the 15-point triangle with vertices (0, 0), (4, 0), (0, 4), the 17-point
+hexagon with vertices (1, 0), (3, 0), (4, 2), (3, 4), (1, 4), (0, 2), the 13-point rhombus with vertices
+(0, 0), (2, 2), (4, 0), (2, −2), and the 12-point parallelogram with vertices (0, 0), (3, 0), (5, 2), (2, 2).
+Result: 128 in Case A and 29 in Case B, all with di = 1; Pθ (S) ≥ |S| + 1 held on all 8 windows
+of all 157 configurations, and every check listed in §C.1 passed on every Case-B instance. Of the
+29 Case-B configurations, 14 have RZ (S) ̸= ∅ for at least one window, giving 35 configuration–
+window pairs with RZ (S) ̸= ∅ and |RZ (S)| ∈ {1, 2, 3, 4, 5}; all 35 have m = 2 (no Case-B instance
+with m = 3 and RZ (S) ̸= ∅ was produced by this generator). Representative rows of the output:
+ p directions          S         |S| Pθ (S)    di      |RZ (S)| dim US |S| + 1 − |RZ (S)| H2 (S)      d
+ 3   (1, 2), (1, 0)    4×4       16    35     (1, 1)      4       13           13           17     (−1, −1)
+ 3   (1, 2), (1, 0)    hexagon   17    37     (1, 1)      5       13           13           18     (−1, −1)
+ 3   (1, 2), (1, −2)   hexagon   17    45     (1, 1)      3       15           15           18     (−1, −1)
+ 5   (1, −3), (1, 0)   4×4       16    37     (1, 1)      2       15           15           17      (−1, 1)
+ 2   (2, −1), (1, 2)   hexagon   17    41     (1, 1)      2       16           16           18      (−2, 0)
+ 5   (2, 1), (1, 2)    4×4       16    54     (1, 1)      1       16           16           17     (−2, −2)
+On all 35 pairs with RZ (S) ̸= ∅, the sampled base matrix had modular rank |S| + 1 − |RZ (S)|,
+and the extended matrix had modular rank H2 (S) = |S| + 1. Thus their rank difference was
+exactly |RZ (S)|, matching the dimension comparison in §7. These numerical equalities alone do
+not identify the full rational space of affine relations. On the 116 two-component configurations
+of Experiment 2 the criterion of Observation C.1 below agreed with the computed case in all 116
+instances, and the Case-B direction pairs had | det(v1 , v2 )| ∈ {2, 3, 4, 5, 6, 7, 10}.
+Observation C.1 (A criterion for Case B when m = 2). Suppose m = 2 and both components
+satisfy Li = Ri ; write δi = Fi − Li for the deviation field, supported in strip i. Replace Hi by a
+32                                         APEX INTELLIGENCE
+
+sufficiently large multiple, which by Remark 1.4 does not change the Case A/Case B decision, and
+expand the four-point template {z, z + H1 , z + H2 , z + H1 + H2 } at an anchor z: δ1 is constant
+along the H1 -pairs and δ2 along the H2 -pairs, so Deθ (z) = 0 if and only if at least one of the two
+pairs of constants agrees. Hence Case B holds if and only if supp δ1 ∩ supp δ2 = ∅, that is, no
+point is deviated by both components at once. In particular, when ki = 1, the tails are constant
+and equal, and | det(v1 , v2 )| = 1, one is always in Case A: the map (π1 , π2 ) : Z2 → Z2 is then
+surjective and the two deviation sets must meet. Under these additional hypotheses, Case B
+occurs only for | det | ≥ 2. The sample of Experiment 2 was generated at random and then sorted
+by the numerical test; the criterion explains why Case B appeared only on direction pairs with
+| det | ≥ 2.
+C.3. A counterexample to the generalisation of Lemma 3.1. (lemma31.py.) Take p = 2,
+m = 3, v1 = (1, 0), v2 = (0, −1), v3 = (1, −1). Tails: L1 = 0 and R1 = ⊮[x even]; L2 = L3 = 0
+and R2 = R3 = ⊮[3 | x]; the transition strip of each component is constant 1, of width 1. Here
+π2 (v1 ) = π3 (v1 ) = 1 > 0, so B1+ = R2 + R3 ≡ 0 and B1− = L2 + L3 = 0, and the program
+computes Λ1 = {±1} (with κ1 = 12 and frequencies {0, 6}), so that A1 (T v1 ) = T 2v1 − 1.
+      • For the pairs of realised sectors adjacent along the rays ±v1 , namely (R1 , R2 , R3 ) with
+        (L1 , R2 , R3 ) and (R1 , L2 , L3 ) with (L1 , L2 , L3 ): the difference after applying A1 (T v1 ) is
+        0, up to a floating-point error of 1.3 · 10−16 , for both colours.
+      • For the mixed choice (R1 , R2 , L3 ) against (L1 , R2 , L3 ) — here B = R2 + L3 = ⊮[3 | x],
+        and the sign vector (+, +, −) corresponds to the cone {y > 0, x > 0, x + y < 0} = ∅,
+        which is not realised: the difference after applying A1 (T v1 ) has maximum absolute value
+        2.
+  By hand: along the x-direction, ∆1 = ⊮[R1 + B = 1] − ⊮[L1 + B = 1] takes the values
+(−1, 0, 1, 0, 1, 0) for x mod 6 = 0, . . . , 5, whereas its translate by x 7→ x + 2 is (1, 0, 1, 0, −1, 0).
+The two differ, so ∆1 is not killed by T 2v1 − 1: its spectrum contains cube roots of unity, and
+those are not in Λ1 . This is why §3 can only assert that Ae is constant across the realised sectors,
+where B = Biσ — and that is exactly, and only, what Lemma 3.2 needs.
+
+              Appendix D. The Fp and convex form of Szabados’ theorem
+   This appendix proves in full the Fp and convex version of a theorem of Szabados. Szabados
+[17, Theorem 1] proved that a non-periodic sum of two Z-valued periodic configurations with
+different period directions does not have low rectangular complexity; the convex generalisation is
+[2, Theorem 1.7], and the Fp and convex version is stated, with a sketch, as [5, Theorem 2.8].
+Theorem D.1 below is the latter, proved here in full. The proof follows Szabados [17] — pigeonhole,
+balanced sets, and the one-dimensional Morse–Hedlund theorem — with two changes. The
+coefficient ring is Fp : the algebraic steps use addition, subtraction, equality and periodicity,
+without division or a property specific to the characteristic. The window is an arbitrary lattice-
+convex set instead of a rectangle: in Lemma D.5 one deletes, at each step, whichever of the
+two extreme rows is the shorter. In addition, Lemma 3 of [17] rests on Lemma 39 of Kari and
+Szabados [11]; we replace it by two self-contained arguments, Lemma D.3, which uses the explicit
+shape of the annihilator, and step (6) of Lemma D.7, which uses the two-sided recursion supplied
+by the generating property. Apart from the one-dimensional Morse–Hedlund theorem, nothing
+external is quoted here.
+                   STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                33
+
+D.0. The statements.
+Theorem D.1. Let p be a prime, let θ1 , θ2 : Z2 → Fp have periods h1 , h2 ∈ Z2 \ {0} respectively,
+with h1 and h2 linearly independent over R, and put θ = θ1 + θ2 . If Pθ (S) ≤ |S| for some
+non-empty finite lattice-convex S, then θ is periodic.
+Corollary D.2. Let η : Z2 → Fp and let η = η1 + η2 be an Fp -minimal periodic decomposition,
+of order 2 — that is, a decomposition into periodic Fp -configurations with as few summands as
+possible, here two. Then η does not have low convex complexity.
+Proof. Order 2 forces η to be non-periodic, a periodic configuration having a minimal decomposi-
+tion of length 1, and it forces the two periods to point in different directions, components with
+parallel periods being mergeable into one, against minimality. If η had low convex complexity,
+Theorem D.1 would make it periodic, a contradiction.                                           □
+D.1. Notation. Let u be the primitive vector in the direction of h1 , so that h1 = c1 u with
+c1 ≥ 1, and let π := det(u, ·) : Z2 → Z, which is surjective. The rows are the fibres Lt := π −1 (t);
+neighbouring lattice points of a row differ by u. Put ∆ := π(h2 ) ̸= 0 and, replacing h2 by −h2
+if necessary, assume ∆ > 0. For integers a ≤ b the strip St[a, b] := {v : a ≤ π(v) ≤ b}, of width
+b − a, is the union of the rows La , . . . , Lb and is invariant under ±u; we also set St[a, a − 1] := ∅.
+For a non-empty finite F ⊂ Z2 put ht(F ) := max π(F ) − min π(F ); F fits into St[a, b] if some
+translate of it is contained there, that is if ht(F ) ≤ b − a. For a non-empty finite lattice-convex
+F write E+ (F ) := F ∩ Lmax π(F ) and E− (F ) := F ∩ Lmin π(F ) , the top and bottom rows; lattice
+convexity makes every non-empty row of F a run of consecutive lattice points.
+   For a finite F ⊂ Z2 write Pat(F, θ) := {θ|v+F : v ∈ Z2 }, the patterns being regarded
+as functions w 7→ θ(v + w) on F , so that Pθ (F ) = |Pat(F, θ)| in the notation of §0.2, with
+Pθ (∅) = 1; Xθ is the orbit closure, so that every finite-window pattern of an x ∈ Xθ is a pattern
+of θ. “x = θ on U ” means x(v) = θ(v) for all v ∈ U . Inside this appendix the letter D denotes
+auxiliary finite sets and never the difference operator of §0.3, which does not occur here.
+D.2. Two algebraic facts. For s ∈ Z, the h2 -periodicity of θ2 gives
+               θ(v + sh2 ) − θ(v) = θ1 (v + sh2 ) − θ1 (v),   which is h1 -periodic in v.         (D.1)
+Consequently: if T sh2 θ, that is v 7→ θ(v + sh2 ), agrees with θ on a set F , then it agrees with θ
+on F + Zh1 .
+Lemma D.3 (Periodicity on a strip implies periodicity). Suppose b − a ≥ ∆ and q ≥ 1, and
+that θ(v + qu) = θ(v) for all v ∈ St[a, b]. Then θ has period qh1 .
+Proof. The strip is invariant under +u, so θ(v + qh1 ) = θ(v) for v ∈ St[a, b], applying the
+hypothesis c1 times. Put ψ(v) := θ(v + qh1 ) − θ(v); since θ1 has period h1 we have ψ(v) =
+θ2 (v + qh1 ) − θ2 (v), so ψ has period h2 , and ψ = 0 on St[a, b]. Write h2 = gh′2 with h′2 primitive
+and take any lattice line L = {v0 + sh′2 : s ∈ Z} in the direction h′2 . Then ψ|L is periodic in
+s with period g, while π(v0 + sh′2 ) = π(v0 ) + s π(h′2 ) runs through an arithmetic progression
+of common difference π(h′2 ) = ∆/g ≥ 1; a closed interval [a, b] of length b − a ≥ ∆ = g · (∆/g)
+contains at least g of its terms, so L meets St[a, b] in at least g consecutive of its points. A
+function of period g vanishing at g consecutive points vanishes identically, so ψ|L ≡ 0. As L was
+arbitrary, ψ ≡ 0.                                                                                   □
+34                                       APEX INTELLIGENCE
+
+D.3. Balanced sets.
+Definition D.4. Let B be a non-empty finite lattice-convex set, let σ ∈ {+, −} and put
+E := Eσ (B). Call B σ-balanced if
+       (i) Pθ (B) ≤ |B|;
+      (ii) Pθ (B) < Pθ (B \ E) + |E|;
+     (iii) for every integer t ∈ [min π(B), max π(B)], one has |B ∩ Lt | ≥ |E| − 1.
+Lemma D.5 (Existence). Let S be a non-empty finite lattice-convex set with Pθ (S) ≤ |S|. Then
+there are a sign σ and a σ-balanced set B ⊆ S.
+Proof. Construct D0 := S ⊋ D1 ⊋ · · · ⊋ DK = ∅ as follows: if Di ̸= ∅, choose σi with
+|Eσi (Di )| ≤ |E−σi (Di )| — either sign will do when Di has a single row, where E+ = E− = Di —
+and put Di+1 := Di \ Eσi (Di ). Each Di is again lattice-convex: after an extreme row has been
+deleted the remaining points lie in an open half-plane, so the lattice points of their convex hull
+still belong to Di and do not lie on the deleted row. Put f (i) := Pθ (Di ) − |Di |; then f (0) ≤ 0 and
+f (K) = 1, so there is a smallest i with f (i + 1) > 0, and for it f (i) ≤ 0 < f (i + 1). Let B := Di ,
+σ := σi and E := Eσ (B). Condition (i) is f (i) ≤ 0. For (ii), Pθ (B) ≤ |B| = |B \ E| + |E| <
+Pθ (B \ E) + |E|.
+    For (iii), write n = |E| and E ′ = E−σ (B), so |E ′ | ≥ n. If n = 1, the required lower bound
+is zero and holds for every integer t. If B has only one row, the only relevant row contains
+n points, so (iii) also holds. Hence assume n ≥ 2 and min π(B) < max π(B). For a real
+t ∈ [min π(B), max π(B)] let λ(t) be the length of the intersection of the convex polygon Conv(B)
+with the line {π = t}; λ is concave, by the concavity of the length of parallel chords of a convex
+set. On the two extreme rows that intersection is exactly Conv(E), respectively Conv(E ′ ), a
+supporting line meeting the polygon in the convex hull of the vertices it carries, of lengths
+(n − 1)|u| and (|E ′ | − 1)|u| ≥ (n − 1)|u|. Hence λ(t) ≥ (n − 1)|u| for every t in that interval. For
+every integer t there, surjectivity of π gives a lattice point on Lt , and the lattice points of Lt are
+spaced |u| apart. Its intersection with Conv(B) is a closed segment of length at least (n − 1)|u|,
+so it contains at least n − 1 lattice points. These belong to B by lattice convexity. This proves
+(iii) at every intermediate integer height, including those not assumed in advance to meet B. □
+D.4. Ambiguity strips and the propagation lemma.
+Definition D.6. Say that θ has the +-ambiguity strip St[a, b], where a ≤ b, if there is an x ∈ Xθ
+with x = θ on St[a, b − 1] — an empty condition when a = b — and x ̸= θ at some point of Lb .
+The −-ambiguity strips are defined symmetrically, replacing u by −u.
+Lemma D.7 (Propagation). Let B be +-balanced and put n := |E+ (B)|. If θ has some
++-ambiguity strip St[a, b] into which B fits, that is with b − a ≥ ht(B), then θ is periodic.
+Proof. (1) Placing B. Translate B so that max π(B) = b; then B ⊆ St[a, b], and E := E+ (B) =
+B ∩ Lb = {e1 , . . . , en } with el+1 = el + u, while B0 := B \ E ⊆ St[a, b − 1], possibly empty. Put
+t− := min π(B). Take a witness x ∈ Xθ of the ambiguity: x = θ on St[a, b − 1] and x ̸= θ
+somewhere on Lb . Note that B0 + iu ⊆ St[a, b − 1] for every i ∈ Z, so x = θ on each B0 + iu.
+  (2) Two determination rules. For 0 ≤ i ≤ n put Di := B0 ∪ {e1 , . . . , ei } and Di′ := B0 ∪
+{en−i+1 , . . . , en }. By (ii) of Definition D.4, Pθ (Dn ) − |Dn | < Pθ (D0 ) − |D0 |, so there is a
+k ∈ {0, . . . , n − 1} with Pθ (Dk+1 ) − |Dk+1 | < Pθ (Dk ) − |Dk |, that is Pθ (Dk+1 ) < Pθ (Dk ) + 1;
+the restriction map Pat(Dk+1 , θ) → Pat(Dk , θ) being onto, this forces Pθ (Dk+1 ) = Pθ (Dk ) and
+makes that map a bijection. Hence:
+  (R+ ) for every y ∈ Xθ and v ∈ Z2 , the value y(ek+1 + v) is determined by y|Dk +v .
+                    STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                   35
+
+In the same way there is a k ′ ∈ {0, . . . , n − 1} with
+  (R− ) for every y ∈ Xθ and v ∈ Z2 , the value y(en−k′ + v) is determined by y|D′ ′ +v .
+                                                                                            k
+
+   (3) Claim: x|Dk +iu ̸= θ|Dk +iu for every i ∈ Z. Suppose x = θ on Dk + i0 u. If k = 0, then
+D0 = B0 , and (1) together with (R+ ) gives x(e1 + iu) = θ(e1 + iu) for every i, that is x = θ
+on Lb , against the choice of the witness. So let k ≥ 1. By (R+ ), x(ek+1 + i0 u) = θ(ek+1 + i0 u);
+hence x = θ on Dk + (i0 + 1)u, whose points are those of B0 + (i0 + 1)u, by (1), together with
+the points el + (i0 + 1)u = el+1 + i0 u for 1 ≤ l ≤ k, which lie in Dk + i0 u when l ≤ k − 1 and
+are the point just treated when l = k. By induction x = θ on Dk + iu for every i ≥ i0 , hence
+on the half-line {e1 + su : s ≥ i0 } ⊂ Lb . Now go left. If k ′ = 0, then (1) and (R− ) give x = θ
+on {en + iu : i ∈ Z} = Lb , a contradiction. If k ′ ≥ 1, choose i1 with n − k ′ + i1 ≥ i0 ; the points
+e1 + (n − k ′ + i1 )u, . . . , e1 + (n − 1 + i1 )u of the top row of Dk′ ′ + i1 u then lie on that half-line,
+so x = θ on Dk′ ′ + iu for every i ≥ i1 . By (R− ), x(en−k′ + i1 u) = θ(en−k′ + i1 u), whence x = θ
+on Dk′ ′ + (i1 − 1)u, whose top-row points el + (i1 − 1)u = el−1 + i1 u, n − k ′ + 1 ≤ l ≤ n, either
+lie in Dk′ ′ + i1 u or are the point just treated. Descending induction gives x = θ on Dk′ ′ + iu for
+every i ∈ Z, and the top rows of these sets cover all of Lb , against the choice of the witness. The
+claim follows.
+   (4) Counting. By (3) and (1), for each i the patterns x|B+iu and θ|B+iu are two B-patterns of
+θ which agree on B0 + iu and differ somewhere. So every pattern γ in Γ := {θ|B0 +iu : i ∈ Z} ⊆
+Pat(B0 , θ) has at least two extensions to a B-pattern, N (γ) ≥ 2. But
+                             X                  
+                                        N (γ) − 1 = Pθ (B) − Pθ (B0 ) < |E| = n
+                         γ∈Pat(B0 ,θ)
+
+by (ii), so |Γ| ≤ n − 1; in particular n ≥ 2, since otherwise Γ would be empty, which it is not.
+   (5) Periodicity of the rows of B0 . Assume B0 ̸= ∅; when B0 = ∅, one has t− = b, the initial
+strip St[t− , b − 1] is empty, and one takes Q0 := 1. For every integer t with t− ≤ t ≤ b − 1,
+condition (iii) and n ≥ 2 from (4) give |B ∩ Lt | ≥ n − 1 ≥ 1. Thus no row of this strip is
+missing. By lattice convexity, B ∩ Lt = B0 ∩ Lt is a run of mt ≥ n − 1 consecutive points
+wt , wt + u, . . . , wt + (mt − 1)u. Put ξt (s) := θ(wt + su) for s ∈ Z. As i varies, θ|B0 +iu takes at
+most n − 1 values, so its restriction to the first n − 1 points of row t — that is, the word of
+length n − 1 read in ξt from position i — takes at most n − 1 values, and ξt has at most n − 1
+subwords of length n − 1. By the one-dimensional Morse–Hedlund theorem [13] (a bi-infinite
+sequence with at most m subwords of some length m is periodic; see also [2, Theorem 1.1]), ξt is
+periodic. Let Q0 be a common multiple of the periods of these rows; then θ(v + Q0 u) = θ(v) for
+all v ∈ St[t− , b − 1].
+   (6) Extending upwards one row at a time. If ∆ < b − t− , then b − 1 − t− ≥ ∆, so the strip
+obtained in (5) already contains St[t− , t− + ∆]; take Q∗ := Q0 and proceed to (7). Otherwise
+∆ ≥ b − t− . Suppose R ≥ b and θ has period Qu on St[t− , R − 1], which for R = b is step (5)
+with Q = Q0 . Choose w with π(w) = R − b, so that the top row of B + w lies on LR
+and B0 + w + iu ⊆ St[t− , R − 1]; then the pattern θ|B0 +w+iu depends only on i mod Q. Put
+ys := θ(e1 + w + su) and apply (R+ ) and (R− ) to y := θ and v = w + iu:
+                                                                                
+                          yi+k is determined by i mod Q; yi , . . . , yi+k−1 ,
+                                                                                
+                          yi−1 is determined by i mod Q; yi , . . . , yi+k′ −1 ,
+the second being (R− ) at v = w + (i − n + k ′ )u. Put K := max(k, k ′ , 1) and let σi :=
+(i mod Q; yi , . . . , yi+K−1 ) ∈ Z/Q × FK
+                                         p . Then σi+1 is determined by σi , and so is σi−1 . Let Φ be
+the forward map, defined on the set Σ of states that actually occur; backward determinacy makes
+Φ injective on Σ, since Φ(σ) = Φ(σ ′ ) forces σ = σ ′ , and Σ is finite, so Φ is a bijection of Σ and
+36                                        APEX INTELLIGENCE
+
+the bi-infinite orbit (σi ) is periodic. Its period Q′ is a multiple of Q, by the phase component,
+and ys+Q′ = ys . Hence θ has period Q′ u on St[t− , R]. Iterating from R = b up to R = t− + ∆,
+finitely many steps, gives a Q∗ for which θ has period Q∗ u on the strip St[t− , t− + ∆], of width
+∆.
+   (7) By Lemma D.3, θ has period Q∗ h1 .                                                       □
+Remark D.8. Step (5) of Lemma D.7 is the argument of [17, Lemma 4] and of [6, Lemma 2.24];
+steps (6) and (7) replace [17, Lemma 3], which appeals to Lemma 39 of [11], and use nothing
+beyond the generating property and the explicit annihilator.
+D.5. Proof of Theorem D.1. Suppose θ is not periodic. Replacing h2 by ch2 for an integer
+c ≥ 1, which changes neither π nor u, we may assume ∆ ≥ ht(S) + 1. Put
+     D := {αh1 + βh2 : α, β ∈ [0, 1)} ∩ Z2 ,
+                                                                                                  
+                                                    Dj := D + jh2 ,    Sj := St j∆, (j + 1)∆ − 1 .
+Every v ∈ Z2 is uniquely v = αh1 + βh2 with α, β ∈ R, and π(v) = β∆, so v ∈ Sj if and
+only if β ∈ [j, j + 1); in that case v − ⌊α⌋h1 = {α}h1 + βh2 is a lattice point of Dj . Hence
+Sj = Dj + Zh1 , and distinct values of ⌊α⌋ give distinct points, so the union is disjoint. Put
+N := Pθ (D) < ∞.
+   (a) A balanced set, and unambiguity. Take a σ-balanced B ⊆ S by Lemma D.5. We may
+assume σ = +: otherwise replace u, h1 , π, h2 by −u, −h1 , −π, −h2 , respectively. This keeps
+h1 = c1 u with c1 ≥ 1 and ∆ > 0, and condition (iii) is unchanged when the order of the integer
+heights is reversed. Use these oriented periods in the definitions of D, Dj , Sj and N above. Since
+θ is not periodic, the contrapositive of Lemma D.7 says: for all a ≤ b with b − a ≥ ht(B) and
+every x ∈ Xθ , if x = θ on St[a, b − 1] then x = θ on St[a, b]. Iterating row by row,
+                    x = θ on St[a, b], b − a ≥ ht(B) − 1 =⇒ x = θ on {π ≥ a}.                     (D.2)
+  (b) A witness of non-periodicity. N ! h2 is not a period of θ, so there is a v0 with θ(v0 + N !h2 ) ̸=
+θ(v0 ). Put k := ⌊π(v0 )/∆⌋ − N , so that π(v0 ) ≥ (k + N )∆.
+  (c) Pigeonhole. Among the N + 1 patterns θ|Dk+j , 0 ≤ j ≤ N , at most N are distinct, so there
+are 0 ≤ j < j ′ ≤ N with θ(v + (j ′ − j)h2 ) = θ(v) for all v ∈ Dk+j . By (D.1) this holds for all
+                            ′
+v ∈ Sk+j , that is x := T (j −j)h2 θ ∈ Xθ satisfies x = θ on Sk+j = St[(k + j)∆, (k + j + 1)∆ − 1].
+That strip has width ∆ − 1 ≥ ht(S) ≥ ht(B), so (D.2) gives x = θ on {π ≥ (k + j)∆}, that is
+                       θ(v + (j ′ − j)h2 ) = θ(v)     whenever π(v) ≥ (k + j)∆.
+Since π(h2 ) = ∆ > 0, that half-plane is invariant under +(j ′ − j)h2 ; applying the identity
+repeatedly, and using (j ′ − j) | N !, we get θ(v + N !h2 ) = θ(v) for every v with π(v) ≥ (k + j)∆.
+But π(v0 ) ≥ (k + N )∆ ≥ (k + j)∆, so θ(v0 + N !h2 ) = θ(v0 ), contradicting (b).                 □
+Remark D.9. The proof of Theorem D.1 works for any finite-valued configuration with a decom-
+position into two periodic configurations over an abelian group. The required algebraic identity
+is (D.1): the difference θ(· + sh2 ) − θ is h1 -periodic. Over Z it is the convex generalisation of
+[17, Theorem 1] recorded as [2, Theorem 1.7].
+Acknowledgements. The mathematical content of this paper was developed with substantial
+assistance from large language models, which were used for literature search, for drafting, and
+for adversarial checking of the arguments; the authors are responsible for all statements. The
+numerical verification of Appendix C was carried out with the scripts named there.
+Theorem and lemma numbers of the cited works are those of the originals.
+                     STAR CONFIGURATIONS AND THE CONVEX NIVAT CONJECTURE                                          37
+
+                                                  References
+ [1] M. Boyle and D. Lind, Expansive subdynamics, Trans. Amer. Math. Soc. 349 (1997), no. 1, 55–102.
+ [2] C. F. Colle, On periodic decompositions, one-sided nonexpansive directions and Nivat’s conjecture, Discrete
+     Contin. Dyn. Syst. 43 (2023), no. 12, 4299–4327.
+ [3] C. F. Colle, On periodic decompositions and nonexpansive lines, Math. Z. 303 (2023), art. 80.
+ [4] C. F. Colle and E. Garibaldi, An alphabetical approach to Nivat’s conjecture, Nonlinearity 33 (2020), 3620–3652.
+ [5] C. F. Colle and E. Garibaldi, A modular structure theorem for minimal periodic decompositions and periodicity
+     of configurations with Pη (4, n) ≤ 4n, preprint, arXiv:2606.10193v1 [math.DS], 8 June 2026.
+ [6] V. Cyr and B. Kra, Nonexpansive Z2 -subdynamics and Nivat’s conjecture, Trans. Amer. Math. Soc. 367
+     (2015), no. 9, 6487–6537.
+ [7] V. Cyr and B. Kra, Complexity of short rectangles and periodicity, European J. Combin. 52 (2016), 146–173.
+ [8] C. Epifanio, M. Koskas and F. Mignosi, On a conjecture on bidimensional words, Theoret. Comput. Sci. 299
+     (2003), 123–150.
+ [9] J. Kari and E. Moutot, Decidability and periodicity of low complexity tilings, in 37th International Symposium
+     on Theoretical Aspects of Computer Science (STACS 2020), LIPIcs vol. 154, Art. No. 14, 2020.
+[10] J. Kari and E. Moutot, Decidability and periodicity of low complexity tilings, Theory Comput. Syst. 67 (2023),
+     125–148.
+[11] J. Kari and M. Szabados, An algebraic geometric approach to Nivat’s conjecture, Inform. and Comput. 271
+     (2020), 104481.
+[12] A. Khetan, A counterexample to Nivat’s conjecture for a non-convex window of full affine span, preprint,
+     arXiv:2607.09830v2, July 2026.
+[13] M. Morse and G. A. Hedlund, Symbolic dynamics, Amer. J. Math. 60 (1938), 815–866.
+[14] M. Nivat, Invited talk, 24th International Colloquium on Automata, Languages and Programming (ICALP
+     1997), Bologna, 1997.
+[15] A. Quas and L. Zamboni, Periodicity and local complexity, Theoret. Comput. Sci. 319 (2004), 229–240.
+[16] J. W. Sander and R. Tijdeman, The rectangle complexity of functions on two-dimensional lattices, Theoret.
+     Comput. Sci. 270 (2002), 857–863.
+[17] M. Szabados, Nivat’s conjecture holds for sums of two periodic configurations, in SOFSEM 2018: Theory and
+     Practice of Computer Science, Lecture Notes in Comput. Sci. vol. 10706, Springer, 2018, pp. 539–551.
+

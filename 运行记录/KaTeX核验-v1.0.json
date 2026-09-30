@@ -1,0 +1,16 @@
+{
+  "engine": "KaTeX",
+  "version": "0.16.47",
+  "path": "proof/submission.md",
+  "sha256": "1a8a25625b09e5502a605f56eaae0c28091fad56774ef89f9c5513bfd701b9f1",
+  "body_utf16": 19846,
+  "inline_math": 274,
+  "display_math": 23,
+  "math_fragments": 297,
+  "raw_math_tokens": [],
+  "errors": [],
+  "error_elements": 0,
+  "checked_at": "2026-09-30T07:00:14.179Z",
+  "pipeline_source_sha256": "4bf701b3dfbf7935fa28d51bdfc6c2738836e9e9f98ea31ef8a7b752ab5b821d",
+  "passed": true
+}

@@ -1,0 +1,1581 @@
+{
+  "comparisons": [
+    {
+      "SC": 60,
+      "patterns": 347,
+      "window": {
+        "a": 6,
+        "b": 9,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "SC": 1296,
+      "patterns": 6909,
+      "window": {
+        "a": 30,
+        "b": 30,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "SC": 1,
+      "patterns": 8,
+      "window": {
+        "kind": "triangle",
+        "n": 1
+      }
+    },
+    {
+      "SC": 380,
+      "patterns": 3132,
+      "window": {
+        "kind": "triangle",
+        "n": 20
+      }
+    },
+    {
+      "SC": 2486,
+      "patterns": 19492,
+      "window": {
+        "kind": "triangle",
+        "n": 50
+      }
+    }
+  ],
+  "independence": "Separate producer/checker implementations; same Codex context; legacy checker reused.",
+  "legacy_negative_controls": [
+    {
+      "memory_only": true,
+      "name": "矩阵条目且同步摘要",
+      "reason": "full reconstructed matrix mismatch",
+      "rejected": true
+    },
+    {
+      "memory_only": true,
+      "name": "右核非自由坐标",
+      "reason": "right kernel multiplication nonzero",
+      "rejected": true
+    },
+    {
+      "memory_only": true,
+      "name": "下界子式行列式",
+      "reason": "exact minor determinant mismatch",
+      "rejected": true
+    },
+    {
+      "memory_only": true,
+      "name": "模式漏项且同步摘要",
+      "reason": "global pattern set mismatch (omission, spurious pattern, duplicate or order)",
+      "rejected": true
+    },
+    {
+      "memory_only": true,
+      "name": "J 支撑系数",
+      "reason": "entire J support mismatch",
+      "rejected": true
+    },
+    {
+      "memory_only": true,
+      "name": "合法二次起点漏项",
+      "reason": "legal quadratic position list mismatch",
+      "rejected": true
+    },
+    {
+      "memory_only": true,
+      "name": "全局覆盖事件漏项",
+      "reason": "coverage event omission",
+      "rejected": true
+    },
+    {
+      "memory_only": true,
+      "name": "删点来源映射",
+      "reason": "restriction mapping mismatch",
+      "rejected": true
+    }
+  ],
+  "legacy_results": [
+    {
+      "configuration": {
+        "Case_B_global_operator_identity": true,
+        "component_period_groups": [
+          "Z*(1,0)",
+          "Z*(1,2)",
+          "Z*(1,4)"
+        ],
+        "pairwise_intersections": [
+          [
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ],
+        "tails": "zero on both sides of each support line"
+      },
+      "counts_and_bounds": {
+        "R_Z_S_count": 9,
+        "T_d_S_count": 40,
+        "actual_extended_rank": 86,
+        "actual_linear_rank": 46,
+        "all_legal_positions_lower_bound": 86,
+        "global_pattern_count": 347,
+        "lemma_2_5_lower_bound": 46,
+        "original_theorem_A_bound_if_applicable": 55,
+        "window_size": 54
+      },
+      "example_id": "rectangle_6x9",
+      "global_coverage": {
+        "coverage_event_counts": {
+          "one_line": 57,
+          "two_lines": 425,
+          "zero_lines": 1
+        },
+        "coverage_event_total": 483,
+        "distinct_two_line_anchors": 295,
+        "pattern_count": 347,
+        "restriction_group_sizes": {
+          "1": 347
+        },
+        "source_pattern_count": 347
+      },
+      "matrices": {
+        "extended": {
+          "dimensions": [
+            347,
+            95
+          ],
+          "exact_Q_rank": 86,
+          "free_coordinate_matrix_verified": "identity",
+          "integer_determinant": -1,
+          "kernel_row_dot_products": 3123,
+          "kernel_vectors": 9,
+          "minor_order": 86,
+          "rank_lower_bound": 86,
+          "rank_upper_bound": 86
+        },
+        "linear": {
+          "dimensions": [
+            347,
+            55
+          ],
+          "exact_Q_rank": 46,
+          "free_coordinate_matrix_verified": "identity",
+          "integer_determinant": 1,
+          "kernel_row_dot_products": 3123,
+          "kernel_vectors": 9,
+          "minor_order": 46,
+          "rank_lower_bound": 46,
+          "rank_upper_bound": 46
+        }
+      },
+      "witness": {
+        "candidate_support_points": 22,
+        "cross_support_size": 4,
+        "entire_J_support_size": 12,
+        "global_support_completeness": true,
+        "nonzero_witness": {
+          "point": [
+            -5,
+            -9
+          ],
+          "value": 1
+        },
+        "ordered_cross_pairs": 6
+      }
+    },
+    {
+      "configuration": {
+        "Case_B_global_operator_identity": true,
+        "component_period_groups": [
+          "Z*(1,0)",
+          "Z*(1,2)",
+          "Z*(1,4)"
+        ],
+        "pairwise_intersections": [
+          [
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ],
+        "tails": "zero on both sides of each support line"
+      },
+      "counts_and_bounds": {
+        "R_Z_S_count": 9,
+        "T_d_S_count": 38,
+        "actual_extended_rank": 84,
+        "actual_linear_rank": 46,
+        "all_legal_positions_lower_bound": 83,
+        "global_pattern_count": 347,
+        "lemma_2_5_lower_bound": 45,
+        "original_theorem_A_bound_if_applicable": null,
+        "window_size": 53
+      },
+      "example_id": "rectangle_6x9_minus_2_4",
+      "global_coverage": {
+        "coverage_event_counts": {
+          "one_line": 57,
+          "two_lines": 425,
+          "zero_lines": 1
+        },
+        "coverage_event_total": 483,
+        "distinct_two_line_anchors": 295,
+        "pattern_count": 347,
+        "restriction_group_sizes": {
+          "1": 347
+        },
+        "source_pattern_count": 347
+      },
+      "matrices": {
+        "extended": {
+          "dimensions": [
+            347,
+            92
+          ],
+          "exact_Q_rank": 84,
+          "free_coordinate_matrix_verified": "identity",
+          "integer_determinant": 1,
+          "kernel_row_dot_products": 2776,
+          "kernel_vectors": 8,
+          "minor_order": 84,
+          "rank_lower_bound": 84,
+          "rank_upper_bound": 84
+        },
+        "linear": {
+          "dimensions": [
+            347,
+            54
+          ],
+          "exact_Q_rank": 46,
+          "free_coordinate_matrix_verified": "identity",
+          "integer_determinant": 1,
+          "kernel_row_dot_products": 2776,
+          "kernel_vectors": 8,
+          "minor_order": 46,
+          "rank_lower_bound": 46,
+          "rank_upper_bound": 46
+        }
+      },
+      "witness": {
+        "candidate_support_points": 22,
+        "cross_support_size": 4,
+        "entire_J_support_size": 12,
+        "global_support_completeness": true,
+        "nonzero_witness": {
+          "point": [
+            -5,
+            -9
+          ],
+          "value": 1
+        },
+        "ordered_cross_pairs": 6
+      }
+    }
+  ],
+  "new_negative_controls": [
+    {
+      "mathematical_reason": "sections mathematical reconstruction mismatch",
+      "name": "section K",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "sections mathematical reconstruction mismatch",
+      "name": "stripe ell",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "sections mathematical reconstruction mismatch",
+      "name": "conditional epsilon",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "sections mathematical reconstruction mismatch",
+      "name": "erosion omission",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "complete witness reconstruction mismatch",
+      "name": "witness coefficient",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "global coverage event omission",
+      "name": "coverage omission",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "single representative collision or phase mismatch",
+      "name": "single collision",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "full global pattern set mismatch",
+      "name": "pattern omission with updated digest",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "analytic rank metadata mismatch",
+      "name": "fake 679 minor status",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "sections mathematical reconstruction mismatch",
+      "name": "stress epsilon",
+      "rejected": true
+    },
+    {
+      "mathematical_reason": "sections mathematical reconstruction mismatch",
+      "name": "stress ell",
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "review": {
+    "fresh_context": true,
+    "mathematical_blockers": 0,
+    "model": "gpt-6.1-sol",
+    "record": "对抗复核-v1.0.md",
+    "reviewed_manuscript_sha256": "3bd81a166c53f8a073ad893eeaef24fe05b83468023151b3b550db385d9fd52c"
+  },
+  "scope": "Stress cases verify general SC nonzero-background handling; Case B parameter bridge and general theorem are proved in manuscript, not by finite tests",
+  "stress": [
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 3,
+      "window": {
+        "a": 1,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 6,
+      "window": {
+        "a": 1,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 11,
+      "window": {
+        "a": 1,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 16,
+      "window": {
+        "a": 1,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 21,
+      "window": {
+        "a": 1,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 27,
+      "window": {
+        "a": 1,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 35,
+      "window": {
+        "a": 1,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 44,
+      "window": {
+        "a": 1,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 5,
+      "window": {
+        "a": 2,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 15,
+      "window": {
+        "a": 2,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 25,
+      "window": {
+        "a": 2,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 37,
+      "window": {
+        "a": 2,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 49,
+      "window": {
+        "a": 2,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 65,
+      "window": {
+        "a": 2,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 79,
+      "window": {
+        "a": 2,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 97,
+      "window": {
+        "a": 2,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 6,
+      "window": {
+        "a": 3,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 23,
+      "window": {
+        "a": 3,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 40,
+      "window": {
+        "a": 3,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 61,
+      "window": {
+        "a": 3,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 77,
+      "window": {
+        "a": 3,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 97,
+      "window": {
+        "a": 3,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 115,
+      "window": {
+        "a": 3,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        4,
+        3
+      ],
+      "configuration": "higher-order",
+      "patterns": 137,
+      "window": {
+        "a": 3,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 7,
+      "window": {
+        "a": 4,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 33,
+      "window": {
+        "a": 4,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 59,
+      "window": {
+        "a": 4,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 93,
+      "window": {
+        "a": 4,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        4
+      ],
+      "configuration": "higher-order",
+      "patterns": 113,
+      "window": {
+        "a": 4,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        4,
+        6
+      ],
+      "configuration": "higher-order",
+      "patterns": 137,
+      "window": {
+        "a": 4,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        8,
+        8
+      ],
+      "configuration": "higher-order",
+      "patterns": 159,
+      "window": {
+        "a": 4,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        12,
+        15
+      ],
+      "configuration": "higher-order",
+      "patterns": 185,
+      "window": {
+        "a": 4,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 8,
+      "window": {
+        "a": 5,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 45,
+      "window": {
+        "a": 5,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 82,
+      "window": {
+        "a": 5,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 133,
+      "window": {
+        "a": 5,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        6
+      ],
+      "configuration": "higher-order",
+      "patterns": 157,
+      "window": {
+        "a": 5,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        4,
+        10
+      ],
+      "configuration": "higher-order",
+      "patterns": 185,
+      "window": {
+        "a": 5,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        12,
+        14
+      ],
+      "configuration": "higher-order",
+      "patterns": 211,
+      "window": {
+        "a": 5,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        25,
+        27
+      ],
+      "configuration": "higher-order",
+      "patterns": 241,
+      "window": {
+        "a": 5,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 9,
+      "window": {
+        "a": 6,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 59,
+      "window": {
+        "a": 6,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 109,
+      "window": {
+        "a": 6,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 181,
+      "window": {
+        "a": 6,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        8
+      ],
+      "configuration": "higher-order",
+      "patterns": 209,
+      "window": {
+        "a": 6,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        4,
+        14
+      ],
+      "configuration": "higher-order",
+      "patterns": 241,
+      "window": {
+        "a": 6,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        16,
+        20
+      ],
+      "configuration": "higher-order",
+      "patterns": 271,
+      "window": {
+        "a": 6,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        35,
+        39
+      ],
+      "configuration": "higher-order",
+      "patterns": 305,
+      "window": {
+        "a": 6,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 10,
+      "window": {
+        "a": 7,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 75,
+      "window": {
+        "a": 7,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 140,
+      "window": {
+        "a": 7,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 237,
+      "window": {
+        "a": 7,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        10
+      ],
+      "configuration": "higher-order",
+      "patterns": 269,
+      "window": {
+        "a": 7,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        4,
+        18
+      ],
+      "configuration": "higher-order",
+      "patterns": 305,
+      "window": {
+        "a": 7,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        20,
+        26
+      ],
+      "configuration": "higher-order",
+      "patterns": 339,
+      "window": {
+        "a": 7,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        45,
+        51
+      ],
+      "configuration": "higher-order",
+      "patterns": 377,
+      "window": {
+        "a": 7,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 11,
+      "window": {
+        "a": 8,
+        "b": 1,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 93,
+      "window": {
+        "a": 8,
+        "b": 2,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 175,
+      "window": {
+        "a": 8,
+        "b": 3,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 301,
+      "window": {
+        "a": 8,
+        "b": 4,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        12
+      ],
+      "configuration": "higher-order",
+      "patterns": 337,
+      "window": {
+        "a": 8,
+        "b": 5,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        4,
+        22
+      ],
+      "configuration": "higher-order",
+      "patterns": 377,
+      "window": {
+        "a": 8,
+        "b": 6,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        24,
+        32
+      ],
+      "configuration": "higher-order",
+      "patterns": 415,
+      "window": {
+        "a": 8,
+        "b": 7,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        55,
+        63
+      ],
+      "configuration": "higher-order",
+      "patterns": 457,
+      "window": {
+        "a": 8,
+        "b": 8,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 3,
+      "window": {
+        "kind": "triangle",
+        "n": 0
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 10,
+      "window": {
+        "kind": "triangle",
+        "n": 1
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 25,
+      "window": {
+        "kind": "triangle",
+        "n": 2
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 51,
+      "window": {
+        "kind": "triangle",
+        "n": 3
+      }
+    },
+    {
+      "bounds": [
+        0,
+        2,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 91,
+      "window": {
+        "kind": "triangle",
+        "n": 4
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 154,
+      "window": {
+        "kind": "triangle",
+        "n": 5
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        2
+      ],
+      "configuration": "higher-order",
+      "patterns": 231,
+      "window": {
+        "kind": "triangle",
+        "n": 6
+      }
+    },
+    {
+      "bounds": [
+        0,
+        3,
+        4
+      ],
+      "configuration": "higher-order",
+      "patterns": 323,
+      "window": {
+        "kind": "triangle",
+        "n": 7
+      }
+    },
+    {
+      "bounds": [
+        0,
+        4,
+        8
+      ],
+      "configuration": "higher-order",
+      "patterns": 433,
+      "window": {
+        "kind": "triangle",
+        "n": 8
+      }
+    },
+    {
+      "bounds": [
+        0,
+        8,
+        21
+      ],
+      "configuration": "higher-order",
+      "patterns": 562,
+      "window": {
+        "kind": "triangle",
+        "n": 9
+      }
+    },
+    {
+      "bounds": [
+        0,
+        16,
+        33
+      ],
+      "configuration": "higher-order",
+      "patterns": 702,
+      "window": {
+        "kind": "triangle",
+        "n": 10
+      }
+    },
+    {
+      "bounds": [
+        6,
+        35,
+        48
+      ],
+      "configuration": "higher-order",
+      "patterns": 857,
+      "window": {
+        "kind": "triangle",
+        "n": 11
+      }
+    },
+    {
+      "bounds": [
+        14,
+        50,
+        63
+      ],
+      "configuration": "higher-order",
+      "patterns": 1030,
+      "window": {
+        "kind": "triangle",
+        "n": 12
+      }
+    },
+    {
+      "bounds": [
+        24,
+        65,
+        78
+      ],
+      "configuration": "higher-order",
+      "patterns": 1221,
+      "window": {
+        "kind": "triangle",
+        "n": 13
+      }
+    },
+    {
+      "bounds": [
+        36,
+        96,
+        124
+      ],
+      "configuration": "higher-order",
+      "patterns": 1422,
+      "window": {
+        "kind": "triangle",
+        "n": 14
+      }
+    },
+    {
+      "bounds": [
+        50,
+        114,
+        144
+      ],
+      "configuration": "higher-order",
+      "patterns": 1639,
+      "window": {
+        "kind": "triangle",
+        "n": 15
+      }
+    },
+    {
+      "bounds": [
+        66,
+        132,
+        164
+      ],
+      "configuration": "higher-order",
+      "patterns": 1874,
+      "window": {
+        "kind": "triangle",
+        "n": 16
+      }
+    },
+    {
+      "bounds": [
+        84,
+        175,
+        184
+      ],
+      "configuration": "higher-order",
+      "patterns": 2127,
+      "window": {
+        "kind": "triangle",
+        "n": 17
+      }
+    },
+    {
+      "bounds": [
+        104,
+        196,
+        204
+      ],
+      "configuration": "higher-order",
+      "patterns": 2388,
+      "window": {
+        "kind": "triangle",
+        "n": 18
+      }
+    },
+    {
+      "bounds": [
+        126,
+        217,
+        280
+      ],
+      "configuration": "higher-order",
+      "patterns": 2667,
+      "window": {
+        "kind": "triangle",
+        "n": 19
+      }
+    },
+    {
+      "bounds": [
+        150,
+        272,
+        305
+      ],
+      "configuration": "higher-order",
+      "patterns": 2964,
+      "window": {
+        "kind": "triangle",
+        "n": 20
+      }
+    },
+    {
+      "bounds": [
+        63,
+        50
+      ],
+      "configuration": "background",
+      "patterns": 86,
+      "window": {
+        "a": 6,
+        "b": 9,
+        "kind": "rectangle"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 3,
+      "window": {
+        "kind": "point"
+      }
+    },
+    {
+      "bounds": [
+        0,
+        1,
+        1
+      ],
+      "configuration": "higher-order",
+      "patterns": 41,
+      "window": {
+        "kind": "segment",
+        "n": 6
+      }
+    }
+  ],
+  "stress_direction_checks": 263,
+  "stress_windows": 88,
+  "triangle": {
+    "SC": 882,
+    "T": 497,
+    "actual_patterns": 7037,
+    "analytic_rank": {
+      "affine": 244,
+      "extended": 679,
+      "type": "analytic proof plus exact geometry; no large numerical minor"
+    },
+    "events": 7062,
+    "fingerprint": "c68c8a66cce70a8dd0cc9b3b4ed3ceee0ed057cc121c30a01e1c23b13f563646",
+    "multiple_anchors": 6795,
+    "quad": 679,
+    "witness_points": 12
+  }
+}

@@ -1,0 +1,1878 @@
+                                             An Algebraic Geometric Approach to Nivat’s
+                                                            Conjecture
+
+                                                                 Jarkko Kari and Michal Szabados
+
+                                                             Department of Mathematics and Statistics,
+                                                             University of Turku, 20014 Turku, Finland
+                                                                  jkari@utu.fi, micsza@utu.fi
+
+                                                                        Version: May 20, 2016
+
+
+
+
+arXiv:1605.05929v1 [cs.DM] 19 May 2016
+                                               Abstract. We study multidimensional configurations (infinite words)
+                                               and subshifts of low pattern complexity using tools of algebraic geome-
+                                               try. We express the configuration as a multivariate formal power series
+                                               over integers and investigate the setup when there is a non-trivial annihi-
+                                               lating polynomial: a non-zero polynomial whose formal product with the
+                                               power series is zero. Such annihilator exists, for example, if the number
+                                               of distinct patterns of some finite shape D in the configuration is at most
+                                               the size |D| of the shape. This is our low pattern complexity assumption.
+                                               We prove that the configuration must be a sum of periodic configurations
+                                               over integers, possibly with unbounded values. As a specific application
+                                               of the method we obtain an asymptotic version of the well-known Nivat’s
+                                               conjecture: we prove that any two-dimensional, non-periodic configura-
+                                               tion can satisfy the low pattern complexity assumption with respect to
+                                               only finitely many distinct rectangular shapes D.
+
+
+                                         Keywords: Nivat’s conjecture, symbolic dynamics, algebraic geometry, Laurent
+                                         polynomials, pattern complexity, periodicity
+
+                                         1    Introduction
+                                                                         d
+                                         Consider configuration c ∈ AZ , a d-dimensional infinite array filled by symbols
+                                         from finite alphabet A. Suppose that for some finite observation window D ⊆ Zd ,
+                                         the number of distinct patterns of shape D that exist in c is small, at most the
+                                         cardinality |D| of D. We investigate global regularities and structures in c that
+                                         are enforced by such local complexity assumption.
+                                             Let us be more precise on the involved concepts. As usual, we denote by
+                                         cv ∈ A the symbol in c in position v ∈ Zd . For u ∈ Zd , u 6= 0, we say that c is
+                                         u-periodic if cv = cu+v holds for all v ∈ Zd , and c is periodic if it is u-periodic
+                                         for some u 6= 0. For a finite domain D ⊆ Zd , the elements of AD are D-patterns.
+                                         For a fixed D, we denote by cv+D the D-pattern in c in position v, that is, the
+                                         pattern u 7→ cv+u for all u ∈ D. The number of distinct D-patterns in c is the
+                                         D-pattern complexity Pc (D) of c. Our assumption of low local complexity is
+                                                                             Pc (D) ≤ |D|,                                   (1)
+2
+
+for some finite D.
+
+Nivat’s conjecture
+There are specific examples in the literature of open problems in this frame-
+work. Nivat’s conjecture (proposed by M. Nivat in his keynote address in ICALP
+1997 [Niv97]) claims that in the two-dimensional case d = 2, the low complex-
+ity assumption (1) for a rectangle D implies that c is periodic. The conjecture
+is a natural generalization of the one-dimensional Morse-Hedlund theorem that
+states that if a bi-infinite word contains at most n distinct subwords of length
+n then the word must be periodic [MH38]. In the two-dimensional setting and
+m, n ∈ N we denote by Pc (m, n) the complexity Pc (D) for the m × n rectangle
+D.
+Conjecture 1 (Nivat’s conjecture). If for some m, n we have Pc (m, n) ≤ mn then
+c is periodic.
+     The conjecture has recently raised wide interest, but it remains unsolved.
+In [EKM03] it was shown Pc (m, n) ≤ mn/144 is enough to guarantee the pe-
+riodicity of c. This bound was improved to Pc (m, n) ≤ mn/16 in [QZ04], and
+recently to Pc (m, n) ≤ mn/2 in [CK15]. Also the cases of narrow rectangles
+have been investigated: it was shown in [ST02] and recently in [CK16] that
+Pc (2, n) ≤ 2n and Pc (3, n) ≤ 3n, respectively, imply that c is periodic. Note that
+it is enough to prove Conjecture 1 for two-letter alphabet (Lemma 48).
+     The analogous conjecture in the higher dimensional setups d ≥ 3 is false [ST00].
+The following example recalls a simple counter example for d = 3.
+                                                                  3
+Example 2. Fix n ≥ 3, and consider the following c ∈ {0, 1}Z consisting of two
+perpendicular lines of 1’s on a 0-background, at distance n from each other:
+c(i, 0, 0) = c(0, n, i) = 1 for all i ∈ Z, and c(i, j, k) = 0 otherwise (see Figure 1).
+For D equal to the n × n × n cube we have Pc (D) = 2n2 + 1 since the D-patterns
+in c have at most a single 1-line piercing a face of the cube. Clearly c is not
+periodic although Pc (D) = 2n2 + 1 < n3 = |D|. Notice that c is a “sum” of
+two periodic components (the lines of 1’s). Our results imply that any counter
+example must decompose into a sum of periodic components.                            t
+                                                                                     u
+
+
+Periodic tiling problem
+Another related open problem is the periodic (cluster) tiling problem by Lagarias
+and Wang [LW96]. A (cluster) tile is a finite D ⊂ Zd . Its co-tiler is any subset
+C ⊆ Zd such that
+                                 D ⊕ C = Zd .                                 (2)
+The co-tiler can be interpreted as the set of positions where copies of D are
+placed so that they together cover the entire Zd without overlaps. Note that the
+tile D does not need to be connected – hence the term “cluster tile” is sometimes
+used. The tiling is by translations of D only: the tiles may not be rotated.
+                                                                                 3
+
+
+
+
+                                          z
+
+
+                               y                   x
+
+
+
+
+Fig. 1: Non-periodic configuration of low complexity. If D is the 4 × 4 × 4 cube,
+then P (D) = 33.
+
+                                                                                 d
+    It is natural to interpret any C ⊆ Zd as the binary configuration c ∈ {0, 1}Z
+with cv = 1 if and only if v ∈ C. Then the tiling condition (2) states that C is a
+co-tiler for D if and only if the (−D)-patterns in the corresponding configuration
+c contain exactly a single 1 in the background of 0’s. In fact, as co-tilers of D
+and −D coincide [Sze98], this is equivalent to all D-patterns having a single 1.
+    We see that the set C of all co-tiler configurations for D is a subshift of
+finite type [LM95]. We also see that the low local complexity assumption (1) is
+satisfied. We even have PC (D) ≤ |D| where we denote by PC (D) the number of
+distinct D-patterns found in the elements of the subshift C.
+Conjecture 3 (Periodic Tiling Problem). If tile D has a co-tiler then it has a
+periodic co-tiler.
+    This conjecture was first formulated in [LW96]. In the one-dimensional case
+it is easily seen true. The two-dimensional case was established only recently
+[Bha16], the higher dimensional cases with d > 2 are open. Interestingly, it is
+known that if |D| is a prime number then every co-tiler of D is periodic [Sze98]
+(see also our Example 4).
+
+Our contributions
+We approach these problems using tools of algebraic geometry. Assuming alpha-
+bet A ⊆ Z, we express configuration c as a formal power series over d variables
+and with coefficients in A. The complexity assumption (1) implies that there is a
+non-trivial polynomial that annihilates the power series under formal multiplica-
+tion (Lemma 5). This naturally leads to the study of the annihilator ideal of the
+power series, containing all the polynomials that annihilate it. Using Hilbert’s
+Nullstellensatz we prove that the ideal contains polynomials of particularly sim-
+ple form (Corollary 12). In particular, this implies that c = c1 + · · · + cm for
+some periodic c1 , . . . , cm (Theorem 13). This decomposition result is already an
+interesting global structure on c, but to prove periodicity we would need m = 1.
+4
+
+   We study the structure of the annihilator ideal in the two-dimensional setup,
+and prove that it is always a radical (Theorem 21). This leads to a stronger
+decomposition theorem (Theorem 23).
+   To approach Nivat’s conjecture we study a hypothetical non-periodic config-
+uration that would be a counterexample to it. Our main result is an asymptotic
+version of the conjecture (Theorem 44): for any non-periodic configuration c
+there are only finitely many pairs m, n ∈ N such that Pc (m, n) ≤ mn.
+   These results were reported without detailed proofs at ICALP 2015 confer-
+ence [KS15b].
+
+
+2    Basic Concepts and Notation
+For a domain R – which will usually be the whole numbers Z or complex numbers
+C – denote by R[x1 , . . . , xd ] the set of polynomials over R in d variables. We
+adopt the usual simplified notation: for a d-tuple of non-negative integers v =
+(v1 , . . . , vd ) set X v = xv11 . . . xvdd , then we write
+
+                               R[X] = R[x1 , . . . , xd ]
+
+                                                                   av X v , where
+                                                                P
+and a general polynomial f ∈ R[X] can be expressed as f =
+av ∈ R and the sum goes over finitely many d-tuples of non-negative integers v.
+If we allow v to contain also negative integers we obtain Laurent polynomials,
+which are denoted by R[X ±1 ]. Finally, by relaxing the requirement to have only
+finitely many av 6= 0 we get formal power series:
+                                X
+                   R[[X ±1 ]] =     av X v v ∈ Zd , av ∈ R .
+
+Note that we allow infinitely many negative exponents in formal power series.
+
+   Let d be a positive integer. Let us define a d-dimensional configuration to be
+any formal power series c ∈ C[[X ±1 ]] and denote by cv the coefficient of X v :
+                                      X
+                                 c=        cv X v
+                                        v∈Zd
+
+A configuration is integral if all coefficients cv are integers, and it is finitary if
+there are only finitely many distinct coefficients cv .
+    Classically in symbolic dynamics configurations are understood as elements
+      d
+of AZ . Because the actual names of the symbols in the alphabet A do not matter,
+they can be chosen to be integers. Then such a “classical” configuration can be
+identified with a finitary integral configuration by simply setting the coefficient
+cv to be the integer at position v.
+    Multiplication of a formal power series by a Laurent polynomial is well defined
+and results again in formal power series. For example, X v c is a translation of
+c by the vector v. Another important example is that c is periodic if and only
+if there is a non-zero v ∈ Zd such that (X v − 1)c = 0. Here the right side is
+understood as the constant zero configuration.
+                                                                                       5
+
+                                 av X v and a positive integer n define f (X n ) =
+                              P
+P For nva polynomial f (X) =
+   av X . (See Figure 2.) The following example, and the proof of Lemma 7,
+use the well known fact that for any integral polynomial f and prime number p,
+we have f p (X) ≡ f (X p ) (mod p).
+
+
+                                                                     x31 x32
+                                      x21 x22
+        x1 x2
+    3   -x1 2x21               3      -x21      2x41        3        -x31       2x61
+
+
+Fig. 2: Plot of f (X), f (X 2 ) and f (X 3 ) for the polynomial f (X) = f (x1 , x2 ) =
+3 − x1 + 2x21 + x1 x2 .
+
+
+
+Example 4. The example concerns the periodic tiling problem. We provide a
+short proof of the fact – originally proved in [Sze98] – that if the size p = |D|
+of tile D is a prime number then all co-tilers C are P  periodic. When the tile D
+                                                                v
+is represented as the Laurent polynomial      f (X) =     v∈D X    and the co-tiler
+                                          v
+                                 P
+C as the power    series  c(X) =    v∈C X   , the tiling condition  (2) states that
+f (X)c(X) = v∈Zd X v . Multiplying both sides by f p−1 (X), we get
+              P
+
+                                   X
+                    f p (X)c(X) =      pp−1 X v ≡ 0 (mod p).
+                                   v∈Zd
+
+On the other hand, since p is a prime, f p (X) ≡ f (X p ) (mod p) so that
+
+                            f (X p )c(X) ≡ 0     (mod p).
+
+Let v ∈ D and w ∈ C be arbitrary. We have
+                                     X
+            0 ≡ [f (X p )c(X)]w+pv =   c(X)w+pv−pu              (mod p).
+                                          u∈D
+
+The last sum is a sum of p numbers, each 0 or 1, among which there is at least
+one 1 (corresponding to u = v). The only way for the sum to be divisible by
+p is by having each summand equal to 1. We have that w + p(v − u) is in C
+for all u, v ∈ D and w ∈ C, which means that C is p(v − u)-periodic for all
+u, v ∈ D.                                                                   t
+                                                                            u
+    The next lemma grants us that for low complexity configurations there exists
+at least one Laurent polynomial that annihilates the configuration by formal
+multiplication.
+Lemma 5. Let c be a configuration and D ⊂ Zd a finite domain such that
+Pc (D) ≤ |D|. Then there exists a non-zero Laurent polynomial f ∈ C[X ±1 ] such
+that f c = 0.
+6
+
+Proof. Denote D = {u1 , . . . , un } and consider the set
+
+                         { (1, cu1 +v , . . . , cun +v ) | v ∈ Zd }.
+
+It is a set of complex vectors of dimension n+1, and because c has low complexity
+there is at most n of them. Therefore there exists a common non-zero orthogonal
+vector (a0 , . . . , an ). Let g(X) = a1 X −u1 +· · ·+an X −un 6= 0, then the coefficient
+of gc at position v is
+
+                     (gc)v = a1 cu1 +v + · · · + an cun +v = −a0 ,
+
+that is, gc is a constant configuration. Now it suffices to set f = (X v − 1)g for
+arbitrary non-zero vector v ∈ Zd .                                              t
+                                                                                u
+
+
+3    Annihilating Polynomials
+Let c be a configuration. We say that a Laurent polynomial f annihilates (or is
+an annihilator of) the configuration if f c = 0. Define
+                                  
+                        Ann(c) = f ∈ C[X] f c = 0 .
+
+It is the set of all polynomial annihilators of c. Clearly it is an ideal of C[X].
+The zero polynomial annihilates every configuration; let us call the annihilator
+non-trivial if it is non-zero.
+    An easy, but useful observation is that if f is an annihilator, then any mono-
+mial multiple X v f is also an annihilator. We shall use this fact without further
+reference.
+    There is a good reason why to study this ideal. Firstly, by Lemma 5, for
+low complexity configurations Ann(c) is non-trivial, which is the case of Nivat’s
+conjecture and periodic tiling problem. Secondly, to prove that a configuration
+is periodic is equivalent to showing that X v − 1 annihilates c for some non-zero
+v ∈ Zd .
+    We defined Ann(c) to consist of complex polynomials, so that we can later
+use Hilbert’s Nullstellensatz directly, as it requires polynomial ideals over alge-
+braically closed field. We shall however occasionally work with integer coefficients
+and Laurent polynomials when it is more convenient.
+    In what follows we consider configurations which have an integral annihilator.
+Although it follows by a small modification of Lemma 5 that such an annihilator
+for integral configurations exists, a stronger statement holds:
+Lemma 6. Let c be an integral configuration. Then Ann(c) is generated by
+finitely many integral polynomials.
+Proof. We will show that Ann(c) is generated by integral polynomials, the claim
+then follows from Hilbert’s Basis Theorem. Let f ∈ Ann(c) be arbitrary and
+denote
+                                      Xn
+                             f (X) =     ai X ui .
+                                             i=1
+                                                                                      7
+
+Let V be a vector subspace of Cn defined by
+
+                       V := (cv−u1 , . . . , cv−un ) | v ∈ Zd .
+
+Then f c = 0 if and only if (a1 , . . . , an ) ⊥ V . All the vectors in V have inte-
+gers coordinates, therefore the space V ⊥ has a basis consisting of rational, and
+                                                                      (j)         (j)
+therefore also integer vectors b(1) , . . . , b(m) . Denote b(j) = (b1 , . . . , bn ).
+                                                       n     (j)
+   Consider integral polynomials g (j) (X) = i=1 bi X ui . Because b(j) = b(j) ⊥
+                                                     P
+                   (j)
+V we have that g is an integral annihilator of c. From construction the poly-
+nomial f is a linear combination of g (1) , . . . , g (m) , which concludes the proof. t
+                                                                                       u
+
+     In this section we aim to prove a decomposition theorem – the fact that
+every finitary integral configuration with an annihilator can be written as a
+sum of periodic configurations. Let us introduce additional notation: if Z =
+(z1 , . . . , zd ) ∈ Cd is a complex vector, then it can be plugged into a polynomial.
+In particular, plugging into a monomial X v results in Z v = z1v1 · · · zdvd . Recall
+that the notation f (X n ) for positive integers n was defined in section 2.
+
+Lemma 7. Let c(X) be a finitary integral configuration and f (X) ∈ Ann(c) a
+non-zero integer polynomial. Then there exists an integer r such that for every
+positive integer n relatively prime to r we have f (X n ) ∈ Ann(c).
+
+                             av X v and let m ∈ N be arbitrary. We prove that if
+                          P
+Proof. Denote f (X) =
+f (X ) is an annihilator, then also f (X pm ) is an annihilator for a large enough
+     m
+
+prime p.
+    Let p be a prime. Since f p (X) ≡ f (X p ) (mod p) we especially have f p (X m ) ≡
+f (X pm ) (mod p). We assume that f (X m ) annihilates c(X), therefore multiply-
+ing both sides by c(X) results in
+
+                            0 ≡ f (X pm )c(X)    (mod p).
+
+The coefficients in f (X pm )c(X) are bounded in absolute value by
+                                          X
+                                 s = cmax   |av |,
+
+where cmax is the maximum absolute value of coefficients in c. Note that the
+bound is independent of m. Therefore for any m, if p > s we have f (X pm )c(X) =
+0, which means f (X pm ) ∈ Ann(c).
+     To finish the proof, set r = s!. Now every n relatively prime to r is of the form
+p1 · · · pk where each pi is a prime greater than s. Because f (X) is an annihilator
+now it follows easily by induction that also f (X p1 ···pk ) is an annihilator.      t
+                                                                                     u
+
+                                                                    av X v as
+                                                                 P
+     Let us define the support of a Laurent polynomial f =
+
+                           supp(f ) = { v ∈ Zd | av 6= 0 }.
+
+Recall that x1 , . . . , xd denote the variables of polynomials.
+8
+
+                                                                                av X v a non-
+                                                                            P
+Lemma 8. Let c be a finitary integral configuration and f =
+trivial integer polynomial annihilator. Define
+                                         Y
+                     g(X) = x1 · · · xd        (X rv − X rv0 )
+                                             v∈supp(f )
+                                               v6=v 0
+
+
+where r is the integer from Lemma 7 and v0 ∈ supp(f ) arbitrary. Then g(Z) = 0
+for any common root Z ∈ Cd of Ann(c).
+
+Proof. Fix Z. If any of its complex coordinates is zero then clearly g(Z) = 0.
+Assume therefore that all coordinates of Z are non-zero.
+   Let us define for α ∈ C
+
+                          Sα = v ∈ supp(f ) Z rv = α ,
+                               
+                               X
+                      fα (X) =     av X v .
+                                      v∈Sα
+
+
+Because supp(f ) is finite, there are only finitely many non-empty sets Sα1 , . . . , Sαm
+and they form a partitioning of supp(f ). In particular we have f = fα1 +· · ·+fαm .
+    Numbers of the form 1 + ir are relatively prime to r for all non-negative
+integers i, therefore by Lemma 7, f (X 1+ir ) ∈ Ann(c). Plugging in Z we obtain
+f (Z 1+ir ) = 0. Now compute:
+                              X                       X
+             fα (Z 1+ir ) =          av Z (1+ir)v =          av Z v αi = fα (Z)αi
+                              v∈Sα                    v∈Sα
+
+Summing over α = α1 , . . . , αm gives
+
+                   0 = f (Z 1+ir ) = fα1 (Z)α1i + · · · + fαm (Z)αm
+                                                                  i
+
+
+Let us rewrite the last equation as a statement about orthogonality of two vectors
+in Cm :
+                                               
+                        fα1 (Z), . . . , fαm (Z) ⊥ (α1i , . . . , αm
+                                                                   i
+                                                                     )
+
+By Vandermode determinant, for i ∈ {0, . . . , m − 1} the vectors on the right
+side span the whole Cm . Therefore the left side must be the zero vector, and
+especially for α such that v0 ∈ Sα we have
+                                         X
+                            0 = fα (Z) =     av Z v .
+                                                 v∈Sα
+
+Because Z does not have zero coordinates, each term on the right hand side is
+non-zero. But the sum is zero, therefore there are at least two vectors v0 , v ∈ Sα .
+From the definition of Sα we have Z rv = Z rv0 = α, so Z is a root of X rv −X rv0 .
+                                                                                  t
+                                                                                  u
+                                                                                     9
+
+Line polynomials
+
+We say that a Laurent polynomial f is a line Laurent polynomial if its support
+contains at least two points and all the points lie on a single line. Let us call
+a vector v ∈ Zd primitive if its coordinates don’t have a common non-trivial
+integer factor. Then every line Laurent polynomial can be expressed as
+                                  0
+                     f (X) = X v (an X nv + · · · + a1 X v + a0 )
+
+for some ai ∈ C, n ≥ 1, an 6= 0 6= a0 , v 0 , v ∈ Zd , where v is primitive. Moreover,
+the vector v is determined uniquely up to the sign. We define the direction of a
+line Laurent polynomial to be the vector space hvi ⊂ Qd .
+                                                        n
+    Recall that an ideal A ≤ C[X] √ is radical if a ∈ A implies a ∈ A. Clearly,
+that happens if and only if A = A where
+                       √
+                         A = a ∈ C[X] ∃n : an ∈ A .
+                              
+
+
+The next lemma states that for one-dimensional configurations Ann(c) is radical.
+
+Lemma 9. Let c ∈ C[[x±1 ]] be a finitary one-dimensional configuration annihi-
+lated by f m for a non-trivial polynomial f and m ∈ N. Then it is also annihilated
+by f .
+
+Proof. The configuration c can be viewed as a sequence attaining only finitely
+many values, and f m as a recurrence relation on it. Therefore c must be periodic,
+which means there is n ∈ N such that xn − 1 ∈ Ann(c).
+   Then also g = gcd(xn −1, f m ) ∈ Ann(c). Because g divides xn −1, it has only
+simple roots, and from g | f m we conclude g | f . Any multiple of g annihilates
+the sequence, hence also f does.                                                t
+                                                                                u
+
+Lemma 10. Let c be a finitary configuration and f1 , . . . , fk line Laurent poly-
+nomials such that f1m1 · · · fkmk annihilates c. Then also f1 · · · fk annihilates it.
+
+Proof. We will show that if f is a line Laurent polynomial and f m annihilates
+c, then also f annihilates c. Without loss of generality assume
+
+                        f (X) = an X nv + · · · + a1 X v + a0
+
+for some ai ∈ C and v ∈ Zd . Define g(t) = an tn + · · · + a1 t + a0 ∈ C[t] so that
+f m (X) = g m (X v ).
+    For any u ∈ Zd the sequence of coefficients (cu+iv )i∈Z can be viewed as a one-
+dimensional configuration annihilated by g m . By Lemma 9 it is also annihilated
+by g, therefore g(X v ) = f (X) annihilates c.
+    To finish the proof observe that f2m2 . . . fkmk c is a finitary configuration an-
+nihilated by f1m1 . Thus it is also annihilated by f1 and f1 f2m2 . . . fkmk c = 0. The
+argument can be repeated for all fi .                                                 t
+                                                                                      u
+10
+
+Theorem 11. Let c be a finitary integral configuration and f = av X v a non-
+                                                                  P
+trivial integral polynomial annihilator. Let r be the integer from Lemma 7 and
+v0 ∈ supp(f ) arbitrary. Then the Laurent polynomial
+                                Y
+                                       (X rv − X rv0 )
+                              v∈supp(f )
+                                v6=v 0
+
+annihilates the configuration.
+
+Proof. Denote g(X) the polynomial in the statement. By Lemma 8, x1 · · · xd ·
+g(X) vanishes on all common
+                         p    roots of Ann(c), therefore by Hilbert’s nullstellen-
+satz x1 · · · xd · g(X) ∈ Ann(c). There exists an integer m such that xm        m
+                                                                       1 · · · xd ·
+g m (X) ∈ Ann(c). Then also g m (X) is an annihilator and the proof is finished
+by Lemma 10.                                                                     t
+                                                                                 u
+
+Corollary 12. Let c be a finitary integral configuration with a non-trivial anni-
+hilator. Then there exist vectors v1 , . . . , vm ∈ Zd in pairwise distinct directions
+such that the Laurent polynomial
+
+                             (X v1 − 1) · · · (X vm − 1)
+
+annihilates c.
+
+Proof. By Lemma 6, c has an integral annihilating polynomial, and therefore
+                                                                 (|supp(f )|−1)rv0
+also an annihilating polynomial as in Theorem
+                                      Q ui 11. Divide it by X
+to obtain an annihilator of the form (X − 1). To finish the proof observe
+that (X au − 1)(X bu − 1) divides (X abu − 1)2 , and therefore any two factors
+(X au − 1)(X bu − 1) can be by Lemma 10 replaced by a single factor (X abu − 1).
+                                                                                 t
+                                                                                 u
+
+
+Decomposition theorem
+
+Multiplying a configuration by (X v −1) can be seen as a ”difference operator” on
+the configuration. Corollary 12 then says, that there is a sequence of difference
+operators which annihilates the configuration. We can reverse the process: let us
+start by a zero configuration and step by step ”integrate” until we obtain the
+original configuration. This idea gives the Decomposition theorem:
+
+Theorem 13 (Decomposition theorem). Let c be a finitary integral config-
+uration with a non-trivial annihilator. Then there exist periodic integral config-
+urations c1 , . . . , cm such that c = c1 + · · · + cm .
+
+     The proof goes by a series of lemmas.
+
+Lemma 14. Let f, g be line Laurent polynomials in distinct directions and c
+a configuration annihilated by g. Then there exists a configuration c0 such that
+f c0 = c and c0 is also annihilated by g.
+                                                                                  11
+
+Proof. Without loss of generality assume f, g are of the form
+
+                         f (X) = an X nu + · · · + a1 X u + a0
+                         g(X) = bm X mv + · · · + b1 X v + b0
+
+for some vectors u, v ∈ Zd , n, m ∈ N and ai , bi ∈ C such that an , bm , a0 , b0 are
+all non-zero.
+    The vectors u and v are linearly independent and the whole space Zd is
+partitioned into two-dimensional sublattices (cosets) modulo hu, vi. Fix one such
+a sublattice Λ and a point z ∈ Λ, then every point in the sublattice can be
+uniquely expressed as z + au + bv for some a, b ∈ Z. Denote [a, b] = z + au + bv.
+    The equation f c0 = c is satisfied if and only if
+
+                   an c0[a−n,b] + · · · + a1 c0[a−1,b] + a0 c0[a,b] = c[a,b]     (3)
+
+holds for every a, b ∈ Z (on every sublattice Λ). This is a linear recurrence
+relation on the sequences (c0[a,b] )a∈Z . Let us define c0[a,b] = 0 if 0 ≤ a < n, the
+rest of c0 is then uniquely determined by the recurrence relation so that f c0 = c
+holds.
+    It remains to show that c0 defined this way is annihilated by g. A simple
+computation shows that
+
+                               f (gc0 ) = g(f c0 ) = gc = 0.
+
+Therefore the configuration gc0 satisfies a linear recurring relation defined by f
+on the sequences (gc0 )[a,b] a∈Z . Moreover we have (gc0 )[a,b] = 0 for 0 ≤ a < n,
+from which it follows that gc0 is zero everywhere.                                t
+                                                                                  u
+
+Lemma 15. Let f1 , . . . , fm be line Laurent polynomials in pairwise distinct di-
+rections and c a configuration annihilated by their product f1 · · · fm . Then there
+exist configurations c1 , . . . , cm such that fi annihilates ci and
+
+                                    c = c1 + · · · + cm .
+
+Proof. The proof goes by induction on m. For m = 1 there is nothing to prove,
+assume m ≥ 2.
+   Since the configuration fm c is annihilated by f1 · · · fm−1 , by induction hy-
+pothesis we have
+
+                                 fm c = b1 + · · · + bm−1
+
+where each bi is annihilated by fi for 1 ≤ i < m. Let ci be such that fm ci = bi
+and ci is annihilated by fi , this is possible by Lemma 14. Then it suffices to set
+cm = c − c1 − · · · − cm−1 ; clearly c = c1 + · · · + cm and
+
+                       fm cm = fm (c − c1 − · · · − cm−1 ) = 0.
+
+                                                                                   t
+                                                                                   u
+12
+
+Proof (of Theorem 13). By Corollary 12 there is an annihilator of the form
+(X v1 − 1) · · · (X vm − 1) where (X vi − 1) have distinct directions. Therefore by
+Lemma 15 there are c1 , . . . , cm such that c is their sum and each ci is periodic
+with the vector vi .
+    It remains to show that ci can be integral. This follows from the fact that con-
+figurations in the proof of Lemma 14 are constructed by satisfying a recurrence
+relation (3), which for polynomials of the form (X vi − 1) has always integral
+solution.                                                                         t
+                                                                                  u
+Example 16. Recall the 3D counter example in Example 2. It is the sum c1 + c2
+where c1 (i, 0, 0) = 1 and c2 (0, n, i) = 1 for all i ∈ Z, and all other entries are 0.
+Configurations c1 and c2 are (1, 0, 0)- and (0, 0, 1)-periodic, respectively, so that
+(X (1,0,0) − 1)(X (0,0,1) − 1) annihilates c = c1 + c2 .                             t
+                                                                                     u
+Example 17. The periodic configurations c1 , . . . , cm in Theorem 13 may, for some
+configurations c, be necessarily non-finitary. Let α ∈ R be irrational, and define
+three periodic two-dimensional configurations c1 , c2 and c3 by
+        c1 (i, j) = biαc,       c2 (i, j) = bjαc,       c3 (i, j) = b(i + j)αc.
+Then c = c3 − c1 − c2 is a finitary integral configuration (over alphabet {0, 1}),
+annihilated by the polynomial (X (1,0) − 1)(X (0,1) − 1)(X (1,−1) − 1), but it cannot
+be expressed as a sum of finitary periodic configurations as proved in [KS15a].
+Figure 3 illustrates the setup for α being the golden ratio.                       t
+                                                                                   u
+
+
+
+
+Fig. 3: The configuration c from Example 17 when α is the golden ratio is shown
+on the left. On the right the configuration is skewed such that the three directions
+h(1, 0)i, h(0, 1)i and h(1, −1)i became symmetrical, the bottom left corner is
+preserved.
+
+
+
+
+4    Two-dimensional Configurations
+In the rest of the paper we focus on two-dimensional configurations. We ana-
+lyze Ann(c) using tools of algebraic geometry and provide a description of a
+                                                                                     13
+
+polynomial φ which divides every annihilator. Moreover we show a theoretical
+result that Ann(c) is a radical ideal, which allows us to formulate a more explicit
+version of the decomposition theorem for two-dimensional configurations.
+    To simplify the notation, we prefer to write C[x, y] in the place of C[x1 , x2 ].
+Let us recall some algebraic notions about polynomial ideals, for a reference see
+[AM69] and [CLO92]. By roots or zeros of an ideal A ≤ C[X] we understand the
+set
+                          { Z ∈ Cd | ∀f ∈ A : f (Z) = 0 }.
+Two ideals A, B ≤ C[X] are said to be comaximal if A + B = C[X], or equiva-
+lently if 1 ∈ A + B. It is a fact that two polynomial ideals in C[X] are comaximal
+if and only if they do not have common zeros. It T   is also aQwell-known fact that
+if A1 , . . . , An are pairwise comaximal ideals then Ai = Ai .
+    Recall that an ideal A is prime if ab ∈ A implies a ∈ A or b ∈ A. We make use
+of the well-known minimal decomposition theorem for radical ideals and adapt
+it to the ring C[x, y].
+Theorem 18 (Minimal decomposition). Every radical ideal A ≤ C[X] can
+be uniquely written as a finite intersection of prime ideals A = P1 ∩ · · · ∩ Pk
+where Pi 6⊂ Pj for i 6= j.
+Proof. See e.g. [CLO92] Chapter 4, §6, Theorem 5.                                     t
+                                                                                      u
+Lemma 19. For a non-trivial prime ideal P ≤ C[x, y] one of the following
+holds:
+ – P is a principal ideal generated by an irreducible polynomial, i.e. P = hϕi
+   for some irreducible ϕ,
+ – or P is maximal ideal, in which case P = hx − α, y − βi for some α, β ∈ C.
+Proof. Follows by Proposition 1 in section 1.5 and Corollary 2 in section 1.6 of
+Fulton’s book [Ful89].                                                        t
+                                                                              u
+  Let us define the empty intersection and empty product of ideals to be the
+whole ring C[x, y].
+Corollary 20. Let A ≤ C[x, y] be a non-trivial radical ideal. Then there are dis-
+tinct principal ideals R1 , . . . , Rs generated by irreducible polynomials and distinct
+maximal ideals M1 , . . . , Mt such that Ri 6⊂ Mj and
+                              A = R1 · · · Rs M1 · · · Mt .
+Moreover the ideals are determined uniquely and the ideals R = R1 · · · Rs , M1 , . . . , Mt
+are pairwise comaximal.
+Proof. Apply Lemma 19 to Theorem 18 to obtain A = Q       R1 ∩ · · ·T∩ Rs ∩ M1 ∩
+· · · ∩ Mt for Ri , Mj as in the statement. Observe that    Ri = Ri since Ri
+are generated by irreducible polynomials. The ideals R, M1 , . . . , Mt are pairwise
+comaximal since a maximal ideal is comaximal with any ideal not contained in it.
+Therefore A = R M1 · · · Mt . The uniqueness follows from uniqueness of minimal
+decomposition.                                                                    t
+                                                                                  u
+14
+
+Theorem 21. Let c be a two-dimensional finitary integral configuration with a
+non-trivial annihilator. Then Ann(c) is a radical ideal. Moreover if P is a prime
+ideal from the minimal decomposition of Ann(c) then
+       P = hxa y b − ωi    or   P = hxa − ωy b i    or   P = hx − ωx , y − ωy i
+for (a, b) ∈ N20 primitive vector and ω, ωx , ωy ∈ C roots of unity.
+                      p
+Proof. Denote A = Ann(c). Since c has a non-trivial annihilator, A is non-
+trivial. Let A = P1 ∩ · · · ∩ Pk be its minimal decomposition.
+    Let P be one of Pi . Assume first that P = hϕi for an irreducible polynomial
+ϕ. By Lemma 6 and Theorem 11 there exist vectors ui 6= vi such that
+                        (X v1 − X u1 ) · · · (X vn − X un ) ∈ A.
+Since ϕ is an irreducible factor of this polynomial we have ϕ | X v − X u for some
+u 6= v. Let v − u = dw for a primitive vector w = (a, b) and d > 0. We can
+assume a ≥ 0, otherwise the roles of u and v can be exchanged. Observe that in
+Laurent polynomials
+           X v − X u = X u (X dw − 1) = X u (X w − ω1 ) · · · (X w − ωd )
+where ω1 , . . . , ωd are d-th roots of unity. Therefore the irreducible polynomial
+factors of X v − X u are, up to a constant multiple, of the form
+       xa y b − ω (if b ≥ 0),   or xa − ωy −b (if −b > 0),         or x,   or y
+for ω a root of unity. The cases ϕ = x and ϕ = y cannot happen. This classifies
+the case of principal ideals P .
+    Now assume that P = hx − α, y − βi for some α, β ∈ C, without loss of
+                                       Qk
+generality let P = P1 . Choose g ∈ i=2 (Pi \ P1 ) arbitrarily, then g(x − α) ∈ A
+and g ∈/ A. There exists m ∈ N such that g m (x−α)m ∈ Ann(c), but g m ∈/ Ann(c),
+and in particular α 6= 0. In other words, (x−α)m annihilates the non-zero finitary
+configuration c0 = g m c. By Lemma 10 also x − α annihilates c0 , and therefore
+for every i, j ∈ Z
+                                   c0i,j = c00,j α−i .
+If α is not a root of unity then c0 is not finitary, which is a contradiction. A
+similar argument applies to β.
+    To prove the radicality of Ann(c), observe that each Pi is generated by line
+polynomials. Because by Corollary 20 we have A = P1 · · · Pk , A has a finite set
+of generators A = hg1 , . . . , gk i such that each gi is a product of line polynomials.
+Then for each i there exists m ∈ N such that gim ∈ Ann(c), and by Lemma 10
+we have gi ∈ Ann(c). Ann(c) contains a set of generators of its radical, and
+therefore it is a radical ideal.
+                                                                                      t
+                                                                                      u
+    The proof of the radicality of Ann(c) relies on the decomposition of two-
+dimensional radical ideal into a product of primes. Although no analog of such
+statement is available in higher dimensions, we conjecture that Ann(c) is radical
+for higher dimensional finitary configurations as well.
+                                                                                         15
+
+Lemma 22. Let c be a configuration and A1 , . . . , Ak , k ≥ 2 pairwise comaximal
+ideals such that Ann(c) = A1 ∩ · · · ∩ Ak . Then there are uniquely determined
+configurations c1 , . . . , ck such that Ann(ci ) = Ai and c = c1 + · · · + ck .
+
+Proof. Note that Ann(c) = A1 · · · Ak . We use the following two easy to prove
+facts from commutative algebra. If Ai are parwise comaximal then:
+
+(a) The ideals A1 and A2 · · · Ak are comaximal. Q
+(b) There exist f1 , . . . , fk such that fi ∈
+                                             / Ai , fi ∈ j6=i Aj and f1 + · · · + fk = 1.
+
+Let fi be as in (b) and set ci = fi c. Then c = c1 + · · · + ck . Let us show
+A1 ⊂ Ann(c1 ):
+
+     g ∈ A1 ⇒ gf1 ∈ A1 · · · Ak = Ann(c) ⇒ g ∈ Ann(f1 c) = Ann(c1 ).
+
+Next let us show Ann(c1 ) ⊂ A1 . Note that (1 − f1 ) = f2 + · · · + fk ∈ A1 and
+compute:
+
+     g ∈ Ann(c1 ) ⇒ gf1 ∈ Ann(c) ⊂ A1 ⇒ g = gf1 + g(1 − f1 ) ∈ A1 .
+
+For the uniqueness assume c = c01 + · · · + c0k such that c1 6= c01 and Ann(c0i ) = Ai .
+By (a) let f ∈ A1 and g ∈ A2 · · · Ak be such that f + g = 1. Then
+
+           c1 − c01 = f (c1 − c01 ) + g(c1 − c01 )
+                    = f (c1 − c01 ) + g(−c2 − · · · − ck + c02 + · · · + c0k ) = 0.
+
+The argument can be repeated for all ci .                                                 t
+                                                                                          u
+
+Note. If Ann(c) consisted of Laurent polynomials instead of ordinary polynomi-
+als, the statement of Theorem 21 would simplify – all principal prime ideals in
+the decomposition would be of the form hX u − ωi for a primitive vector u (with
+possibly negative coordinates) and root of unity ω. In the next proof we also
+deal with the fact that Ann(c) does not consist of Laurent polynomials, which
+is done by a technical trick.
+
+Theorem 23 (Two-dimensional decomposition theorem). Let c be as in
+Theorem 21 and P1 ∩ · · · ∩ Pk be the minimal decomposition of Ann(c). Then
+there exist configurations c1 , . . . , ck such that Ann(ci ) = Pi and c = c1 + · · · + ck .
+
+Proof. Let R1 , . .Q  . , Rs , M1 , . . . , Mt be as in Corollary 20. By the same corollary,
+the ideals R =            Ri , M1 , . . . , Mt are pairwise comaximal, and by Lemma 22
+there are configurations cR , cM1 , . . . , cMt annihilated by corresponding ideals
+such that c = cR + cM1 + · · · + cMt .
+      By Theorem 21, Ri = hϕi i for some line polynomial ϕi . These polynomials
+are in finitely many distinct directions m. Define φ1 , . . . , φm such that each
+φj is product of all ϕi in the same direction. Then, by Lemma 15, there are
+cφ1 , . . . , cφm annihilated by corresponding polynomials such that cR = cφ1 +
+· · · + cφm .
+16
+
+    Moreover Ann(cφi ) = hφi i: if f ∈ Ann(cφ1 ), then f φ2 · · · φm ∈ Ann(cR ) = R.
+The ideal R is one-generated, so φ1 · · · φm | f φ2 · · · φm and therefore f ∈ hφ1 i.
+Analogously for other φi .                                          Q
+    For the next step define S1 ⊂ {1, . . . , s} such that φ1 = i∈S1 ϕi . Since all
+ϕi for i ∈ S1 have the same direction, by Theorem 21 either they are all of the
+form ϕi = xa y b − ωi or they are all of the form ϕi = xa − ωi y b for some a, b ∈ N0 .
+Assume the first case. Then hϕi i = Ri are pairwiseP   comaximal and by Lemma 22
+there exist cRi annihilated by Ri such that cφ1 = i∈S1 cRi .
+    If we have ϕi = xa − ωi y b for i ∈ S1 we do the following technical trick.
+Consider the configuration c0φ1 obtained by mirroring cφ1 along the horizontal
+axis. It is easy to verify that Ann(c0φ1 ) = i∈S1 hϕ0i i where ϕ0i P    = xa y b − ωi .
+                                                 Q
+Proceeding as in the previous case we obtain cRi such that cφ1 = i∈S1 c0Ri and
+                                                  0               0
+
+Ann(c0Ri ) = hϕ0i i.P
+                    Let us mirror each c0Ri back along the horizontal axis to obtain
+cRi . Then cφ1 = i∈S1 cRi and Ann(cRi ) = Ri , as desired.
+    Analogously we can decompose each cφi . To finish the proof observe that
+
+                      c = cR1 + · · · + cRs + cM1 + · · · + cMt .
+
+                                                                                     t
+                                                                                     u
+
+    We say that a two-dimensional configuration is doubly periodic if there are
+two linearly independent vectors in which it is periodic. A configuration which
+is periodic but not doubly periodic is called one-periodic.
+
+Corollary 24. Let c be as in Theorem 21.
+
+(a) There exist a non-negative integer m, line polynomials φ1 , . . . , φm in pairwise
+    distinct directions, a polynomial φ := φ1 · · · φm and an ideal H which is an
+    intersection of maximal ideals such that hφi and H are comaximal and
+
+                              Ann(c) = φ1 · · · φm H = φH.
+
+    Moreover m and H are determined uniquely and φ, φ1 , . . . , φm are deter-
+    mined uniquely up to a constant factor and the order.
+(b) There exist configurations cφ , cH , c1 , . . . , cm such that
+
+                           c = c1 + · · · + cm + cH = cφ + cH
+
+     where Ann(cφ ) = hφi, Ann(cH ) = H and Ann(ci ) = hφi i. Moreover cφ and
+     cH are determined uniquely. Each ci is one-periodic in the direction of φi ,
+     and cH is doubly periodic.
+
+Proof. Let us continue
+                 Tt    with the notation from the proof of Theorem 23.
+   (a) Let H = i=1 Mi . Then φ, φ1 , . . . , φm , H are as desired.
+   (b) Let cH = cM1 +· · ·+cMt , cφ = cR and ci = cφi . The fact that Ann(cH ) =
+H follows by Lemma 27 introduced later and the uniqueness of cφ and cH follows
+by Lemma 22.
+                                                                               17
+
+    Let v be a primitive direction of the polynomial φ1 . There is n ∈ N such that
+each irreducible factor of φ1 divides X nv − 1. Therefore this Laurent polynomial
+annihilates cφ1 which means that cφ1 has period nv. If there was a period u
+in any other direction, then φ1 | X u − 1, which is impossible. Therefore cφ1 is
+one-periodic, and so is any cφi .
+    Denote M1 = hx − ωx , y − ωy i and let n ∈ N be such that ωxn = 1. Then cM1
+has a horizontal period n since xn − 1 ∈ M1 . Similarly cM1 has a vertical period.
+By a similar argument each cMj is doubly periodic. A finite sum cH of doubly
+periodic configurations is also doubly periodic.                                t
+                                                                                u
+
+    Let us denote the number m from Corollary 24 by ord(c). It is an important
+characteristic of the configuration which provides information about its period-
+icity.
+
+Corollary 25. Let c be as in Theorem 21. Then
+ – ord(c) = 0 if and only if c is doubly periodic,
+ – ord(c) = 1 if and only if c is one-periodic,
+ – ord(c) ≥ 2 if and only if c is non-periodic.
+
+Proof. If ord(c) = 0 then c = cH , which is doubly periodic. If ord(c) = 1 then
+c = c1 + cH is a sum of one-periodic and doubly periodic configuration, which
+is one-periodic. If ord(c) ≥ 2 then every annihilating polynomial is divisible by
+φ1 φ2 . Therefore X v − 1 cannot be an annihilator for any non-zero vector v and
+c is non-periodic.                                                              t
+                                                                                u
+
+    Corollary 24 and Corollary 25 are powerful tools to analyze configurations
+from the structure of their annihilator ideals. The main improvement over the
+earlier decomposition theorem is that not only we know that c can be decom-
+posed into a sum of periodic components, but also we can exactly describe the
+annihilator ideals of each component. Moreover each component is either one-
+or doubly periodic and the number of one-periodic components (in distinct di-
+rections) is unique and determines whether the original configuration is periodic
+or not.
+
+Example 26. Let us call D ⊂ Z2 a T-shape if it is of the form
+
+                    D = {0, . . . , w} × {h} ∪ {d} × {0, . . . , h}
+
+for some h, w, d ∈ N, d ≤ h (Figure 4). We show that if Pc (D) ≤ |D| for a
+T-shape D, then c is periodic. For a contradiction assume that the inequality
+holds and c is non-periodic.
+     We need a fact which is later proved in the next section as Lemma 32: The
+coefficients of c can be renamed such that if Pc (D) ≤ |D|, then there is an
+annihilator polynomial with supp(f ) ⊂ −D. Without loss of generality assume
+that the coefficients of c have been renamed and we have such an annihilator f .
+     By Corollary 25, ord(c) ≥ 2, and in particular there are two line polynomials
+φ1 , φ2 in distinct directions such that φ1 φ2 divides any annihilator polynomial.
+18
+
+The convex hull of supp(φ1 φ2 ) is a parallelogram, and therefore the convex hull
+of supp(f ) has two pairs of parallel sides because f is a polynomial multiple of
+φ1 φ2 . This is, however, impossible since supp(f ) ⊂ −D and convex hull of any
+non-collinear subset of points in −D is a triangle.                            t
+                                                                               u
+
+
+
+                                             w
+                                         d
+
+
+
+                                                      h
+
+
+
+
+Fig. 4: A T-shape with w = 5, h = 3 and d = 2. Convex hull of any non-collinear
+subset of its points is a triangle.
+
+
+    Knowing a configuration and its annihilator, Theorem 23 gives a decompo-
+sition into a sum of configurations and provides their annihilators. We finish
+the section by giving a complementary claim: given configurations and their
+annihilators, we can describe the annihilator of their sum.
+
+Lemma 27. Let c1 , c2 be configurations such that Ann(c1 ) and Ann(c2 ) are non-
+trivial radical ideals. Let P1 , . . . , Pk , Q1 , . . . , Q` be prime ideals such that
+                              k
+                              \                                 `
+                                                                \
+                 Ann(c1 ) =         Pi       and   Ann(c2 ) =         Qj
+                              i=1                               j=1
+
+are minimal decompositions. If Pi 6= Qj for all admissible i, j, then Ann(c1 +
+c2 ) = Ann(c1 ) ∩ Ann(c2 ).
+
+Proof. Denote c = c1 + c2 , clearly Ann(c) ⊃ Ann(c1 ) ∩ Ann(c2 ). To prove the
+other inclusion, for the contrary suppose there exists f ∈ Ann(c) such that
+f ∈/ Ann(c1 ) ∩ Ann(c2 ). Then f does not belong to at least one of the prime
+ideals. Without loss of generality assume f ∈    / P1 and P1 is minimal such ideal
+with respect to inclusion. In particular, we have Qj * P1 for every j.
+                         Q`
+    Now choose any g ∈ j=1 (Qj \ P1 ), then we have g ∈ Ann(c2 )\P1 . Consider
+the polynomial f g. Since f annihilates c and g annihilates c2 , we have that f g
+annihilates c−c2 = c1 . But f g ∈
+                                / P1 , which is in contradiction with Ann(c1 ) ⊂ P1 .
+                                                                                  t
+                                                                                  u
+
+Corollary 28. Let c1 , c2 be two-dimensional finitary integral configurations hav-
+ing a non-trivial annihilator and k = ord(c1 ), ` = ord(c2 ) such that
+
+           Ann(c1 ) = φ1 · · · φk H1         and   Ann(c2 ) = ψ1 · · · ψ` H2
+                                                                                   19
+
+where φi , ψj are line polynomials and H1 , H2 intersections of maximal ideals as
+in Corollary 24. If φi and ψj have pairwise distinct directions, then ord(c1 +c2 ) =
+k + ` and there exists H an intersection of maximal ideals such that
+
+                       Ann(c1 + c2 ) = φ1 · · · φk ψ1 · · · ψ` H.
+
+                                                                                    t
+                                                                                    u
+
+Example 29. Let us show that if c1 and c2 are two-dimensional finitary one-
+periodic configurations in distinct directions, then their sum is non-periodic.
+    By Corollary 25 we have ord(c1 ) = ord(c2 ) = 1, and therefore by Corollary 24
+there are φ, ψ line polynomials such that Ann(c1 ) = φH1 and Ann(c2 ) = ψH2
+for some H1 , H2 intersections of maximal ideals. Moreover φ and ψ have the
+same direction as is the unique direction of periodicity of c1 and c2 respectively.
+Therefore, by the previous lemma, ord(c1 + c2 ) = 2 and therefore c1 + c2 is
+non-periodic by Corollary 25.                                                    t
+                                                                                 u
+
+
+5    Approaching Nivat’s Conjecture
+
+In this section we apply the facts we learned in previous sections about annihi-
+lating polynomials and link them to the complexity of a configuration.
+     When going from a symbolic configuration to formal power series, we have to
+choose numerical representations of the symbols. We begin by showing that there
+is a particularly suitable choice, and we call such configurations normalized. Next,
+in order to attack Nivat’s conjecture, we define a class of configurations called
+counterexample candidates. As the name suggests, these are potential counterex-
+amples to the conjecture, and our goal is to prove that such configurations have
+high complexity.
+     To handle the complexity we need a suitable tool. We introduce lines of
+blocks, which are just sets of blocks m × n located on a common line in the
+configuration. We prove two complementary lemmas – the first one states that
+there are many disjoint lines of blocks, while the other gives a lower bound on
+the number of distinct blocks on a line. These combined result in a lower bound
+on the overall complexity.
+     Our main result is that if c is non-periodic then the condition Pc (m, n) > mn
+is true for all but finitely many pairs m, n. In the proof we consider three different
+ranges of m and n:
+Very thin blocks. If m or n is so small that the support of no annihilating
+polynomial fits in the m × n rectangle, then by a variation of Lemma 5 the
+configuration has complexity Pc (m, n) > mn.
+Thin blocks. Consider fixed n, large enough so that the support of some an-
+nihilator fits inside a strip of height n. We show that there exists m0 such that
+for all m > m0 we have Pc (m, n) > mn. Analogously for a fixed m.
+Fat blocks. We prove that there are constants m0 and n0 such that for m > m0
+and n > n0 we have Pc (m, n) > mn.
+20
+
+    These three ranges cover all but finitely many dimensions m × n. Interest-
+ingly, a common approach works for all configurations except for the case of fat
+blocks when c is a sum of horizontally and vertically one-periodic configuration.
+This case requires a more involved combinatorial analysis which is carried out
+separately in section 6.
+
+
+Normalized Configurations
+
+There is a particularly suitable choice when representing a symbolic configuration
+as a formal power series. For a configuration c consider Laurent polynomials f
+such that f c is a constant configuration. We say that c is normalized if all such
+f are annihilators, i.e. the constant in the result of f c is zero. Let us denote by
+1 the constant one configuration.
+Lemma 30. Let c be a finitary configuration. Then there exists a, b ∈ C, a 6= 0
+such that ac + b1 is normalized. Moreover if c is integral then a, b ∈ Z.
+
+Proof. Let f, g be Laurent polynomials such that f c, gc are constant configura-
+tions. Denote by κ(f ) the number such that f c = κ(f )1 and by σ(f ) the sum of
+the coefficients of f . Then
+
+                      σ(f )κ(g)1 = f gc = gf c = σ(g)κ(f )1
+                   g σ(f )c − κ(f )1 = σ(f )κ(g)1 − κ(f )σ(g)1 = 0.
+                                    
+             ⇒
+
+    If there is f such that σ(f ) 6= 0 we can choose a = σ(f ), b = −κ(f ) and we
+are done. Let us assume that for all f we have σ(f ) = 0, we will show that then
+c is already normalized and therefore we can choose a = 1, b = 0.
+    For even k let Ck denote the hypercube [− k2 , k2 )d ⊂ Zd of side k centered
+around the origin. Choose even n ∈ N such that supp(f ) ⊂ Cn and consider
+arbitrary even integer N > n. Let us count the sum of coefficients of f c inside
+of CN .
+
+
+                        c                              fc
+
+
+
+
+                                      f                 n
+
+
+
+                        CN                            CN
+                       CN +n
+                                                     CN +2n
+
+  Fig. 5: Proof of Lemma 30: Counting sum of coefficients of f c inside of CN .
+                                                                                      21
+
+   Since f c is a constant configuration the sum is surely κ(f )N d . On the other
+hand, the coefficients of f c in CN depend only on the coefficients of c in CN +n .
+Each such coefficient cv contributes to the sum by σ(f )cv , but we overcount in
+the region CN +2n \ CN of f c, see Figure 5. This region is of size proportional
+to N d−1 and because c is finitary, the contribution to each position is bounded.
+Therefore
+                              X
+                κ(f )N d =         σ(f )cv + O(N d−1 ) = O(N d−1 ).
+                            v∈CN +n
+
+
+Taking the limit N → ∞ shows that κ(f ) = 0. Therefore f is an annihilator and
+c is normalized.
+P Foruthe     ”moreover” part we argue as in the proof of Lemma 6. Let f =
+   ai X i , then
+
+           f c = a0 1   ⇔    (−a0 , a1 , . . . , am ) ⊥ (1, cv−u1 , . . . , cv−um )
+
+for all v ∈ Z. Thus all f form a vector space over C which has integral generators
+if c is integral. Therefore if there is f with σ(f ) 6= 0, then there is also integral
+f 0 with σ(f 0 ) 6= 0. In that case necessarily σ(f 0 ), κ(f 0 ) ∈ Z.               t
+                                                                                    u
+
+Corollary 31. Either c is normalized, in which case c + κ1 is normalized for
+all choices of κ ∈ C, or there is unique κ ∈ C such that c + κ1 is normalized.
+
+Proof. Follows from the proof of Lemma 30 by choosing κ = b/a.                        t
+                                                                                      u
+
+   Note that the case when σ(f ) = 0 for all f in the proof of the previous lemma
+can be handled easily for two-dimensional integral configurations. If the sum of
+coefficients of f is zero and f c is a constant configuration, then f 2 c = 0. We
+proved that the ideal of annihilators is radical, so we can conclude f c = 0.
+   To link polynomials and complexity we use a variation of Lemma 5. Recall
+that for a finite shape D ⊂ Zd we denote by cv+D the pattern of shape D
+extracted from the position v ∈ Zd . Formally we defined it as a function
+
+                                cv+D : D → C
+                                         di 7→ cv+di ,
+
+and therefore it makes sense to talk about linear independence of patterns (over
+C). If we denote D = {d1 , . . . , dn }, then this is the same as if we considered
+cv+D to be the vector (cv+d1 , . . . , cv+dn ) ∈ Cn .
+   Let us say that a Laurent polynomial f fits in S ⊂ Zd if a translate of
+− supp(f ) is a subset of S. Here S can also be infinite, and usually will be a
+convex subset of Zd .
+
+Lemma 32. Let c be a configuration and D ⊂ Zd a finite shape. Assume there is
+no annihilating Laurent polynomial f which fits in D. Then there are |D| linearly
+independent patterns cv+D . Moreover if c is normalized then Pc (D) > |D|.
+22
+
+Proof. Denote D as above and for contradiction assume the vectors (cv+d1 , . . . , cv+dn ) ∈
+Cn span a space of dimension at most n−1. Then there exists a common orthog-
+onal vector (a1 , . . . , an ) and f (X) = a1 X −d1 + · · · + an X −dn is an annihilating
+polynomial fitting in D.
+    For the second part for contradiction suppose Pc (D) ≤ n, then the vec-
+tors (1, cv+d1 , . . . , cv+dn ) ∈ Cn+1 span a space of dimension at most n. Let
+(a0 , a1 , . . . , an ) be their common orthogonal vector. Then f defined as previ-
+ously has the property f c = −a0 1. If c is normalized then f is an annihilator.
+                                                                                        t
+                                                                                        u
+
+
+Counterexample Candidates
+
+We approach Nivat’s conjecture by examining a potential counterexample to it.
+Let us recall the conjecture, in the contrapositive direction:
+
+Conjecture (Nivat’s conjecture). Let c be a non-periodic two-dimensional con-
+figuration. Then for all positive integers m, n we have Pc (m, n) > mn.
+
+    If c is a counterexample, then it is surely a non-periodic two-dimensional
+configuration. It is finitary, since otherwise its complexity is not bounded. It
+also has to have an annihilator – otherwise by Lemma 5 for all m, n we have
+Pc (m, n) > mn. Moreover, without loss of generality, we can assume that c is
+integral. Let us make a formal definition:
+
+Definition 33. A configuration is a counterexample candidate if it is two-
+dimensional, non-periodic, finitary and integral configuration with an annihi-
+lator.
+
+    Our goal is to show that any counterexample candidate c has a high com-
+plexity. In the proofs which follow we will frequently use the annihilator struc-
+ture characterization from Corollary 24. Let us therefore define polynomials
+φ, φ1 , . . . , φord(c) and an ideal H such that
+
+                         Ann(c) = φH = φ1 · · · φord(c) H
+
+as in the statement of Corollary 24. Note that since c is non-periodic we have
+ord(c) ≥ 2.
+    For a non-zero Laurent polynomial f let us define the bounding box of f to
+be the vector box(f ) = (m, n) with m, n smallest integers such that f fits in a
+block (m + 1) × (n + 1). Equivalently,
+
+                  box(f ) = (max A − min A, max B − min B)
+
+where A = { a | (a, b) ∈ supp(f ) } and B = { b | (a, b) ∈ supp(f ) }. Let us
+furthermore extend the definition to vectors: if v = (v1 , v2 ) then define box(v) =
+(|v1 |, |v2 |).
+                                                                                23
+
+
+                                               x2 y
+
+                                                      -3x3
+
+                                       xy -1
+
+
+
+    Fig. 6: The bounding box of the polynomial xy −1 + x2 y − 3x3 is (2, 2).
+
+
+Example 34. For example, box(xy −1 + x2 y − 3x3 ) = (2, 2) and box(X u − X v ) =
+box(u − v). If we plot the support of a polynomial as points in the plane, the
+bounding box are dimensions of the smallest rectangle which covers all of them,
+see Figure 6. Note however that a polynomial f never fits in box(f ).
+
+    With the framework that we just defined we get almost for free that coun-
+terexample candidates have high complexity for very thin rectangles:
+
+Lemma 35 (Very thin blocks). Let c be a counterexample candidate and
+(mφ , nφ ) = box(φ). If M, N are positive integers such that M ≤ mφ or N ≤ nφ
+then Pc (M, N ) > M N .
+
+Proof. By Lemma 30 there exist a, b ∈ Z, a 6= 0, such that c0 = ac+b1 is a finitary
+integral configuration which is normalized. Clearly Pc (M, N ) = Pc0 (M, N ). Let
+Ann(c0 ) = φ0 H 0 . Since Ann(ac) = Ann(c) and ord(b1) = 0, by Corollary 28 we
+have φ0 = φ.
+    Thus every annihilator of c0 is a multiple of φ and therefore it cannot fit in
+an M × N rectangle. By Lemma 32 we have Pc0 (M, N ) > M N which concludes
+the proof.                                                                        t
+                                                                                  u
+
+Disjoint Lines of Blocks
+For a finite shape D ⊂ Z2 let us define a line of D-patterns in direction v ∈ Z2 ,
+v 6= 0 to be a set of the form
+                                
+                             L = cu+kv+D k ∈ Z
+
+for some vector u ∈ Z2 . Let Linesv (D) be the set of all lines in the same
+direction, i.e.
+
+                Linesv (D) = { cu+kv+D | k ∈ Z } u ∈ Z2 .
+                            
+
+Note that Linesv (D) is a family of sets. In our usual setup the vector v will
+be primitive and as the shape D we will consider rectangular blocks M × N . In
+that case we talk about lines of M × N blocks in direction v and denote more
+conveniently by Linesv (M, N ). Figure 7 illustrates this definition.
+    Our strategy is to prove two complementary lemmas. The first one gives
+a lower bound on the number of pairwise disjoint sets in Linesv (M, N ) for a
+24
+
+
+
+
+Fig. 7: Two lines of blocks 5 × 4 in direction (2, 1). They are elements of
+Lines(2,1) (5, 4).
+
+
+suitable choice of v, M, N . The second one gives a lower bound for the number
+of blocks in any L ∈ Linesv (M, N ). Combined, they give a lower bound on the
+complexity of the configuration.
+    We make use of the structure of the annihilator ideal Ann(c) = φH. When
+talking about minimal polynomials, we mean minimal with respect to polyno-
+mial division. In polynomials in one variable, all ideals have (up to a constant
+factor) unique minimal polynomial which generates the ideal. In our case the
+situation can be more complicated.
+    Clearly, minimal polynomials of Ann(c) are of the form φh where h is a
+minimal polynomial of H. Moreover, in that case Ann(hc) = hφi. Note that we
+cannot take any polynomial from H in the place of h – for example, φh ∈ H but
+Ann(φhc) = Ann(0) = C[x, y].
+    We claim that H contains a line polynomial in arbitrary non-zero direction
+v ∈ Z2 which is minimal. If H = C[X] this is triviallyQ
+                                                      true. Otherwise let Zi ∈ C2
+                                               2    u       v    v
+be the roots of H. Then for a suitable u ∈ Z , X        i (X − Zi ) ∈ H is a line
+polynomial in the direction v. It suffices to choose a minimal polynomial from
+H which divides it.
+Lemma 36. Let f be a line Laurent polynomial and v a primitive vector in
+the direction of f . Let c be a configuration such that Ann(c) = hf i. Denote
+(mf , nf ) = box(f ), (m, n) = box(v) and let M > mf , N > nf be positive
+integers. Then Linesv (M, N ) contains at least (M − mf )n + m(N − nf ) pairwise
+disjoint sets.
+Proof. Without loss of generality assume v = (m, n), otherwise a mirrored or
+rotated configuration can be considered. There is an integer d ∈ N such that
+(mf , nf ) = (dm, dn) = dv. Denote M 0 = M − mf , N 0 = N − nf and define
+           D = (M 0 , 0) + a(−M 0 , N 0 ) + b(mf , nf ) a, b ∈ [0, 1) ∩ Z2 .
+               
+
+The shape D is contained in an M × N block and |D| = M 0 nf + mf N 0 , see
+Figure 8. Moreover no multiple of f fits in D, thus by Lemma 32 there are at
+least M 0 nf + mf N 0 = d(M 0 n + mN 0 ) linearly independent patterns cv+D .
+                                                                                  25
+
+    Let L be a line of patterns from Linesv (D). Then f gives a linear recurrence
+relation of degree d on the elements of L. Therefore the vector space generated
+by the elements of L has dimension at most d. In particular, each line contains
+at most d of the |D| linearly independent patterns cv+D . It follows that there
+are at least M 0 n + mN 0 distinct lines in Linesv (D).
+    We claim that if two lines are distinct then they are disjoint. Indeed, if a line
+contains a particular D-pattern, then f uniquely determines the next and the
+previous pattern on the line. Therefore the lines either contain exactly the same
+patterns or they are disjoint.
+    We proved that Linesv (D) contains at least M 0 n + mN 0 pairwise disjoint
+lines, therefore also Linesv (M, N ) does.                                          t
+                                                                                    u
+
+
+
+
+               nf = dn
+
+                                              D
+
+           N 0 = N − nf
+                                                                      dv
+                                                              v
+
+                                  M 0 = M − mf          mf = dm
+
+Fig. 8: The shape D in Lemma 36. The marked points are elements of the M ×N
+block, the filled ones belong to D.
+
+
+
+Corollary 37. Let c be a vertically one-periodic two-dimensional finitary con-
+figuration and f ∈ C[y] minimal vertical polynomial which annihilates it. Let nf
+be the degree of f . Then for any M > 0, N > nf the family Lines(0,1) (M, N )
+contains at least M disjoint sets.
+
+Proof. Let h ∈ H be such that f = φh, clearly h ∈ C[y]. Denote nh the degree
+of h. Then Ann(hc) = hφi and by Lemma 36 the set Lines(0,1) (M, N − nh ) in hc
+contains at least M disjoint columns of blocks. An M × N block in c determines
+an M × (N − nh ) block in hc. Therefore also Lines(0,1) (M, N ) contains at least
+M disjoint columns of blocks.                                                  t
+                                                                               u
+
+Lemma 38. Let c be a counterexample candidate, f ∈ Ann(c) be minimal and v
+be a primitive vector in the direction of φ1 . Denote (mf , nf ) = box(f ), (m, n) =
+box(v) and let M > mf , N > nf be integers. Then Linesv (M, N ) contains at
+least (M − mf )n + m(N − nf ) disjoint sets.
+
+Proof. Let c0 = (f /φ1 )c, then c0 is a one-periodic configuration with Ann(c0 ) =
+hφ1 i. Denote (m1 , n1 ) = box(φ1 ), then by Lemma 36, Linesv (M − mf + m1 , N −
+26
+
+nf + n1 ) in c0 contains at least (M − mf )n + m(N − nf ) disjoint elements. An
+M ×N block in c when multiplied by f /φ1 determines an (M −mf +m1 )×(M −
+nf + n1 ) block in c0 . Therefore the lower bound applies also for Linesv (M, N )
+in c.                                                                          t
+                                                                               u
+
+Non-periodic Stripes
+Define a stripe to be a set of integer points between two parallel lines, i.e. a set
+of the form
+
+                       w + au + bv a ∈ [0, 1), b ∈ R ∩ Z2 ,
+                     
+
+where u, v, w ∈ Z2 are arbitrary, v 6= 0. The vector w specifies the position of
+the stripe, u determines its width and the stripe extends infinitely along v. Let
+us call the vector space hvi ⊂ Q2 the direction of the stripe.
+Lemma 39. Let c be a counterexample candidate and v ∈ Z2 a non-zero vector.
+Let S be an infinite stripe in the direction of v of maximal width such that φ
+does not fit in. Then c restricted to the stripe S is non-periodic in the direction
+of v.
+Proof. Since ord(c) ≥ 2 there are at least two line polynomial factors of φ in
+different directions. Without loss of generality assume that v is distinct from the
+direction of φ1 .
+    Let h ∈ H be a minimal line polynomial in the direction of v. Then f = φh
+is a minimal polynomial from Ann(c). Consider c0 = (f /φ1 )c. It is a one-periodic
+configuration in the direction of φ1 . Let S 0 be a narrower stripe in c0 determined
+from S in c by the multiplication by f /φ1 . S 0 is of maximal width such that φ1
+does not fit in.
+    For a contradiction assume that c restricted to S is periodic in the direction of
+v, then also c0 restricted to S 0 is. Moreover S 0 determines the whole configuration
+c0 – the annihilator φ1 gives a linear recurrence relation on the coefficients of
+c0 lying on lines in the direction of φ1 , and S 0 is wide enough so that every
+coefficient is determined. Therefore c0 is periodic also in the direction of v, which
+is in contradiction with one-periodicity of c0 .                                    t
+                                                                                    u
+Lemma 40. Let c be a counterexample candidate and v ∈ Z2 a non-zero vector.
+Denote (mφ , nφ ) = box(φ), (m, n) = box(v) and let M > mφ , N > nφ be
+integers. Let L ∈ Linesv (M, N ) be arbitrary.
+(a) If v is neither horizontal nor vertical, then
+                                   M − m φ + 1 N − nφ + 1
+                                                         
+                      |L| ≥ min                  ,          .
+                                        m          n
+(b) Assume v is not horizontal. If M ≥ (N + nφ ) m
+                                                 n + mφ then
+
+                                             N +1
+                                     |L| ≥        .
+                                               n
+                                                                                   27
+
+Proof. Without loss of generality assume v = (m, n), the other cases are mirrored
+or rotated. Also assume that there is a block in L with (0, 0) as its bottom left
+corner. The proof is illustrated in Figure 9.
+(a) Consider the stripe
+
+         S1 = (0, nφ ) + a(mφ , −nφ ) + bv a ∈ [0, 1), b ∈ R ∩ Z2 .
+               
+
+
+Since (mφ , nφ ) is the bounding box of φ, the stripe S from Lemma 39 fits in
+S1 . Therefore S1 is non-periodic in the direction of v, and in particular there
+exists a ”fiber” f = { u + kv | k ∈ Z } inside of the stripe on which c spells a
+non-periodic sequence.
+    Each block from L contains the same number of consecutive points from a
+fixed fiber in S1 , let p(f ) be this number for f . Clearly, one of the two fibers on
+the boundaries of S1 lower bounds this quantity. Therefore, by computing the
+number of points on the boundary fibers,
+
+                                        M − mφ k j N − nφ k
+                                    j                        
+                        p(f ) ≥ min              ,              .
+                                          m             n
+
+   Now by Morse-Hedlund theorem there are at least p(f ) + 1 distinct blocks
+in L. The proof is finished by verifying that bp/qc + 1 ≥ (p + 1)/q for p, q ∈ N.
+(b) Consider the stripe
+
+              S2 = a(mφ , −nφ ) + bv a ∈ [0, 1), b ∈ R ∩ Z2 .
+                    
+
+
+As in the part (a), it contains a non-periodic fiber. Moreover, if the condition on
+M is satisfied, then the boundary of S2 intersects every block in L on the top
+edge. Therefore bN/nc lower bounds the number of points from any fiber of S2
+contained in a block in L. The rest follows as in (a).                            t
+                                                                                  u
+
+
+
+                                                                     M
+
+
+
+ N − nφ    v                                                       S2
+                       S1
+                                                 N
+                                                      v
+   nφ
+
+
+           mφ        M − mφ
+                                                     nφ m
+                                                        n     mφ         Nm
+                                                                          n
+
+
+           Fig. 9: The stripes S1 and S2 from the proof of Lemma 40.
+28
+
+The Main Result
+
+Let us combine the above lemmas to get a lower bound on the complexity of a
+counterexample candidate.
+
+
+Lemma 41 (Thin blocks). Let c be a counterexample candidate and (mφ , nφ ) =
+box(φ). Fix an integer N > nφ . Then there exists M0 such that if M > M0 then
+Pc (M, N ) > M N .
+
+Proof. Since ord(c) ≥ 2 we can without loss of generality assume that the di-
+rection of φ1 is not horizontal. Let v be a primitive vector in that direction and
+denote (m, n) = box(v).
+    Let h ∈ H be a horizontal line polynomial and let f = φh, (mf , nf ) = box(f ).
+Clearly nf = nφ . Assume M ≥ (N + nφ ) m      n + mφ . Then by Lemma 38 and
+Lemma 40(b) for M > mf , N > nf we have
+                           [
+           Pc (M, N ) =        Linesv (M, N )
+                                                N + 1
+                       ≥ (M − mf )n + m(N − nf )
+                                                   n
+                       ≥ (M − mf )(N + 1) = M N + M − mf (N + 1).
+
+The proof is finished by choosing M0 = max mf (N +1), (N +nφ ) m
+                                          
+                                                               n +mφ . t
+                                                                       u
+
+Lemma 42 (Fat blocks I). Let c be a counterexample candidate and let v be
+the direction of φ1 . If v is neither horizontal nor vertical, then there exist positive
+integers M0 , N0 such that for M > M0 and N > N0 holds Pc (M, N ) > M N .
+
+Proof. Let f ∈ Ann(c) be minimal and denote (m, n) = box(v), (mφ , nφ ) =
+box(φ), (mf , nf ) = box(f ). Assume M > mf , N > nf and let α = m  n . We
+consider three ranges of M . The proof is illustrated in Figure 10.
+
+(a) Assume (N + nφ )α + mφ ≤ M . This condition is equivalent to the one in
+Lemma 40(b), therefore by combining with Lemma 38
+
+                                                          N + 1
+              Pc (M, N ) ≥ (M − mf )n + m(N − nf )
+                                                             n
+                                                                      m
+                          = (M − mf )(N + 1) + (N − nf )(N + 1)
+                                                                      n
+                          = M N + M + Θ(N 2 ).
+
+Therefore there exist an integer N1 such that for N > N1 the complexity is at
+least M N .
+                                                                                                   29
+
+(b) Assume (N − nφ )α − mφ < M < (N + nφ )α + mφ . Then M = Θ(N ). Now
+combine Lemma 38 and Lemma 40(a):
+                                                M − m φ N − nφ
+                                                               
+                                         
+    Pc (M, N ) > (M − mf )n + m(N − nf ) min           ,
+                                                  m        n
+                                                M − m f N − nf
+                                                               
+                                         
+               ≥ (M − mf )n + m(N − nf ) min           ,
+                                                  m        n
+                                         n          n             mo
+               = (M − mf )(N − nf ) + min (M − mf )2 , (N − nf )2
+                                                    m             n
+               = (M − mf )(N − nf ) + Θ(N 2 )
+               = M N + Θ(N 2 ).
+
+Therefore there is an integer N2 such that for N > N2 the complexity exceeds
+MN.
+(c) Assume M ≤ (N − nφ )α − mφ . This is equivalent to the condition in
+Lemma 40(b) when the roles of horizontal and vertical direction are exchanged.
+Therefore, similarly as in (a), there exists M0 such that for M > M0 the complex-
+ity is at least M N . The whole proof is finished by choosing N0 = max{N1 , N2 }.
+                                                                               t
+                                                                               u
+
+
+                                         M0
+                 N
+                                                     mφ
+                                                 −
+                                              )α
+                                         n   φ                                                N2
+                                     −
+                                (N
+                            ≤
+                        M                                                             M
+                                                                                  ≤
+                                                                              φ
+                                                                          m
+                                                                      +                       N1
+                                                                 )α
+                                                               nφ
+                                v                          +
+                                                      (N
+
+                                                                                          M
+
+      Fig. 10: Three different ranges for M from the proof of Lemma 42.
+
+
+   Now we are just a step away from our main theorem. Suppose we knew that
+Lemma 42 holds also when there are only horizontal and vertical φi components:
+Lemma 43 (Fat blocks II). Let c be a counterexample candidate, ord(c) =
+2 and the directions of φ1 , φ2 are horizontal and vertical, respectively. Then
+there exist positive integers M0 , N0 such that for M > M0 and N > N0 holds
+Pc (M, N ) > M N .
+   This is exactly the case when c is a sum of horizontally one-periodic and
+vertically one-periodic configurations, as will be shown later. We postpone the
+30
+
+proof of Lemma 43 to the next section. Assuming the lemma is valid, we can
+finally give a proof of our main theorem.
+Theorem 44 (The main result). Let c be a two-dimensional non-periodic
+configuration. Then Pc (M, N ) > M N holds for all but finitely many choices
+M, N ∈ N.
+Proof. By the discussion preceding Definition 33, it is enough to consider coun-
+terexample candidates c. Note that either at least one of φi is neither horizontal
+nor vertical, or ord(c) = 2 and the directions of φ1 , φ2 are horizontal and vertical
+in some order. In either case, by Lemma 42 or Lemma 43, there are M0 , N0 such
+that for M > M0 , N > N0 we have Pc (M, N ) > M N .
+    Let (mφ , nφ ) = box(φ) and assume nφ < N ≤ N0 . By Lemma 41 for each
+such N all but finitely many M satisfy Pc (M, N ) > M N . Therefore for the whole
+range nφ < N ≤ N0 the condition can be violated only finitely many times. The
+situation for mφ < M ≤ M0 is symmetric.
+    Finally, if M ≤ mφ or N ≤ nφ the complexity is greater than M N by
+Lemma 35. This concludes the proof.                                                t
+                                                                                   u
+Corollary 45. If c is a two-dimensional configuration such that Pc (M, N ) ≤
+M N holds for infinitely many pairs M, N ∈ N, then c is periodic.
+
+
+6     The Rectilinear Case
+To complete the proof of our main result it remains to prove Lemma 43. Let us
+restate the lemma first. Define a rectilinear configuration to be a two-dimensional
+configuration which can be written as a sum of horizontally and vertically peri-
+odic configuration.
+Lemma 46. Let c be a finitary integral two-dimensional configuration. The fol-
+lowing are equivalent:
+  (i) c is rectilinear and non-periodic
+ (ii) c is a sum of horizontally one-periodic finitary configuration and vertically
+      one-periodic finitary configuration
+(iii) ord(c) = 2 and the directions of φ1 and φ2 are horizontal and vertical, in
+      some order.
+Proof. We prove (i) ⇒ (iii) ⇒ (ii) ⇒ (i). Assume (i). Since c is non-periodic
+ord(c) ≥ 2. Let m, n be the respective periods of the horizontal and vertical
+component of c. Then c is annihilated by (xm − 1)(y n − 1). The φi components
+are line polynomials in distinct directions dividing this polynomial. Therefore
+ord(c) = 2, one φi is horizontal and the other one vertical.
+   The implication (iii) ⇒ (ii) follows directly from Corollary 24.
+   For the remaining implication assume (ii). Then c is rectilinear, and it is also
+non-periodic by Example 29.                                                       t
+                                                                                  u
+     With this notation we can restate Lemma 43:
+                                                                                 31
+
+Lemma 47. Let c be a finitary integral rectilinear non-periodic configuration.
+Then there exist positive integers M0 , N0 such that for M > M0 and N > N0
+holds Pc (M, N ) > M N .
+    Let us give an overview of the proof. First we show that it is enough to
+consider binary configurations, i.e. configurations with coefficients from {0, 1}.
+Then, with the help of symbolic dynamics, we show that either the configuration
+already has a high complexity, or it contains arbitrarily large doubly periodic
+region. This reduces to study of configurations which are non-periodic, but ver-
+tically periodic on the upper half plane { (x, y) ∈ Z2 | x ≥ 0 } and horizontally
+periodic on the right half plane { (x, y) ∈ Z2 | y ≥ 0 }. We, finally, settle this
+case combinatorially.
+
+Lemma 48. Let c be a non-periodic configuration. Then the coefficients of c
+can be mapped to {0, 1} such that the resulting configuration is non-periodic.
+Proof. First let us map a given coefficient α to 1 and the rest to 0. If any
+of these configurations is non-periodic we are done. Assume each of them is
+periodic. Because c is non-periodic there must be two coefficients α, β such that
+the corresponding configurations are one-periodic in distinct directions. Denote
+their vectors of periodicity u, v respectively.
+    Observe that no sublattice modulo hu, vi in c can contain both coefficients
+α and β – if there is α, the whole line in direction u contains coefficients α
+and similarly for β and a line in direction v. These lines intersect, which is a
+contradiction.
+    Define c0 by mapping both α and β to 1 and the rest to 0. We will show that
+ 0
+c is non-periodic. For contradiction suppose there is a vector of periodicity w,
+by scaling it we can assume that w ∈ hu, vi.
+    Now the direction of w differs from u or v, without loss of generality assume
+it is different from u. Then in c the coefficients α are periodic with the vector
+w – any line in direction w which contains α must contain only α and β from
+the periodicity of c0 , and the whole line lies in a sublattice modulo hu, vi and
+therefore contains α only. But the coefficients α are periodic also in the direction
+v, which is in contradiction with one-periodicity.                                 t
+                                                                                   u
+Note. We gave an elementary proof since the claim is not related to the theory
+developed in this paper. With it, however, it can be shortened. If there are two
+coefficients which are one-periodic in distinct directions, then the configuration
+obtained by mapping them to 1 and the rest to 0 is a sum of two one-periodic
+configurations having distinct directions. Such a configuration is, by Example 29,
+non-periodic.
+   It is clear that by mapping the coefficients of c into a configuration c0 the
+complexity can only decrease or not change: Pc (M, N ) ≥ Pc0 (M, N ). Therefore
+we can restrict our efforts only to binary configuration:
+Corollary 49. If Nivat’s conjecture holds for binary configurations, then it holds
+in general. Similarly, if Lemma 47 holds for binary configurations, then it holds
+in general.
+32
+
+Proof. By Lemma 48 a non-periodic configuration c can be mapped to a binary
+non-periodic configuration c0 . Nivat’s conjecture and Lemma 47 give a lower
+bound on the complexity of c0 . The same bound applies also for c.        t
+                                                                          u
+   Let us say that two configurations are disjoint if they do not both have a
+non-zero coefficient at the same position, i.e. if supp(c1 ) ∩ supp(c2 ) = ∅ where
+supp(c) is defined by supp(c) = { v ∈ Zd | cv 6= 0 }.
+Lemma 50. Let c be a binary two-dimensional configuration annihilated by
+(xm − 1)(y n − 1) for some m, n ∈ N. Then there exist disjoint binary two-
+dimensional configurations c1 , c2 such that c1 has horizontal period m, c2 has
+vertical period n, and c = c1 + c2 .
+Proof. Let u = (m, 0), v = (0, n). The configuration c decomposes into finitely
+many sublattices modulo hu, vi. We show that each of these sublattices is u- or
+v-periodic. The proof is then finished by setting c1 to contain all the u-periodic
+sublattices and c2 to contain the rest which is necessarily v-periodic.
+     Let c0 be a binary configuration defined by c0i,j = cw+iu+jv for some w ∈ Z2 ,
+i.e. c0 is one of the sublattices ”condensed.” Then c0 is annihilated by (x−1)(y−1).
+The only possible 2 × 2 blocks in such a configuration are
+                                   
+                         00     00     11    01     10      11
+                              ,      ,     ,     ,        ,      .
+                         00     11     00    01     10      11
+
+Notice that if there is 0 adjacent to 1 in one row then there is an all-zero and
+all-one column. Similarly, if a column contains adjacent 0 and 1 then there is
+an all-zero and all-one row. These two options cannot happen simultaneously.
+Therefore c0 is (1, 0)- or (0, 1)-periodic, which means that the corresponding
+sublattice in c is u- or v-periodic.                                           t
+                                                                               u
+    To proceed we need some basic concepts of symbolic dynamics, for a compre-
+hensive reference see [Kůr03]. The orbit closure O(c) of a configuration c is the
+subshift it generates: O(c) contains precisely those configurations c0 whose finite
+patterns are among the finite patterns of c. If O(c0 ) = O(c) for all c0 ∈ O(c)
+then the subshift is minimal. This happens if and only if c is uniformly recurrent,
+that is, if and only if for every finite pattern p ∈ AD that appears somewhere
+in c there exists finite E ⊆ Zd such that every E-pattern of c contains p as a
+subpattern.
+    Note that for all c0 ∈ O(c) and all finite D ⊆ Zd we have Pc0 (D) ≤ Pc (D).
+We can replace configuration c in our proof with any non-periodic c0 from its
+orbit closure without increasing the complexity.
+    We use the following one-dimensional technical lemma.
+Lemma 51. Let c ∈ AZ be a non-periodic one-dimensional configuration, and
+let X = O(c) be its orbit closure. Then one of the following holds:
+(a) X contains a uniformly recurrent element that is not periodic, or
+(b) X contains some cR that is non-periodic but is eventually periodic on the
+    right.
+                                                                                      33
+
+Proof. Suppose that (a) does not hold. Let us prove the existence of cR .
+     Consider the sequence c, σ(c), σ 2 (c), . . . of configurations, where σ is the left
+shift. The sequence has an accumulation point c0 under the standard compact
+topology of AZ . Then c0 is in X and, in fact, every finite pattern that appears
+in c0 appears arbitrarily far on the right in c.
+     It is well known that every subshift contains a uniformly recurrent configura-
+tion. Let c00 be a uniformly recurrent configuration in the orbit closure O(c0 ) of
+c0 . Then c00 is also in X and, in fact, every finite word that appears in c00 appears
+in c0 and hence appears arbitrarily far on the right in c.
+     Because (a) does not hold, c00 is periodic. It is annihilated by polynomial
+f (x) = (xn − 1) for some n ≥ 1. This means that f c contains arbitrarily long
+segments of 0’s arbitrarily far on the right. Because f c 6= 0, the segments of
+0’s sufficiently far on the right have period breaks: non-zero values followed by
+arbitrarily long runs of 0’s. We obtain cR by translating c in such a way that the
+period breaking points are at the position −1 and take an accumulation point
+of these translates for longer and longer runs of 0’s. We have that f cR is zero at
+all non-negative positions, but non-zero at −1.                                        t
+                                                                                       u
+
+    The next lemma is a two-dimensional variant of the lemma above. It allows
+us to replace c by a more convenient configuration from its orbit closure. Recall
+the notation c(v +D) which is the same as cv+D , that is, the pattern D extracted
+from position v in c. Let us denote [n] := {0, 1, . . . , n − 1}, then we can concisely
+write [m] × [n] for the m × n block.
+
+Lemma 52. Let u1 be horizontal, u2 vertical vector and let c a non-periodic
+binary configuration which can be written as a disjoint sum c1 + c2 where ci
+has period ui . Then there is a non-periodic c0 ∈ O(c) which can be written as
+a disjoint sum c01 + c02 where c0i has period ui , and one of the following two
+possibilities holds:
+(a) c01 or c02 is uniformly recurrent, or
+(b) c01 is doubly periodic on the upper half plane {(x, y) ∈ Z2 | y ≥ 0}, and
+    c02 is doubly periodic on the right half plane {(x, y) ∈ Z2 | x ≥ 0}.
+
+Proof. Denote u1 = (m, 0) and u2 = (0, n), m, n > 0. The idea is to partition
+Z2 into m × n blocks, consider c1 and c2 as one-dimensional configurations over
+such blocks, and apply Lemma 51.
+   Let D = [m] × [n] be the m × n block and let A = {0, 1}D . Construct
+the following one-dimensional configurations e1 and e2 over alphabet A: For all
+k ∈ Z,
+                             e1 (k) = c1 (ku2 + D),
+                                                                            (4)
+                             e2 (k) = c2 (ku1 + D).
+The sequence e1 encodes a vertical stripe of width m in c1 which, by u1 -
+periodicity, determines c1 . Similarly, e2 encodes a horizontal stripe of height
+n in c2 which determines c2 .
+    Because ci is not doubly periodic, the configuration ei is non-periodic. We can
+apply Lemma 51 on ei to obtain e0i ∈ O(ei ). Let us reconstruct a two-dimensional
+34
+
+configuration c0i from e0i by the inverse of (4): Let c0i be ui -periodic and for all
+k ∈ Z,
+
+                                c01 (ku2 + D) = e01 (k),
+                                c02 (ku1 + D) = e02 (k).
+
+Because e0i is non-periodic, c0i is one-periodic. From e0i ∈ O(ei ) follows c0i ∈ O(ci ).
+More precisely, for any E ⊂ Z2 exist k1 , k2 ∈ Z such that
+
+                                c01 (E) = c1 (k2 u2 + E),
+                                c02 (E) = c2 (k1 u1 + E).
+
+Restricting E to {v} gives that c01 and c02 are disjoint since c0i (v) = ci (k1 u1 +
+k2 u2 + v).
+    Now set c0 = c01 + c02 , by Lemma 46 it is a non-periodic configuration. We
+claim that c0 ∈ O(c): Indeed, if E ⊂ Z2 is arbitrary, then there exist k1 , k2 ∈ Z
+such that
+
+             c0 (E) = c01 (E) + c02 (E) = c1 (k2 u2 + E) + c2 (k1 u1 + E)
+                    = c1 (k1 u1 + k2 u2 + E) + c2 (k1 u1 + k2 u2 + E)
+                    = c(k1 u1 + k2 u2 + E).
+
+   It remains to prove that one of the cases (a) or (b) holds. If one of e0i is
+uniformly recurrent, so is c0i , and the case (a) holds. Otherwise, by Lemma 51, e01
+and e02 are eventually periodic to the right, which implies that the corresponding
+two-dimensional configurations c01 and c02 are doubly periodic on the upper half
+plane and on the right half plane, respectively. In that case (b) holds.          t
+                                                                                  u
+
+Lemma 53. Let c0 = c01 + c02 as in Lemma 52. If c01 or c02 is uniformly recurrent,
+then for M, N large enough we have
+
+                                  Pc0 (M, N ) > M N.
+
+Proof. Without loss of generality assume c01 is uniformly recurrent. Consider a
+sublattice Λ modulo hu1 , u2 i in c0 . Because c0 is a disjoint sum and the vectors
+of periodicity of c01 , c02 are u1 , u2 respectively, c0 restricted to Λ is identical with
+one of c01 or c02 .
+     Let us assume that c01 is not constant 1 on any sublattice Λ – if it is, we can
+subtract this sublattice from c01 and add it to c02 . Note that this does not change
+uniform recurrence of either configuration.
+     Since c01 is uniformly recurrent, it is also uniformly recurrent when restricted
+to any sublattice Λ. Let M, N be large enough such that every block M × N in
+c01 contains at least one 0 and one 1 from each sublattice of c01 on which it is not
+constant zero.
+     Let D = [M ] × [N ] and consider a block pattern c0v+D . Let Λ be a sublattice.
+We know that c0v+D agrees with c01,v+D or c02,v+D on Λ. We claim that the former
+                                                                                      35
+
+happens if and only if c0v+D restricted to Λ is either constant zero or if it is not
+u2 -periodic – this is because M, N were chosen such that on sublattices which
+contain 1, no restriction of c01,v+D to Λ is u2 -periodic, while all restrictions of
+c02,v+D are.
+     In other words, from a block c0v+D we can determine the blocks c01,v+D and
+  0
+c2,v+D . By Corollary 37, if N is large enough there are M disjoint columns of
+blocks M × N in c02 . Because c01 is vertically non-periodic, by Morse-Hedlund
+theorem each column of blocks M × N in c01 contains at least N + 1 distinct
+blocks. By positioning the block in c0 these can be combined to achieve the
+lower bound
+
+                          Pc0 (M, N ) ≥ M (N + 1) > M N.
+
+                                                                                       t
+                                                                                       u
+
+   The remaining case to study is illustrated in Figure 11.
+
+
+             c0                             c01                           c02
+
+
+
+
+                            =                              +
+
+
+
+
+Fig. 11: The binary configuration c0 is nonperiodic, but periodic horizontally on
+the right half plane with period 4 and periodic vertically on the upper half
+plane with period 2. It can be decomposed into a disjoint sum of two periodic
+configurations c01 + c02 which are one-periodic, but doubly periodic on the upper
+and right half plane, respectively. (The color black corresponds to coefficient 1
+and white to 0.)
+
+
+
+Lemma 54. Let c0 = c01 + c02 as in Lemma 52 and the case (b) holds. Then for
+M, N large enough we have
+
+                                  Pc0 (M, N ) > M N.
+
+Proof. The configuration c0 is vertically periodic on the upper half plane, let
+n0 ∈ N be the shortest vertical period. Let us call a point v ∈ Z2 period-breaking
+if c0v 6= c0v+(0,n0 ) . Let v0 = (x0 , y0 ) be a topmost period-breaking point (i.e. with
+maximal y0 ).
+36                                  REFERENCES
+
+    We know that c0 is annihilated by (xm − 1)(y n − 1) for some m, n ∈ N. We
+claim that every point v0 +(km, 0) for k ∈ Z is period-breaking. By the choice of
+v0 we have c0v0 6= c0v0 +(0,n0 ) = c0v0 +(0,n0 n) . In particular, (y n0 n −1)c0 6= 0 because
+it has a non-zero value at v0 . Note that (xm − 1) annihilates (y n0 n − 1)c0 , so this
+configuration has a horizontal period m and therefore for all k ∈ Z
+                      c0v0 +(km,0) 6= c0v0 +(km,n0 n) = c0v0 +(km,n0 ) ,
+as claimed.
+    Let M > m, N > max{n0 , n}. Consider a row of blocks M ×N which overlaps
+the rows y0 and y0 +n0 , there are N −n0 such rows. Any block in these rows sees a
+period-breaking point, and we can distinguish between the blocks in distinct rows
+by the highest row inside the block where the period-breaking occurs. Therefore
+there are N −n0 disjoint lines of blocks in the direction (1, 0). Using Lemma 40(b)
+with the roles of horizontal and vertical exchanged, each of these lines contains
+at least M + 1 distinct blocks which gives altogether
+                                    (M + 1)(N − n0 )
+distinct blocks.
+    We will find additional blocks inside the half plane U := { (x, y) ∈ Z2 |
+y > y0 }, all such blocks are distinct from those already counted since there is
+no period-breaking point inside them. Configuration c0 restricted to U is not
+periodic horizontally, but it is periodic horizontally on the right half plane with
+minimal period m0 ∈ N. Define a point v ∈ Z2 horizontal period-breaking if c0v 6=
+c0v+(m0 ,0) and let v 1 = (x1 , y1 ) be a rightmost such point. Clearly, v + (0, kn0 )
+is a horizontal period-breaking point for all k ∈ Z.
+    Because the minimal vertical period of c0 U is n0 , there is a finite set of
+columns {x2 , . . . , xt } such that their joint vertical period is n0 . Let S = {x1 , x1 +
+m0 , x2 , . . . , xt } and set m0 = max S − min S.
+    If M > m0 , then a block M × N can be positioned such that it overlaps with
+all the columns in S. There are M − m0 distinct horizontal positions when this
+happens, and they can be identified by the rightmost horizontal period-breaking
+point. For each of them we can slide the block up into n0 positions with distinct
+patterns, giving (M − m0 )n0 distinct blocks. Altogether we have
+       Pc0 (M, N ) ≥ (M + 1)(N − n0 ) + (M − m0 )n0 = M N + N − m0 n0 .
+It suffices to choose M > max{m, m0 } and N > max{n, n0 , m0 n0 } to finish the
+proof.                                                                        t
+                                                                              u
+    The proof of Lemma 43 follows by putting together all the lemmas in this
+section. That completes the proof of our main result, Theorem 44.
+
+References
+[AM69]       M. Atiyah and I. G. Macdonald. Introduction to commutative alge-
+             bra. Addison-Wesley series in mathematics. Reading, Mass. Addison-
+             Wesley, 1969.
+                                                        REFERENCES          37
+
+[Bha16]  S. Bhattacharya. “Periodicity and decidability of tilings of Z2 ”. In:
+         ArXiv e-prints (Feb. 2016). arXiv:1602.05738 [math.CO].
+[CLO92] D. A. Cox, J. B. Little, and D. O’Shea. Ideals, Varieties, and Algo-
+         rithms. Springer-Verlag, 1992.
+[CK16]   V. Cyr and B. Kra. “Complexity of short rectangles and periodicity”.
+         In: European Journal of Combinatorics 52, Part A (2016), pp. 146
+         –173.
+[CK15]   V. Cyr and B. Kra. “Nonexpansive Z2 -subdynamics and Nivat’s con-
+         jecture”. In: Trans. Amer. Math. Soc. 367.9 (2015), pp. 6487–6537.
+[EKM03] C. Epifanio, M. Koskas, and F. Mignosi. “On a conjecture on bidi-
+         mensional words”. In: Theor. Comput. Sci. 1-3.299 (2003).
+[Ful89]  W. Fulton. Algebraic curves: an introduction to algebraic geometry.
+         Advanced book classics. Addison-Wesley Pub. Co., Advanced Book
+         Program, 1989.
+[KS15a]  J. Kari and M. Szabados. “An Algebraic Geometric Approach to
+         Multidimensional Words”. In: Algebraic Informatics - 6th Interna-
+         tional Conference, CAI 2015, Stuttgart, Germany, September 1-4,
+         2015. Proceedings. 2015, pp. 29–42.
+[KS15b] J. Kari and M. Szabados. “An Algebraic Geometric Approach to
+         Nivat’s Conjecture”. In: Automata, Languages, and Programming -
+         42nd International Colloquium, ICALP 2015, Kyoto, Japan, July 6-
+         10, 2015, Proceedings, Part II. 2015, pp. 273–285.
+[Kůr03] P. Kůrka. Topological and Symbolic Dynamics. Collection SMF. Société
+         mathématique de France, 2003.
+[LW96]   J. C. Lagarias and Y. Wang. “Tiling the Line with Translates of One
+         Tile”. In: Inventiones Mathematicae 124 (1996), pp. 341–365.
+[LM95]   D. Lind and B. Marcus. An Introduction to Symbolic Dynamics and
+         Coding. Cambridge University Press, 1995.
+[MH38]   M. Morse and G. A. Hedlund. “Symbolic Dynamics”. In: American
+         Journal of Mathematics 60.4 (1938), pp. 815–866.
+[Niv97]  M. Nivat. Invited talk at ICALP, Bologna. 1997.
+[QZ04]   A. Quas and L. Q. Zamboni. “Periodicity and local complexity”. In:
+         Theor. Comput. Sci. 319.1-3 (2004), pp. 229–240.
+[ST00]   J. W. Sander and R. Tijdeman. “The complexity of functions on
+         lattices”. In: Theor. Comput. Sci. 246.1-2 (2000), pp. 195–225.
+[ST02]   J. W. Sander and R. Tijdeman. “The rectangle complexity of func-
+         tions on two-dimensional lattices”. In: Theor. Comput. Sci. 270.1-2
+         (2002), pp. 857–863.
+[Sze98]  M. Szegedy. “Algorithms to Tile the Infinite Grid with Finite Clus-
+         ters”. In: FOCS. IEEE Computer Society, 1998, pp. 137–147.
+
