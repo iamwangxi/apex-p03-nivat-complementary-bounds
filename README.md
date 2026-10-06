@@ -13,3 +13,9 @@
 新检查器与生成器分别实现、没有相互导入；同一 Codex 上下文完成，不称为独立模型审阅。旧矩形和删点证书原样复用，旧检查器只移植可移植的数学检查函数与负控，去掉工作区专用主程序。历史路径与哈希属于出处元数据，不是复跑依赖。
 
 仓库：[https://github.com/iamwangxi/apex-p03-nivat-complementary-bounds](https://github.com/iamwangxi/apex-p03-nivat-complementary-bounds)；固定标签 `v1.0`。`MANIFEST.sha256` 列出全部发布文件（自身除外）；`.git/` 不属证据。随附审阅输入是未改动的历史 v1.0，其 pending 仅表示当时状态。当前稿件与粘贴正文见上方链接；实际平台投稿尚未执行。
+
+## 版本说明 / Revision note
+
+本版本与 `e534fd9954c3a55478a3a6f008a66e23a69fbae3`（标签 `v1.0`）相比，只改了 `优化合稿-English-v1.1.md` 与 `proof/submission.md` 两个文件中公式的写法。GitHub 的 Markdown 处理会去掉 `$...$` 里的 `\{`、`\,` 等反斜杠转义，还有部分公式没被识别，并且禁用 `\operatorname` 与 `\tag`；所以这两个文件的全部公式改用 GitHub 的原样数学语法，这两个宏换成等价写法。数学文字没有任何改动。`运行记录/KaTeX核验-v1.0.json` 与 `表述修订记录-v1.1.md` 中记录的哈希对应标签 `v1.0` 的文件；审阅输入与 `引用/` 下的记录保持原样。
+
+This revision differs from `e534fd9954c3a55478a3a6f008a66e23a69fbae3` (tag `v1.0`) only in how formulas are written in `优化合稿-English-v1.1.md` and `proof/submission.md`. GitHub's Markdown processing removed backslash escapes such as `\{` and `\,` inside `$...$`, did not recognise some formulas, and blocks `\operatorname` and `\tag`; so every formula in these two files now uses GitHub's literal math syntax, and the two macros were replaced by equivalent ones. No mathematical text was changed. The hashes recorded in `运行记录/KaTeX核验-v1.0.json` and `表述修订记录-v1.1.md` refer to the files at tag `v1.0`; the review input and the records under `引用/` are unchanged.
