@@ -31,7 +31,7 @@ E_i=\{z\in\mathbb Z^2:z+\mathop{\mathrm{supp}}\nolimitsg_i\subseteq S\},\qquad
 K_i=\#\{t\in\mathbb Z:|E_i\cap\pi_v^{-1}(t)|\ge d_i\},
 ```
 ```math
-\ell_i=\max_{a\in\mathbb Z}\min_{a\le t<a+w_i}|S\cap\pi_v^{-1}(t)|,
+\ell_i=\max_{a\in\mathbb Z}\min_{a\le t\lt a+w_i}|S\cap\pi_v^{-1}(t)|,
 \qquad \varepsilon_i=\mathbf1[A_i(1)=0].
 ```
 Empty sections have length zero. Empty erosions, $`K_i=0`$, $`\ell_i=0`$, points and segments are allowed. The claim is
